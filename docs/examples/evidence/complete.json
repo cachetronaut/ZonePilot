@@ -1,0 +1,180 @@
+{
+  "business": {
+    "coordinates": [
+      0,
+      0
+    ],
+    "geocode_evidence": {
+      "candidate_count": 1,
+      "confidence": 0.99,
+      "confidence_building_level": 0.99,
+      "match_type": "full_match",
+      "result_type": "building"
+    },
+    "input_address": "Synthetic origin A",
+    "name": "Synthetic service business",
+    "resolved_address": "Synthetic business premises A"
+  },
+  "competitors": {
+    "cap_reached": false,
+    "category": "service.locksmith",
+    "coverage": "sampled",
+    "duplicate_count": 1,
+    "observed_in_zone_count": 1,
+    "observed_out_of_zone_count": 1,
+    "records": [
+      {
+        "address": "Synthetic competitor premises",
+        "categories": [
+          "service.locksmith"
+        ],
+        "coordinates": [
+          0.1,
+          0.1
+        ],
+        "geodesic_distance_meters": 15725.355,
+        "id": "fixture-place-001",
+        "name": "Synthetic competitor",
+        "verdict": "in_zone"
+      }
+    ],
+    "returned_count": 3,
+    "search_extent": {
+      "method": "rectangle",
+      "parameters": {
+        "bbox": [
+          -1,
+          -1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": "ok",
+    "unclassified_count": 0
+  },
+  "customers": [
+    {
+      "borderline": false,
+      "coordinates": [
+        0.2,
+        0.3
+      ],
+      "distance_meters": 2000,
+      "evidence_refs": [
+        "customers",
+        "routes"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 0.99,
+        "confidence_building_level": 0.99,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "Synthetic destination 1",
+      "membership_route_disagreement": false,
+      "name": "Synthetic customer 1",
+      "reference": null,
+      "resolved_address": "Synthetic premises 1",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 1,
+      "time_seconds": 1000,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": true,
+      "coordinates": [
+        0.4,
+        0.5
+      ],
+      "distance_meters": 2500,
+      "evidence_refs": [
+        "customers",
+        "routes"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 0.99,
+        "confidence_building_level": 0.99,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "Synthetic destination 2",
+      "membership_route_disagreement": true,
+      "name": "Synthetic customer 2",
+      "reference": null,
+      "resolved_address": "Synthetic premises 2",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 2,
+      "time_seconds": 1260,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        2,
+        2
+      ],
+      "distance_meters": 3000,
+      "evidence_refs": [
+        "customers",
+        "routes"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 0.99,
+        "confidence_building_level": 0.99,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "Synthetic destination 3",
+      "membership_route_disagreement": false,
+      "name": "Synthetic customer 3",
+      "reference": null,
+      "resolved_address": "Synthetic premises 3",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 3,
+      "time_seconds": 1500,
+      "verdict": "out_of_zone"
+    }
+  ],
+  "description": "Hand-authored contract fixture, not a provider response recording.",
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "provenance": "synthetic"
+}

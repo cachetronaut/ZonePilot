@@ -1,0 +1,250 @@
+{
+  "attributions": [
+    {
+      "source": "ZonePilot synthetic fixtures",
+      "text": "Authored synthetic data; no API calls or real premises.",
+      "url": "https://geoapify.com"
+    }
+  ],
+  "business": {
+    "coordinates": [
+      0,
+      0
+    ],
+    "geocode_evidence": {
+      "candidate_count": 1,
+      "confidence": 0.99,
+      "confidence_building_level": 0.99,
+      "match_type": "full_match",
+      "result_type": "building"
+    },
+    "input_address": "Synthetic origin A",
+    "name": "Synthetic service business",
+    "resolved_address": "Synthetic business premises A"
+  },
+  "competitors": {
+    "cap_reached": null,
+    "category": "service.locksmith",
+    "coverage": null,
+    "duplicate_count": null,
+    "observed_in_zone_count": null,
+    "observed_out_of_zone_count": null,
+    "records": [],
+    "returned_count": null,
+    "search_extent": {
+      "method": "rectangle",
+      "parameters": {
+        "bbox": [
+          -1,
+          -1,
+          1,
+          1
+        ]
+      }
+    },
+    "status": "unavailable",
+    "unclassified_count": null
+  },
+  "customers": [
+    {
+      "borderline": null,
+      "coordinates": [
+        0.2,
+        0.3
+      ],
+      "distance_meters": null,
+      "evidence_refs": [
+        "customers",
+        "routes"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 0.99,
+        "confidence_building_level": 0.99,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "Synthetic destination 1",
+      "membership_route_disagreement": null,
+      "name": "Synthetic customer 1",
+      "reference": null,
+      "resolved_address": "Synthetic premises 1",
+      "route_status": "no_route",
+      "route_within_budget": null,
+      "row_id": 1,
+      "time_seconds": null,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": null,
+      "coordinates": null,
+      "distance_meters": null,
+      "evidence_refs": [
+        "customers"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 0,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "geocode_reason": "no_match",
+      "geocode_status": "unresolved",
+      "input_address": "Synthetic destination 2",
+      "membership_route_disagreement": null,
+      "name": "Synthetic customer 2",
+      "reference": null,
+      "resolved_address": null,
+      "route_status": "not_attempted",
+      "route_within_budget": null,
+      "row_id": 2,
+      "time_seconds": null,
+      "verdict": "unknown"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        2,
+        2
+      ],
+      "distance_meters": 3000,
+      "evidence_refs": [
+        "customers",
+        "routes"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 0.99,
+        "confidence_building_level": 0.99,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "Synthetic destination 3",
+      "membership_route_disagreement": false,
+      "name": "Synthetic customer 3",
+      "reference": null,
+      "resolved_address": "Synthetic premises 3",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 3,
+      "time_seconds": 1500,
+      "verdict": "out_of_zone"
+    }
+  ],
+  "data_mode": "synthetic",
+  "errors": [
+    {
+      "code": "route_no_route",
+      "message": "No outbound route was available.",
+      "retryable": false,
+      "row_ids": [
+        1
+      ]
+    },
+    {
+      "code": "geocode_no_match",
+      "message": "No geocoding candidate was found.",
+      "retryable": false,
+      "row_ids": [
+        2
+      ]
+    },
+    {
+      "code": "places_unavailable",
+      "message": "Competitor evidence was unavailable.",
+      "retryable": false,
+      "row_ids": []
+    }
+  ],
+  "evidence": [
+    {
+      "artifact": "evidence/partial.json",
+      "id": "origin",
+      "kind": "synthetic",
+      "operation": "forward_geocoding",
+      "sha256": "df392cce128b907ab69da8c4e95d539f212d893d242112527786f5b49a0f5166"
+    },
+    {
+      "artifact": "evidence/partial.json",
+      "id": "zone",
+      "kind": "synthetic",
+      "operation": "isoline",
+      "sha256": "df392cce128b907ab69da8c4e95d539f212d893d242112527786f5b49a0f5166"
+    },
+    {
+      "artifact": "evidence/partial.json",
+      "id": "customers",
+      "kind": "synthetic",
+      "operation": "forward_geocoding",
+      "sha256": "df392cce128b907ab69da8c4e95d539f212d893d242112527786f5b49a0f5166"
+    },
+    {
+      "artifact": "evidence/partial.json",
+      "id": "routes",
+      "kind": "synthetic",
+      "operation": "route_matrix",
+      "sha256": "df392cce128b907ab69da8c4e95d539f212d893d242112527786f5b49a0f5166"
+    },
+    {
+      "artifact": "evidence/partial.json",
+      "id": "places",
+      "kind": "synthetic",
+      "operation": "places",
+      "sha256": "df392cce128b907ab69da8c4e95d539f212d893d242112527786f5b49a0f5166"
+    }
+  ],
+  "path": "cli",
+  "run_status": "partial",
+  "run_timestamp_utc": "2026-01-01T00:00:00Z",
+  "schema_version": "1.0",
+  "settings": {
+    "boundary_rule": "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees.",
+    "budget_seconds": 1200,
+    "direction": "outbound",
+    "mode": "drive",
+    "route_type": "balanced",
+    "traffic": "free_flow",
+    "units": "metric"
+  },
+  "summary": {
+    "borderline": 0,
+    "classified_denominator": 2,
+    "disagreements": 0,
+    "in_zone": 1,
+    "in_zone_percent": 50,
+    "known_routes": 1,
+    "max_time_row_ids": [
+      3
+    ],
+    "max_time_seconds": 1500,
+    "median_in_zone_seconds": null,
+    "missing_routes": 1,
+    "out_of_zone": 1,
+    "out_of_zone_percent": 50,
+    "resolved": 2,
+    "total": 3,
+    "unknown_membership": 1,
+    "unresolved": 1
+  },
+  "warnings": [],
+  "zone": {
+    "approximation": false,
+    "evidence_refs": [
+      "zone"
+    ],
+    "limitations": [
+      "Synthetic geometry is authored test evidence, not a live drive-time zone.",
+      "Outbound free-flow driving only; return journeys and live traffic are excluded."
+    ],
+    "method": "geoapify_isoline",
+    "parameters": {
+      "boundary_tolerance_degrees": 1e-09,
+      "range_seconds": 1200
+    }
+  }
+}

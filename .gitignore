@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+reports/
+live-evidence/
+raw-sessions/
+.DS_Store

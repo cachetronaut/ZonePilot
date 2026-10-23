@@ -1,0 +1,916 @@
+{
+  "attributions": [
+    {
+      "source": "Geoapify",
+      "text": "API contracts and location services.",
+      "url": "https://geoapify.com"
+    },
+    {
+      "source": "OpenStreetMap",
+      "text": "Live map data: © OpenStreetMap contributors, ODbL. Synthetic fixtures contain no live map records.",
+      "url": "https://www.openstreetmap.org/copyright"
+    }
+  ],
+  "business": {
+    "coordinates": [
+      -102.1,
+      32.0
+    ],
+    "geocode_evidence": {
+      "candidate_count": 1,
+      "confidence": 1.0,
+      "confidence_building_level": 1.0,
+      "match_type": "full_match",
+      "result_type": "building"
+    },
+    "input_address": "90000 Imaginary Fixture Lane, Midland TX (fictional)",
+    "name": "Main Street Plumbing",
+    "resolved_address": "90000 Imaginary Fixture Lane, Midland TX (fictional)"
+  },
+  "competitors": {
+    "cap_reached": false,
+    "category": "service",
+    "coverage": "sampled",
+    "duplicate_count": 0,
+    "observed_in_zone_count": 1,
+    "observed_out_of_zone_count": 1,
+    "records": [
+      {
+        "address": "Synthetic service storefront A",
+        "categories": [
+          "service"
+        ],
+        "coordinates": [
+          -102.12,
+          32.01
+        ],
+        "geodesic_distance_meters": 2189.281,
+        "id": "fixture-service-a",
+        "name": "Fictional repair shop A",
+        "verdict": "in_zone"
+      }
+    ],
+    "returned_count": 2,
+    "search_extent": {
+      "method": "rectangle",
+      "parameters": {
+        "bbox": [
+          -102.2,
+          31.9,
+          -102.0,
+          32.1
+        ]
+      }
+    },
+    "status": "ok",
+    "unclassified_count": 0
+  },
+  "customers": [
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.15,
+        32.02
+      ],
+      "distance_meters": 0.0,
+      "evidence_refs": [
+        "e003",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90001 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 01",
+      "reference": "DEMO-01",
+      "resolved_address": "90001 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 1,
+      "time_seconds": 0.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.14200000000001,
+        32.02
+      ],
+      "distance_meters": 3600.0,
+      "evidence_refs": [
+        "e004",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90002 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 02",
+      "reference": "DEMO-02",
+      "resolved_address": "90002 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 2,
+      "time_seconds": 300.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.134,
+        32.02
+      ],
+      "distance_meters": 5400.0,
+      "evidence_refs": [
+        "e005",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90003 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 03",
+      "reference": "DEMO-03",
+      "resolved_address": "90003 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 3,
+      "time_seconds": 450.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.126,
+        32.02
+      ],
+      "distance_meters": 6000.0,
+      "evidence_refs": [
+        "e006",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90004 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 04",
+      "reference": "DEMO-04",
+      "resolved_address": "90004 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 4,
+      "time_seconds": 500.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.11800000000001,
+        32.02
+      ],
+      "distance_meters": 7200.0,
+      "evidence_refs": [
+        "e007",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90005 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 05",
+      "reference": "DEMO-05",
+      "resolved_address": "90005 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 5,
+      "time_seconds": 600.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.11,
+        32.02
+      ],
+      "distance_meters": 8400.0,
+      "evidence_refs": [
+        "e008",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90006 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 06",
+      "reference": "DEMO-06",
+      "resolved_address": "90006 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 6,
+      "time_seconds": 700.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.102,
+        32.02
+      ],
+      "distance_meters": 9600.0,
+      "evidence_refs": [
+        "e009",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90007 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 07",
+      "reference": "DEMO-07",
+      "resolved_address": "90007 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 7,
+      "time_seconds": 800.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.09400000000001,
+        32.02
+      ],
+      "distance_meters": 10800.0,
+      "evidence_refs": [
+        "e010",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90008 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 08",
+      "reference": "DEMO-08",
+      "resolved_address": "90008 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 8,
+      "time_seconds": 900.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.08600000000001,
+        32.02
+      ],
+      "distance_meters": 12000.0,
+      "evidence_refs": [
+        "e011",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90009 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 09",
+      "reference": "DEMO-09",
+      "resolved_address": "90009 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 9,
+      "time_seconds": 1000.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.078,
+        32.02
+      ],
+      "distance_meters": 13200.0,
+      "evidence_refs": [
+        "e012",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90010 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 10",
+      "reference": "DEMO-10",
+      "resolved_address": "90010 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 10,
+      "time_seconds": 1100.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.07000000000001,
+        32.02
+      ],
+      "distance_meters": 14400.0,
+      "evidence_refs": [
+        "e013",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90011 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 11",
+      "reference": "DEMO-11",
+      "resolved_address": "90011 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 11,
+      "time_seconds": 1200.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": true,
+      "coordinates": [
+        -102.06200000000001,
+        32.02
+      ],
+      "distance_meters": 14400.000012,
+      "evidence_refs": [
+        "e014",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90012 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": true,
+      "name": "Fictional customer 12",
+      "reference": "DEMO-12",
+      "resolved_address": "90012 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 12,
+      "time_seconds": 1200.000001,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": true,
+      "coordinates": [
+        -102.2,
+        32.0
+      ],
+      "distance_meters": 15840.0,
+      "evidence_refs": [
+        "e015",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90013 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": true,
+      "name": "Fictional customer 13",
+      "reference": "DEMO-13",
+      "resolved_address": "90013 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 13,
+      "time_seconds": 1320.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.21,
+        32.0
+      ],
+      "distance_meters": 15840.000012,
+      "evidence_refs": [
+        "e016",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90014 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 14",
+      "reference": "DEMO-14",
+      "resolved_address": "90014 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 14,
+      "time_seconds": 1320.000001,
+      "verdict": "out_of_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.22,
+        32.02
+      ],
+      "distance_meters": 16800.0,
+      "evidence_refs": [
+        "e017",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90015 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 15",
+      "reference": "DEMO-15",
+      "resolved_address": "90015 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 15,
+      "time_seconds": 1400.0,
+      "verdict": "out_of_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.3,
+        32.01
+      ],
+      "distance_meters": 19200.0,
+      "evidence_refs": [
+        "e018",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90016 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 16",
+      "reference": "DEMO-16",
+      "resolved_address": "90016 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 16,
+      "time_seconds": 1600.0,
+      "verdict": "out_of_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.4,
+        32.0
+      ],
+      "distance_meters": 24000.0,
+      "evidence_refs": [
+        "e019",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90017 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 17",
+      "reference": "DEMO-17",
+      "resolved_address": "90017 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 17,
+      "time_seconds": 2000.0,
+      "verdict": "out_of_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.1,
+        32.2
+      ],
+      "distance_meters": 27600.0,
+      "evidence_refs": [
+        "e020",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90018 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 18",
+      "reference": "DEMO-18",
+      "resolved_address": "90018 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 18,
+      "time_seconds": 2300.0,
+      "verdict": "out_of_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.1,
+        31.8
+      ],
+      "distance_meters": 31200.0,
+      "evidence_refs": [
+        "e021",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90019 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 19",
+      "reference": "DEMO-19",
+      "resolved_address": "90019 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 19,
+      "time_seconds": 2600.0,
+      "verdict": "out_of_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.3,
+        31.8
+      ],
+      "distance_meters": 31200.0,
+      "evidence_refs": [
+        "e022",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1.0,
+        "confidence_building_level": 1.0,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "90020 Imaginary Fixture Lane, Midland TX (fictional)",
+      "membership_route_disagreement": false,
+      "name": "Fictional customer 20",
+      "reference": "DEMO-20",
+      "resolved_address": "90020 Imaginary Fixture Lane, Midland TX (fictional)",
+      "route_status": "ok",
+      "route_within_budget": false,
+      "row_id": 20,
+      "time_seconds": 2600.0,
+      "verdict": "out_of_zone"
+    }
+  ],
+  "data_mode": "synthetic",
+  "errors": [],
+  "evidence": [
+    {
+      "artifact": "evidence/e001.json",
+      "id": "e001",
+      "kind": "synthetic",
+      "operation": "geocode_business",
+      "sha256": "0ab2fd5a2567113eeb4ac88c99d8a94abb660bf27ca7c5cbafd104281348913b"
+    },
+    {
+      "artifact": "evidence/e002.json",
+      "id": "e002",
+      "kind": "synthetic",
+      "operation": "isoline",
+      "sha256": "d7b7602c60bc04406df33ca616ac28c282cca1f5d2eff735d66caf4b906995ab"
+    },
+    {
+      "artifact": "evidence/e003.json",
+      "id": "e003",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "f52d5bbc2df373b6c6cc35743294d4361065f1b4affee1c5910b037c078b8c18"
+    },
+    {
+      "artifact": "evidence/e004.json",
+      "id": "e004",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "196c0d4981b17df4ba640af2d74922d79c32efa016c6c820f4c76647fbc37c46"
+    },
+    {
+      "artifact": "evidence/e005.json",
+      "id": "e005",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "26bc9171d317c651faef70caabe3ae951983434cd4d80d017d9b1a6e5b9a6ff2"
+    },
+    {
+      "artifact": "evidence/e006.json",
+      "id": "e006",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "830570f111436073598efb964277c8ed80a74fb3ea987127bcf9b93aa42406b6"
+    },
+    {
+      "artifact": "evidence/e007.json",
+      "id": "e007",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "7b43c6ca1219a37a6fef1e4a08ef0e90a7a7a5d5f29e6b29bad33b5a5bb2b7e0"
+    },
+    {
+      "artifact": "evidence/e008.json",
+      "id": "e008",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "d0facc37c62aa219ae0db1b0b5552f793b48aef2d4ada71c5307b24315bb224d"
+    },
+    {
+      "artifact": "evidence/e009.json",
+      "id": "e009",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "c17051bec613fb1aab48dded3c424659cc6cc4d89980cc8ee2c0d52c08aafff1"
+    },
+    {
+      "artifact": "evidence/e010.json",
+      "id": "e010",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "9dcbc90005c0c9e15dfbb8699db97b5e4a077e52ea1251ccabd4e1332ed63fd3"
+    },
+    {
+      "artifact": "evidence/e011.json",
+      "id": "e011",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "1fa54b2ef0e725011df0aaef5475a5f9ae5460ccb3342ef3b210cc5e2bba9195"
+    },
+    {
+      "artifact": "evidence/e012.json",
+      "id": "e012",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "22799b542175fd72231bed570040d90bf242be61216615348642bd73a6286d05"
+    },
+    {
+      "artifact": "evidence/e013.json",
+      "id": "e013",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "0d9008fc1c758a0a158cd24c4254d8645211fba4fe6f5aec921619427a453eef"
+    },
+    {
+      "artifact": "evidence/e014.json",
+      "id": "e014",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "c7d09bb8fbeeafe2e54061e6aa740c2bdd1c53d427e9e68e6befa99aa34c347f"
+    },
+    {
+      "artifact": "evidence/e015.json",
+      "id": "e015",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "43f2889a5a82b36fe83c871ae749122c385c58c979305e5157e227ef07d591f1"
+    },
+    {
+      "artifact": "evidence/e016.json",
+      "id": "e016",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "94b487b0085396b93a649e557e794a5d1937d4e6135fb06da10216b030fbd420"
+    },
+    {
+      "artifact": "evidence/e017.json",
+      "id": "e017",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "0c8dfd83ddcb227eb3a089fd744f15dc411df71ec2f86a2fbaeba6112605d7e6"
+    },
+    {
+      "artifact": "evidence/e018.json",
+      "id": "e018",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "191daf1bdc3b786a59c254ac3f9ff94d1413e3d2d73ee64569f8115e5cb1e4b1"
+    },
+    {
+      "artifact": "evidence/e019.json",
+      "id": "e019",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "93a774112d1453684f1ea8433c47a00e728bb81556fa29648251e91e63e7f0a6"
+    },
+    {
+      "artifact": "evidence/e020.json",
+      "id": "e020",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "568d00c0b2bca437092a1d6edff1235b629a2ad090fb4012aaf6ce68d40fbba9"
+    },
+    {
+      "artifact": "evidence/e021.json",
+      "id": "e021",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "3432c2449505bc3f031c0860eeb3776279f5de6d95ce9dc0e4e331e1ea36e72a"
+    },
+    {
+      "artifact": "evidence/e022.json",
+      "id": "e022",
+      "kind": "synthetic",
+      "operation": "geocode_customer",
+      "sha256": "d1ea97c3e585865b319d21a9026eee89b2f4af71abde656feda685432a99523d"
+    },
+    {
+      "artifact": "evidence/e023.json",
+      "id": "e023",
+      "kind": "synthetic",
+      "operation": "route_matrix",
+      "sha256": "491a3badec8a174f4e50cdf654264654c0b590e44293e9868bf3e2fcf7a86f5e"
+    },
+    {
+      "artifact": "evidence/e024.json",
+      "id": "e024",
+      "kind": "synthetic",
+      "operation": "places",
+      "sha256": "cbc66f71129c3645b59921b6eb6baee8766b49e6eb84fa8cd93cf0914d1b2e1f"
+    }
+  ],
+  "path": "cli",
+  "run_status": "complete",
+  "run_timestamp_utc": "2026-10-22T12:00:00Z",
+  "schema_version": "1.0",
+  "settings": {
+    "boundary_rule": "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees.",
+    "budget_seconds": 1200,
+    "direction": "outbound",
+    "mode": "drive",
+    "route_type": "balanced",
+    "traffic": "free_flow",
+    "units": "metric"
+  },
+  "summary": {
+    "borderline": 2,
+    "classified_denominator": 20,
+    "disagreements": 2,
+    "in_zone": 13,
+    "in_zone_percent": 65.0,
+    "known_routes": 20,
+    "max_time_row_ids": [
+      19,
+      20
+    ],
+    "max_time_seconds": 2600.0,
+    "median_in_zone_seconds": 800.0,
+    "missing_routes": 0,
+    "out_of_zone": 7,
+    "out_of_zone_percent": 35.0,
+    "resolved": 20,
+    "total": 20,
+    "unknown_membership": 0,
+    "unresolved": 0
+  },
+  "warnings": [
+    "Competitor coverage is sampled, at most 20 candidates and no pagination.",
+    "The category service is broad; these candidates are not verified plumbing competitors.",
+    "Authored synthetic fixtures, not a recording of live Geoapify calls."
+  ],
+  "zone": {
+    "approximation": false,
+    "evidence_refs": [
+      "e002"
+    ],
+    "limitations": [
+      "Outbound free-flow road-time estimate; no live traffic, return trip or profitability model.",
+      "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees."
+    ],
+    "method": "geoapify_isoline",
+    "parameters": {
+      "boundary_tolerance_degrees": 1e-09,
+      "range_seconds": 1200
+    }
+  }
+}
