@@ -19,8 +19,9 @@ import tempfile
 from urllib.parse import urlsplit
 
 
-# B02 remains an owner decision. Setting this is an explicit integration change.
-APPROVED_AGENT_METHOD: str | None = None
+# Owner approved the point-only method on 2026-10-23; sampled hulls remain unapproved.
+APPROVED_AGENT_METHOD = "route_time_at_points"
+AGENT_LIMITATION = "Route-time classification only at measured points; no continuous zone."
 BOUNDARY_RULE = (
     "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees."
 )
@@ -437,6 +438,7 @@ def _validate(report: object, *, acquired: bool) -> None:
         _require(parameters["range_seconds"] == budget and parameters["boundary_tolerance_degrees"] == 1e-9)
     else:
         _require(zone["method"] == APPROVED_AGENT_METHOD and zone["approximation"] is True)
+        _require(AGENT_LIMITATION in zone["limitations"])
         parameters = _object(zone["parameters"], {"budget_seconds"})
         _integer(parameters["budget_seconds"])
         _require(parameters["budget_seconds"] == budget)
@@ -743,7 +745,7 @@ class _Parser(argparse.ArgumentParser):
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = _Parser(description="Validate and render acquired hosted MCP evidence offline.")
+    parser = _Parser(description="approximation=true: Validate and render acquired hosted MCP evidence offline.")
     parser.add_argument("--import-agent", required=True, metavar="INPUT")
     parser.add_argument("--output-dir", required=True, metavar="NEW_DIRECTORY")
     try:
@@ -752,7 +754,7 @@ def main(argv: list[str] | None = None) -> int:
         write_bundle(report, args.output_dir, artifacts)
         return 0 if report["run_status"] == "complete" else 3
     except ReportError as error:
-        print(str(error), file=sys.stderr)
+        print(f"approximation=true: {error}", file=sys.stderr)
         return 2 if error.code == "invalid_arguments" else 1
 
 

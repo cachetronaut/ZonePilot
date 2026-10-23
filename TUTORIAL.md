@@ -18,7 +18,7 @@ These are actual build incidents, not fabricated API failures. Controlled negati
 
 Explain outbound free-flow budget decisions without making profit or arrival-time guarantees. Walk from the pinned OpenAPI contracts to reviewed stdlib adapters, conservative resolution, full Polygon/MultiPolygon membership and indexed routes. Explain nulls and disagreement using the authored synthetic sample, without portraying it as live map evidence.
 
-After B01/B03 close, capture the permitted live CLI sample. After B02/B04 close, capture the matching approved MCP method, nine tool invocations, both named client setups and screenshots. Compare membership and candidate sets honestly. Preserve evidence hashes and upstream attribution. Redact secrets/account details/machine paths explicitly and never relabel real premises as fictional.
+After B01/B03 close, capture the permitted live CLI sample. The owner approved the point-time B02 method on 2026-10-23. After B01/B03/B04 close, capture the matching approved MCP method, nine tool invocations, both named client setups and screenshots. Compare membership and candidate sets honestly. Preserve evidence hashes and upstream attribution. Redact secrets/account details/machine paths explicitly and never relabel real premises as fictional.
 
 ## Feedback for Geoapify
 

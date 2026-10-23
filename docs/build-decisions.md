@@ -16,7 +16,7 @@ The owner authorized offline implementation, privacy history replacement, PR rev
 | POST polygon Places filter | FR-18 and section 11 explicitly choose rectangle metadata plus local membership. Implemented that contract; polygon support is documented, not denied. |
 | Invented sample under data/sample_* | Section 12 reserves those for B03-approved live inputs. The authored Main Street Plumbing example and twenty customers live under tests/fixtures/sample. data/README.md explains the pending live files. |
 | Recorded offline fixtures | Section 10.6 calls for authored synthetic API-shaped responses, explicitly not recordings. Fixtures are labeled synthetic. |
-| Sampled-boundary MCP approximation | B02 requires a sampling/accuracy/cost contract and owner choice. Neither is supplied. Asked about the smaller route-time-at-points method; pending answer means the primary MCP workflow/import remains blocked. |
+| Sampled-boundary MCP approximation | Owner approved route-time-at-points on 2026-10-23. Enable that point-only importer; sampled-boundary/hull methods still lack their required contract and remain rejected. |
 | Twelve hosted tools | The pinned/public table lists eleven, including geocode_structured_address and combine_geometries. Authenticated tools/list remains pending. No isoline tool is listed. |
 | Live sample if a key is present | No key was present. Even with one, B01 entitlement and B03 permitted-evidence policy must close before signing off or publishing real outputs. |
 | README run contract section 12.3 | In the checked-in PRD it is section 12.2; section 12.3 describes tutorial deliverables. Both were followed within this build scope. |
@@ -29,4 +29,4 @@ New implementation commits follow that clean root. GitHub may retain hidden hist
 
 ## Remaining gates
 
-B01, B02, B03 and B04 remain open. Stage 4 still needs tutorial completion, permitted live comparison and screenshots, all nine hosted tools, platform/target-runtime checks, dev.to publication, final attribution/privacy review, owner-controlled visibility and program submission. Offline test success does not close these gates.
+B02 customer method selection is approved on 2026-10-23. B01, B03 and B04 remain open; MCP competitor route-evidence/search-extent approval is also pending. The owner confirmed that wholly fictional samples stay under tests/fixtures/sample and live data/sample_* remain pending. Stage 4 still needs tutorial completion, permitted live comparison and screenshots, all nine hosted tools, platform/target-runtime checks, dev.to publication, final attribution/privacy review, owner-controlled visibility and program submission. Offline test success does not close these gates.

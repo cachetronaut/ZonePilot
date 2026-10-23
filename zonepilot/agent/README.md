@@ -1,6 +1,6 @@
 # Hosted agent pack
 
-Every agent output must say `approximation=true`. There is no native hosted Isoline tool in the pinned inventory. This pack is a setup and sequencing artifact; authenticated setup, B02 method approval, B03 live inputs and B04 evidence are PENDING. It does not claim a completed live comparison.
+Every agent output must say `approximation=true`. There is no native hosted Isoline tool in the pinned inventory. This pack is a setup and sequencing artifact; the B02 point-time method was approved by the owner on 2026-10-23; authenticated setup, B03 live inputs and B04 evidence are PENDING. It does not claim a completed live comparison.
 
 Use only approved fictional inputs. Geoapify receives tool arguments; the chosen AI provider can also receive prompts and tool results. Never put the key in prompts, URLs, source files or literal configuration values. Stop if environment-backed header authentication fails. Do not fall back to a query-key URL.
 
@@ -55,7 +55,7 @@ The importer uses the [shared schema](../../docs/report-schema.md). The agent ex
 python3.15 -m zonepilot.report --import-agent evidence.json --output-dir reports/agent
 ```
 
-While B02 remains open, this command rejects MCP reports with a method-pending diagnostic. The pack does not silently turn a diagnostic polygon into a primary drive-time zone. A proposed route-time-at-points implementation exists behind an explicit approval gate; its customer verdicts follow measured outbound times, and it makes no coverage claim between points. Competitor membership needs its own acquired route evidence before that method can support requested competitor sections.
+This command accepts acquired `route_time_at_points` evidence: a known outbound time at or below the budget is in zone; a larger time is outside; missing, failed or unreachable routes have unknown membership. There is no continuous zone or coverage claim between points. The report must include the exact limitation `Route-time classification only at measured points; no continuous zone.` and `zone.approximation=true`. Sampled hulls and primary diagnostic polygons remain rejected. Requested competitor sections remain blocked pending their route-evidence/search-extent contract and B03; export the not-requested section with null counts and no records.
 
 ## Remaining evidence
 

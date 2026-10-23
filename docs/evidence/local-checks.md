@@ -41,3 +41,7 @@ Sol reviewed 4342973 and reproduced three P2 defects. All were accepted and fixe
 ## Review round 2 regression verification
 
 Sol verified the round 1 fixes and identified two additional P2 defects. Fixed scoped evidence failures and shared snapshot category acceptance. All 134 offline unittest tests passed on Python 3.14.9. CLI replay and mocked HTTP tests retain 19 valid routes after either one malformed customer geocode or one overflowing matrix measurement. Normalized matrix evidence keeps an explicit error/null cell and discards unrelated malformed metadata. The baseline report's only value change is the matrix artifact hash. All 833 snapshot categories pass preflight; tex-mex passes report publication; unknown and multiple categories remain rejected.
+
+## Owner-approved point-time method, 2026-10-23
+
+All 135 offline tests passed on Python 3.14.9 after enabling the owner-approved route_time_at_points default. Import tests no longer patch approval. Tests cover complete/partial keyless bundles, approximation labels, the mandatory point-only limitation, below/equal/above-budget times, missing/failed/unresolved routes, contradictory verdicts, unapproved polygon methods and requested competitor rejection. B01/B03/B04, live competitor evidence/extent, Python 3.15.1 and platform checks remain pending. No live call was made.

@@ -59,7 +59,7 @@ are nonblank strings and retain whatever count was actually read.
 | Settings | `budget_seconds`: integer multiple of 60 from 300 through 3600. `mode=drive`, `traffic=free_flow`, `route_type=balanced`, `units=metric`, `direction=outbound`: strings. `boundary_rule`: nonblank string describing the boundary convention. |
 | Zone | `method`: nonblank string. `approximation`: boolean. `parameters`: object. `limitations`: nonempty array of nonblank strings. `evidence_refs`: nonempty array of distinct evidence ID strings. |
 | CLI parameters | Exactly `range_seconds`: integer equal to `settings.budget_seconds`; `boundary_tolerance_degrees`: number equal to `1e-9`. |
-| Provisional agent parameters | Exactly `budget_seconds`: integer equal to `settings.budget_seconds`. |
+| Approved agent parameters | Exactly `budget_seconds`: integer equal to `settings.budget_seconds`. |
 
 CLI uses `method=geoapify_isoline` and `approximation=false`. Its full validated
 Polygon or MultiPolygon is an evidence artifact. Ring boundaries, including hole
@@ -67,12 +67,12 @@ boundaries, are in zone with segment-distance tolerance `1e-9` degrees. A hole's
 strict interior is out of zone. Every component and hole participates. Reports
 retain this numerical convention and the free-flow, outbound model limits.
 
-B02 has not approved an MCP method. `APPROVED_AGENT_METHOD = None` in the report
-module makes all MCP validation/import fail with fixed `agent_method_pending`.
-After an explicit owner decision, the parent can set this constant to
-`route_time_at_points`. This provisionally supported method requires
-`approximation=true`, the exact provisional parameters above, and limitations
-that disclose classification only at measured points and no continuous zone.
+The owner approved B02 customer classification on 2026-10-23.
+`APPROVED_AGENT_METHOD = "route_time_at_points"` enables offline MCP import.
+This method requires `approximation=true`, the exact approved parameters above,
+and the literal limitation "Route-time classification only at measured points; no continuous zone."
+Additional truthful limitations are allowed. Missing labels/limitations and
+continuous-polygon methods are rejected.
 Membership is `in_zone` exactly when known normalized time is at most the budget;
 it is `out_of_zone` for larger known time and `unknown` for missing routes.
 The incoming verdict must agree; validation never invents measurements or a
@@ -244,7 +244,7 @@ The keyless command is
 It accepts an acquired object only with `path=mcp`, rejects supplied derived root
 fields and nonnull row flags, and reads indexed artifacts relative to the import
 file's parent without following symlinks. It never acquires missing API evidence.
-The B02 method gate currently fails safely with exit 1. Valid complete/partial
+The approved point-time method imports without a key; invalid or unapproved methods fail with exit 1. Import diagnostics retain the approximation label. Valid complete/partial
 bundles return exit 0/3. Argument errors return exit 2 with a fixed usage message.
 Input, artifact, validation and publication errors return exit 1 using fixed
 diagnostics. This command does not use client or engine modules.

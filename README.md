@@ -8,7 +8,7 @@ Built for the [Geoapify Open Geospatial Program](https://geoapify.com). This rep
 
 The offline CLI is implemented with stock Python and zero dependencies. No pip installation or build step is needed. Minimum supported Python is 3.14.9; the build/test target is 3.15.1. Local execution has used Python 3.14.9 on macOS arm64. Python 3.15.1 is not installed here; target-runtime and Linux/Windows checks are PENDING.
 
-Live runs are PENDING: GEOAPIFY_API_KEY was absent during this build. Synthetic fixtures are authored examples, not recorded successful API calls. B01 account entitlement, B02 agent method approval, B03 permitted live sample/evidence, and B04 authenticated client proof remain open. See [build decisions](docs/build-decisions.md), [local evidence](docs/evidence/local-checks.md) and the [PRD](docs/prd.md).
+Live runs are PENDING: GEOAPIFY_API_KEY was absent during this build. Synthetic fixtures are authored examples, not recorded successful API calls. The owner approved the B02 point-time agent method on 2026-10-23. B01 account entitlement, B03 permitted live sample/evidence, and B04 authenticated client proof remain open; MCP competitor evidence/extent is also pending. See [build decisions](docs/build-decisions.md), [local evidence](docs/evidence/local-checks.md) and the [PRD](docs/prd.md).
 
 ## Reproduce the offline example
 
@@ -73,13 +73,13 @@ Requests use a 10-second socket timeout, 120-second run deadline and 60-attempt 
 
 [Client snippets](zonepilot/agent/README.md) cover Claude Code, Codex CLI and Cursor with environment-backed headers. [Sequenced prompts](zonepilot/agent/prompts.md) name all nine promised tools, normalization, diagnostic geometry, comparison and export steps. Every MCP output labels the approximation.
 
-The PRD requires an approved approximation contract before execution. The requested sampled-boundary method is not yet approved; the importer fails safely while B02 is open. The proposed smaller route-time-at-points method is not silently enabled. Agent import makes no network calls:
+The owner approved `route_time_at_points`: known outbound time at or below the budget is in zone, larger known time is outside, and unknown routes have unknown membership. It classifies supplied customer points only, with no continuous polygon. Every agent report retains `approximation=true` and the required no-continuous-zone limitation. Sampled-boundary methods and requested MCP competitor sections remain rejected. Agent import makes no network calls:
 
 ```sh
 python3.15 -m zonepilot.report --import-agent evidence.json --output-dir reports/agent
 ```
 
-This currently returns the method-pending diagnostic for otherwise valid MCP input. It is not a completed Stage 3 acceptance check. AI clients and subscriptions are separate prerequisites, outside the zero-dependency Python claim.
+The importer accepts valid acquired point-time evidence without a key and writes both reports. This offline capability does not establish a live Stage 3 acceptance check. AI clients and subscriptions are separate prerequisites, outside the zero-dependency Python claim.
 
 ## Manual acceptance checklist
 
@@ -92,7 +92,8 @@ The [test record](docs/evidence/local-checks.md) maps tested cases and pending g
 - [x] Shared strict reports, aggregation, escaping and deterministic publication: FR-13, FR-20–23, AC-06.
 - [x] Incremental [PROMPTLOG.md](PROMPTLOG.md): FR-27, CR-12. Genuine build failures are distinguished from controlled negative tests.
 - [ ] Approved twenty-customer live sample and live run: FR-04, AC-08, B01/B03.
-- [ ] Approved agent method, full comparison, nine hosted calls and second-client smoke: FR-12, FR-25–26, AC-07, B02/B04.
+- [x] Owner-approved point-time method and offline importer contract: FR-12, B02 customer classification.
+- [ ] Full comparison, nine hosted calls and second-client smoke: FR-25–26, AC-07, B04; competitor evidence/extent remains pending.
 - [ ] Authenticated setup/screenshots, tutorial feedback and evidence: FR-28, AC-10.
 - [ ] Python 3.15.1 and Linux/Windows command verification: NFR-06, AC-09. Python 3.14.9 macOS verified.
 - [ ] Final [tutorial](TUTORIAL.md), dev.to URL and synchronized revision: CR-06–08, CR-13–14, CR-17, AC-10.

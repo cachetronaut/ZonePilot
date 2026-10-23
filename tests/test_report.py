@@ -624,48 +624,73 @@ class AgentImportTests(unittest.TestCase):
             target.write_bytes(content)
         return source
 
-    def test_default_gate_is_closed_and_no_network_is_used(self):
+    def test_default_approved_method_imports_without_key_or_network(self):
         with tempfile.TemporaryDirectory() as temporary:
             base = Path(temporary)
             source = self.write_input(base, agent_input())
             with patch.dict(os.environ, {}, clear=True), patch("socket.socket", side_effect=AssertionError("network used")), patch("sys.stderr") as stderr:
-                self.assertEqual(report.main(["--import-agent", str(source), "--output-dir", str(base / "output")]), 1)
-            self.assertIn("agent_method_pending", str(stderr.write.call_args_list))
-            self.assertFalse((base / "output").exists())
+                self.assertEqual(report.main(["--import-agent", str(source), "--output-dir", str(base / "output")]), 0)
+            self.assertFalse(stderr.write.called)
+            result = json.loads((base / "output" / "report.json").read_text())
+            self.assertEqual(result["zone"]["method"], "route_time_at_points")
+            self.assertIs(result["zone"]["approximation"], True)
+            self.assertIn("| zone.approximation | true |", (base / "output" / "report.md").read_text())
 
     def test_approved_method_validates_thresholds_and_missing_route_unknown(self):
-        with patch.object(report, "APPROVED_AGENT_METHOD", "route_time_at_points"):
+        value = agent_input()
+        result = report.finalize(value)
+        self.assertEqual(result["summary"]["in_zone"], 1)
+        self.assertEqual(result["summary"]["out_of_zone"], 2)
+        self.assertEqual(result["summary"]["disagreements"], 0)
+        value["customers"][0].update(route_status="no_route", time_seconds=None, distance_meters=None, verdict="unknown")
+        result = report.finalize(value)
+        self.assertEqual(result["run_status"], "partial")
+        self.assertEqual(result["summary"]["unknown_membership"], 1)
+        self.assertEqual(result["summary"]["classified_denominator"], 2)
+        self.assertEqual(result["summary"]["out_of_zone_percent"], 100)
+        value["customers"][0]["verdict"] = "out_of_zone"
+        with self.assertRaises(report.ReportError):
+            report.finalize(value)
+
+    def test_approved_oracle_includes_threshold_and_keeps_unknown_states(self):
+        for seconds, verdict in ((1199.999999, "in_zone"), (1200, "in_zone"), (1200.000001, "out_of_zone")):
             value = agent_input()
-            result = report.finalize(value)
-            self.assertEqual(result["summary"]["in_zone"], 1)
-            self.assertEqual(result["summary"]["out_of_zone"], 2)
-            self.assertEqual(result["summary"]["disagreements"], 0)
-            value["customers"][0].update(route_status="no_route", time_seconds=None, distance_meters=None, verdict="unknown")
-            result = report.finalize(value)
-            self.assertEqual(result["run_status"], "partial")
-            self.assertEqual(result["summary"]["unknown_membership"], 1)
-            self.assertEqual(result["summary"]["classified_denominator"], 2)
-            self.assertEqual(result["summary"]["out_of_zone_percent"], 100)
-            value["customers"][0]["verdict"] = "out_of_zone"
-            with self.assertRaises(report.ReportError):
-                report.finalize(value)
+            value["customers"][0].update(time_seconds=seconds, verdict=verdict)
+            with self.subTest(seconds=seconds):
+                result = report.finalize(value)
+                self.assertEqual(result["customers"][0]["verdict"], verdict)
+                self.assertEqual(result["customers"][0]["route_within_budget"], seconds <= 1200)
+        for state in ("error", "no_route", "not_attempted"):
+            value = agent_input()
+            row = value["customers"][0]
+            row.update(route_status=state, time_seconds=None, distance_meters=None, verdict="unknown")
+            if state == "not_attempted":
+                row.update(geocode_status="unresolved", geocode_reason="no_match", resolved_address=None,
+                           coordinates=None, geocode_evidence={"candidate_count": 0, "confidence": None,
+                           "confidence_building_level": None, "match_type": None, "result_type": None})
+            with self.subTest(state=state):
+                result = report.finalize(value)
+                self.assertEqual(result["customers"][0]["verdict"], "unknown")
+                self.assertIsNone(result["customers"][0]["route_within_budget"])
+                self.assertEqual(result["summary"]["unknown_membership"], 1)
 
     def test_agent_rejects_invented_method_parameters_membership_or_competitors(self):
-        with patch.object(report, "APPROVED_AGENT_METHOD", "route_time_at_points"):
-            for mutation in ("method", "parameters", "approximation", "membership", "competitors"):
-                value = agent_input()
-                if mutation == "method":
-                    value["zone"]["method"] = "circle"
-                elif mutation == "parameters":
-                    value["zone"]["parameters"]["budget_seconds"] = 300
-                elif mutation == "approximation":
-                    value["zone"]["approximation"] = False
-                elif mutation == "membership":
-                    value["customers"][0]["verdict"] = "out_of_zone"
-                else:
-                    value["competitors"] = example()["competitors"]
-                with self.subTest(mutation=mutation), self.assertRaises(report.ReportError):
-                    report.finalize(value)
+        for mutation in ("method", "parameters", "approximation", "limitations", "membership", "competitors"):
+            value = agent_input()
+            if mutation == "method":
+                value["zone"]["method"] = "circle"
+            elif mutation == "parameters":
+                value["zone"]["parameters"]["budget_seconds"] = 300
+            elif mutation == "approximation":
+                value["zone"]["approximation"] = False
+            elif mutation == "limitations":
+                value["zone"]["limitations"] = ["Unbounded coverage claim"]
+            elif mutation == "membership":
+                value["customers"][0]["verdict"] = "out_of_zone"
+            else:
+                value["competitors"] = example()["competitors"]
+            with self.subTest(mutation=mutation), self.assertRaises(report.ReportError):
+                report.finalize(value)
 
     def test_import_rejects_cli_derived_roots_and_nonnull_row_flags(self):
         for mutation in ("cli", "summary", "run_status", *FLAGS):
@@ -684,21 +709,20 @@ class AgentImportTests(unittest.TestCase):
                 self.assertEqual(caught.exception.code, "invalid_import")
 
     def test_approved_keyless_import_writes_complete_and_partial_bundles(self):
-        with patch.object(report, "APPROVED_AGENT_METHOD", "route_time_at_points"):
-            for partial in (False, True):
-                value = agent_input()
-                if partial:
-                    value["customers"][0].update(route_status="error", time_seconds=None, distance_meters=None, verdict="unknown")
-                with tempfile.TemporaryDirectory() as temporary:
-                    base = Path(temporary)
-                    source = self.write_input(base, value)
-                    with patch.dict(os.environ, {}, clear=True), patch("socket.socket", side_effect=AssertionError("network used")):
-                        code = report.main(["--import-agent", str(source), "--output-dir", str(base / "output")])
-                    self.assertEqual(code, 3 if partial else 0)
-                    result = json.loads((base / "output" / "report.json").read_bytes())
-                    self.assertEqual(result["path"], "mcp")
-                    self.assertIs(result["zone"]["approximation"], True)
-                    report.validate(result)
+        for partial in (False, True):
+            value = agent_input()
+            if partial:
+                value["customers"][0].update(route_status="error", time_seconds=None, distance_meters=None, verdict="unknown")
+            with tempfile.TemporaryDirectory() as temporary:
+                base = Path(temporary)
+                source = self.write_input(base, value)
+                with patch.dict(os.environ, {}, clear=True), patch("socket.socket", side_effect=AssertionError("network used")):
+                    code = report.main(["--import-agent", str(source), "--output-dir", str(base / "output")])
+                self.assertEqual(code, 3 if partial else 0)
+                result = json.loads((base / "output" / "report.json").read_bytes())
+                self.assertEqual(result["path"], "mcp")
+                self.assertIs(result["zone"]["approximation"], True)
+                report.validate(result)
 
     def test_bad_json_duplicate_keys_and_nonfinite_values_have_safe_diagnostics(self):
         for text in ('{"path":"mcp","path":"mcp"}', '{"x":NaN}', '{"x":Infinity}', 'PRIVATE_SENTINEL malformed JSON'):
@@ -710,31 +734,31 @@ class AgentImportTests(unittest.TestCase):
                 self.assertNotIn("PRIVATE_SENTINEL", str(caught.exception))
 
     def test_import_rejects_hash_mismatch_missing_artifact_and_symlink(self):
-        with patch.object(report, "APPROVED_AGENT_METHOD", "route_time_at_points"):
-            for mutation in ("hash", "missing", "symlink"):
-                with tempfile.TemporaryDirectory() as temporary:
-                    base = Path(temporary)
-                    value = agent_input()
-                    source = self.write_input(base, value)
-                    artifact = base / value["evidence"][0]["artifact"]
-                    original = artifact.read_bytes()
-                    if mutation == "hash":
-                        artifact.write_bytes(b"not matching")
-                    elif mutation == "missing":
-                        artifact.unlink()
-                    else:
-                        artifact.unlink()
-                        target = base / "other.json"
-                        target.write_bytes(original)
-                        artifact.symlink_to(target)
-                    with self.subTest(mutation=mutation), self.assertRaises(report.ReportError):
-                        report._read_import(source)
+        for mutation in ("hash", "missing", "symlink"):
+            with tempfile.TemporaryDirectory() as temporary:
+                base = Path(temporary)
+                value = agent_input()
+                source = self.write_input(base, value)
+                artifact = base / value["evidence"][0]["artifact"]
+                original = artifact.read_bytes()
+                if mutation == "hash":
+                    artifact.write_bytes(b"not matching")
+                elif mutation == "missing":
+                    artifact.unlink()
+                else:
+                    artifact.unlink()
+                    target = base / "other.json"
+                    target.write_bytes(original)
+                    artifact.symlink_to(target)
+                with self.subTest(mutation=mutation), self.assertRaises(report.ReportError):
+                    report._read_import(source)
 
     def test_module_invocation_and_argument_errors_do_not_echo_untrusted_text(self):
         process = subprocess.run([sys.executable, "-m", "zonepilot.report", "--PRIVATE_SENTINEL"], capture_output=True, text=True, check=False)
         self.assertEqual(process.returncode, 2)
         self.assertEqual(process.stdout, "")
         self.assertIn("invalid_arguments", process.stderr)
+        self.assertIn("approximation=true", process.stderr)
         self.assertNotIn("PRIVATE_SENTINEL", process.stderr)
         with self.assertRaises(report.ReportError) as caught:
             report._read_import("PRIVATE_SENTINEL_missing.json")

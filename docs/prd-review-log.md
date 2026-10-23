@@ -125,3 +125,10 @@ Final tally: 3 full review passes, 2 revision rounds, 30 total findings: 23 fixe
 ## Privacy correction, 2026-10-22
 
 Owner credit is Scout Squad. Historical commit identifiers above describe prior review passes, not retained Git objects. The owner authorized replacing the repository history with one scrubbed initial commit. Python support now starts at 3.14.9, with 3.15.1 the build/test target. Earlier privacy review did not prohibit the former owner credit; this build does.
+
+
+## Owner decisions, 2026-10-23
+
+The owner explicitly approved the smaller per-customer route-time method for the agent pack, with no continuous polygon and approximation labels in every output. B02 customer method selection is closed by this decision. PRD section 10.4 now records the threshold oracle, unknown-route treatment, one-matrix customer scope and row-level disagreement presentation. The sampled-boundary alternative remains unapproved; MCP competitor evidence/search extent remains pending.
+
+The owner also confirmed that Main Street Plumbing and the twenty fictional customers remain under tests/fixtures/sample. Live runs, data/sample_* and real Places evidence remain pending under B03. This is confirmation of fixture handling, not approval of live inputs or publication. B01/B03/B04 and runtime/platform acceptance checks remain open. Prior review entries above describe their original review dates, not the current approval state.
