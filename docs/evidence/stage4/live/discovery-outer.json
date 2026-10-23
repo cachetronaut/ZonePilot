@@ -1,0 +1,350 @@
+{
+  "data_mode": "live",
+  "purpose": "Select real public demo locations for fictional customer identities; no affiliation or actual customer relationship.",
+  "http_attempts": 5,
+  "records": [
+    {
+      "input_address": "10800 F M 307, Midland, TX 79706",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 5,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.897718,
+                32.026444
+              ]
+            },
+            "properties": {
+              "formatted": "10800 F M 307, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.1034818427892115,
+                "confidence": 0.9,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.9,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.04242,
+                31.992841
+              ]
+            },
+            "properties": {
+              "formatted": "2508 F M 307, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.4033584908481453,
+                "confidence": 0.45,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.0006512301013024602,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.03827,
+                31.993489
+              ]
+            },
+            "properties": {
+              "formatted": "2512 F M 307, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.2837232899006825,
+                "confidence": 0.45,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.0006515444015444016,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.037099,
+                31.995736
+              ]
+            },
+            "properties": {
+              "formatted": "2513 F M 307, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.2836700527491365,
+                "confidence": 0.45,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.0006516230240135152,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.036508,
+                31.99584
+              ]
+            },
+            "properties": {
+              "formatted": "2515 F M 307, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.2836700527491365,
+                "confidence": 0.45,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.000651780325890163,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2700 FM 1379, Midland, TX 79706",
+      "resolved_address": "2700 FM 1379, Greenwood, TX 79706, United States of America",
+      "coordinates": [
+        -101.895762,
+        32.027595
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.895762,
+                32.027595
+              ]
+            },
+            "properties": {
+              "formatted": "2700 FM 1379, Greenwood, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.1028873983168512,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "13370 TX 191, Midland, TX 79707",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 3,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.277473,
+                31.94094
+              ]
+            },
+            "properties": {
+              "formatted": "13370 Hwy 191, Midland, TX 79707, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.2247247967816313,
+                "confidence": 0.9,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.9,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1557658,
+                31.9973479
+              ]
+            },
+            "properties": {
+              "formatted": "13370 Sergeant Michael Naylor Memorial Highway, Midland, TX 77906, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053398090333409594,
+                "popularity": 1.438647013968111,
+                "confidence": 0,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.2411425,
+                31.9768268
+              ]
+            },
+            "properties": {
+              "formatted": "13370 Sergeant Michael Naylor Memorial Highway, Midland, TX 79707, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053398090333409594,
+                "popularity": 1.242869033408976,
+                "confidence": 0,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2514 Arena Trail, Midland, TX 79701",
+      "resolved_address": "2514 Arena Trail, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.09584495638613,
+        31.970543397858293
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.09584495638613,
+                31.970543397858293
+              ]
+            },
+            "properties": {
+              "formatted": "2514 Arena Trail, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.3675971062401093,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "1310 North FM 1788, Midland, TX 79707",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.2483676,
+                31.969693
+              ]
+            },
+            "properties": {
+              "formatted": "The University of Texas of the Permian Basin - CEED, 1310 North FM 1788, Midland, TX 79707, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.2566368924210964,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

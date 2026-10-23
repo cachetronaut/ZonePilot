@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.163169,
+          31.983509
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "6000 Riverfront Drive, Midland, TX 79706, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 0.053398090333409594,
+          "match_type": "full_match",
+          "popularity": 1.3649746811159693
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

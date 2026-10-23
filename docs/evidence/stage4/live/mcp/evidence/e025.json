@@ -1,0 +1,375 @@
+{
+  "approximation": true,
+  "candidates": [
+    {
+      "address": "My Community Credit Union, 600 West Louisiana Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0814069,
+        32.0041118
+      ],
+      "distance_meters": 1062.0,
+      "id": "51098a62c5358559c0597d0cdbbb86004040f00102f90109ec1d18000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+      "name": "My Community Credit Union",
+      "route_status": "ok",
+      "time_seconds": 100.0
+    },
+    {
+      "address": "Iron Press Cleaners, 1309 North Big Spring Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "commercial",
+        "service",
+        "service.cleaning",
+        "service.cleaning.dry_cleaning"
+      ],
+      "coordinates": [
+        -102.0790375,
+        32.0107154
+      ],
+      "distance_meters": 1551.0,
+      "id": "51166a4df30e8559c059bd70491f5f014040f00103f9016ded12de0200000092031349726f6e20507265737320436c65616e657273",
+      "name": "Iron Press Cleaners",
+      "route_status": "ok",
+      "time_seconds": 112.0
+    },
+    {
+      "address": "Loraine Center / Midland Police Department, 601 North Loraine Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.facility",
+        "service",
+        "service.police"
+      ],
+      "coordinates": [
+        -102.0760059,
+        32.0032292
+      ],
+      "distance_meters": 395.0,
+      "id": "511b5fd247dd8459c059f75a7dd069004040f00101f9018df55d000000000092032a4c6f7261696e652043656e746572202f204d69646c616e6420506f6c696365204465706172746d656e74",
+      "name": "Loraine Center / Midland Police Department",
+      "route_status": "ok",
+      "time_seconds": 40.0
+    },
+    {
+      "address": "South Big Spring Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.advertising",
+        "service.advertising.billboard"
+      ],
+      "coordinates": [
+        -102.07790468045857,
+        31.993926663726327
+      ],
+      "distance_meters": 1604.0,
+      "id": "511b71b7daf98459c05938c67d5072fe3f40f00103f9014f9e238702000000",
+      "name": null,
+      "route_status": "ok",
+      "time_seconds": 156.0
+    },
+    {
+      "address": "Chase, West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0796906,
+        31.9977366
+      ],
+      "distance_meters": 615.0,
+      "id": "511c339aa6198559c0596d5771aa6bff3f40f00103f90135c79ef6000000009203054368617365",
+      "name": "Chase",
+      "route_status": "ok",
+      "time_seconds": 69.0
+    },
+    {
+      "address": "Midland County Detention Center, West Washington Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.police"
+      ],
+      "coordinates": [
+        -102.0754059,
+        31.9937975
+      ],
+      "distance_meters": 940.0,
+      "id": "513a9b4473d38459c0599baa4f8369fe3f40f00103f9018b6287f20000000092031f4d69646c616e6420436f756e747920446574656e74696f6e2043656e746572",
+      "name": "Midland County Detention Center",
+      "route_status": "ok",
+      "time_seconds": 88.0
+    },
+    {
+      "address": "Prosperity Bank, West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.080078,
+        31.9971187
+      ],
+      "distance_meters": 686.0,
+      "id": "5143c879ff1f8559c059a60ccd2b43ff3f40f00103f9018f6b9cf40000000092030f50726f737065726974792042616e6b",
+      "name": "Prosperity Bank",
+      "route_status": "ok",
+      "time_seconds": 68.0
+    },
+    {
+      "address": "Bank of America, West Ohio Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0762161,
+        32.0010482
+      ],
+      "distance_meters": 153.0,
+      "id": "516e3b7eb9e08459c059ea84ef5822004040f00103f9015f6b9cf40000000092030f42616e6b206f6620416d6572696361",
+      "name": "Bank of America",
+      "route_status": "ok",
+      "time_seconds": 15.0
+    },
+    {
+      "address": "Frost Bank, West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0801792,
+        31.9977008
+      ],
+      "distance_meters": 618.0,
+      "id": "517174f0a7218559c0592983d15169ff3f40f00103f9017c01cbf10000000092030a46726f73742042616e6b",
+      "name": "Frost Bank",
+      "route_status": "ok",
+      "time_seconds": 70.0
+    },
+    {
+      "address": "BB&T, West Kansas Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0779059,
+        32.0045931
+      ],
+      "distance_meters": 863.0,
+      "id": "51962a0769fc8459c0597f4db68196004040f00103f9016f599cf40000000092030442422654",
+      "name": "BB&T",
+      "route_status": "ok",
+      "time_seconds": 68.0
+    },
+    {
+      "address": "Wells Fargo, West Texas Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0798982,
+        31.9986006
+      ],
+      "distance_meters": 763.0,
+      "id": "519800570d1d8559c059ca15f549a4ff3f40f00103f9011344ef6c0000000092030b57656c6c7320466172676f",
+      "name": "Wells Fargo",
+      "route_status": "ok",
+      "time_seconds": 80.0
+    },
+    {
+      "address": "Frost Bank, North Marienfeld Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0789909,
+        31.9977556
+      ],
+      "distance_meters": 556.0,
+      "id": "519f0bd92f0e8559c0595ab835e96cff3f40f00103f9018c6b9cf40000000092030a46726f73742042616e6b",
+      "name": "Frost Bank",
+      "route_status": "ok",
+      "time_seconds": 67.0
+    },
+    {
+      "address": "Wells Fargo, North Carrizo Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0814194,
+        31.9989613
+      ],
+      "distance_meters": 587.0,
+      "id": "51a210b7f9358559c059e9c97fedbbff3f40f00103f901916b9cf40000000092030b57656c6c7320466172676f",
+      "name": "Wells Fargo",
+      "route_status": "ok",
+      "time_seconds": 57.0
+    },
+    {
+      "address": "Midland Fire Department Station #2, South Mineola Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.fire_station"
+      ],
+      "coordinates": [
+        -102.0664714,
+        31.9898431
+      ],
+      "distance_meters": 2517.0,
+      "id": "51a3474211418459c059e6fd7c5b66fd3f40f00102f901b456eb17000000009203224d69646c616e642046697265204465706172746d656e742053746174696f6e202332",
+      "name": "Midland Fire Department Station #2",
+      "route_status": "ok",
+      "time_seconds": 213.0
+    },
+    {
+      "address": "United States Post Office, 100 East Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.facility",
+        "service",
+        "service.post",
+        "service.post.office"
+      ],
+      "coordinates": [
+        -102.0737131,
+        31.9969224
+      ],
+      "distance_meters": 447.0,
+      "id": "51ae6a1cb7b78459c05920f86e4e36ff3f40f00102f9013e6bc10d00000000920319556e697465642053746174657320506f7374204f6666696365",
+      "name": "United States Post Office",
+      "route_status": "ok",
+      "time_seconds": 56.0
+    },
+    {
+      "address": "Community National Bank, North Big Spring Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0784008,
+        31.9981412
+      ],
+      "distance_meters": 532.0,
+      "id": "51bcfec984048559c059011c812e86ff3f40f00103f901737c9cf400000000920317436f6d6d756e697479204e6174696f6e616c2042616e6b",
+      "name": "Community National Bank",
+      "route_status": "ok",
+      "time_seconds": 57.0
+    },
+    {
+      "address": "Security Bank, West Michigan Avenue, Midland, TX 79703, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.079062,
+        32.0029884
+      ],
+      "distance_meters": 775.0,
+      "id": "51ce16105a0f8559c059fa4a83ec61004040f00103f901fb469cf40000000092030d53656375726974792042616e6b",
+      "name": "Security Bank",
+      "route_status": "ok",
+      "time_seconds": 78.0
+    },
+    {
+      "address": "Bank of America, 303 West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0772192,
+        31.9971187
+      ],
+      "distance_meters": 400.0,
+      "id": "51e3a7cc28f18459c059a60ccd2b43ff3f40f00103f901170def6c0000000092030f42616e6b206f6620416d6572696361",
+      "name": "Bank of America",
+      "route_status": "ok",
+      "time_seconds": 48.0
+    },
+    {
+      "address": "City Bank Midland, 400 West Illinois Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.0784227,
+        31.9997352
+      ],
+      "distance_meters": 273.0,
+      "id": "51e6f0a4e0048559c059a1fa62a5eeff3f40f00103f90119a0a6a502000000920311436974792042616e6b204d69646c616e64",
+      "name": "City Bank Midland",
+      "route_status": "ok",
+      "time_seconds": 25.0
+    },
+    {
+      "address": "East Front Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.advertising",
+        "service.advertising.billboard"
+      ],
+      "coordinates": [
+        -102.0656298029267,
+        32.00034157158431
+      ],
+      "distance_meters": 1126.0,
+      "id": "51fda36fd2348459c059781b3d2311004040f00103f901329f238702000000",
+      "name": null,
+      "route_status": "ok",
+      "time_seconds": 83.0
+    }
+  ],
+  "category": "service",
+  "duplicate_count": 0,
+  "invalid_coordinate_count": 0,
+  "max_candidates": 20,
+  "pagination": false,
+  "representation": "mcp_competitor_classification",
+  "returned_count": 20,
+  "search_extent": {
+    "method": "circle",
+    "parameters": {
+      "center": [
+        -102.075567,
+        31.9997
+      ],
+      "radius_meters": 20000
+    }
+  },
+  "search_status": "ok",
+  "settings": {
+    "budget_seconds": 1200,
+    "direction": "outbound",
+    "mode": "drive",
+    "route_type": "balanced",
+    "traffic": "free_flow",
+    "units": "metric"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.071072,
+          31.980342
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "100 East Gist Avenue, Midland, TX 79701, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "match_type": "full_match",
+          "popularity": 1.467630788199049
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

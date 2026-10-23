@@ -1,0 +1,1604 @@
+{
+  "data_mode": "live",
+  "purpose": "Select real public demo locations for fictional customer identities; no affiliation or actual customer relationship.",
+  "http_attempts": 26,
+  "records": [
+    {
+      "input_address": "300 N Loraine St, Midland, TX 79701",
+      "resolved_address": "300 North Loraine Street, Downtown Midland Management District, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.075567,
+        31.9997
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.075567,
+                31.9997
+              ]
+            },
+            "properties": {
+              "formatted": "300 North Loraine Street, Downtown Midland Management District, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.6300150916456089,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "615 W Missouri Ave, Midland, TX 79701",
+      "resolved_address": "615 West Missouri Avenue, Downtown Midland Management District, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.08075785714286,
+        31.99625142857143
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.08075785714286,
+                31.99625142857143
+              ]
+            },
+            "properties": {
+              "formatted": "615 West Missouri Avenue, Downtown Midland Management District, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.6232540558363553,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "906 W Illinois Ave, Midland, TX 79701",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 3,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.084836,
+                31.9999477
+              ]
+            },
+            "properties": {
+              "formatted": "Midland Senior High School, 906 West Illinois Avenue, Midland, TX 79701, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.625224810334446,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0838082,
+                31.9993633
+              ]
+            },
+            "properties": {
+              "formatted": "The Bulldog, 906 West Illinois Avenue, Midland, TX 79701, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.625224810334446,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0862024,
+                31.9986884
+              ]
+            },
+            "properties": {
+              "formatted": "4, 906 West Illinois Avenue, Midland, TX 79701, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.6183749639538956,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "3500 Neely Ave, Midland, TX 79707",
+      "resolved_address": "3500 Neely Avenue, Midland, TX 79707, United States of America",
+      "coordinates": [
+        -102.12886042723052,
+        32.011364317804045
+      ],
+      "evidence": {
+        "candidate_count": 2,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.12886042723052,
+                32.011364317804045
+              ]
+            },
+            "properties": {
+              "formatted": "3500 Neely Avenue, Midland, TX 79707, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.4882454455741718,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1295237,
+                32.0134603
+              ]
+            },
+            "properties": {
+              "formatted": "Legacy Senior High School, 3500 Neely Avenue, Midland, TX 79707, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.4975291927883851,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "909 Bonham St, Midland, TX 79703",
+      "resolved_address": "909 Bonham Street, Midland, TX 79703, United States of America",
+      "coordinates": [
+        -102.12813177220578,
+        31.995025705553658
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.12813177220578,
+                31.995025705553658
+              ]
+            },
+            "properties": {
+              "formatted": "909 Bonham Street, Midland, TX 79703, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.476102030462063,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "700 S Jackson St, Midland, TX 79701",
+      "resolved_address": "700 South Jackson Street, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.05536,
+        31.993089
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.05536,
+                31.993089
+              ]
+            },
+            "properties": {
+              "formatted": "700 South Jackson Street, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.4292459837920002,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "900 S Raymond Rd, Midland, TX 79703",
+      "resolved_address": "900 South Raymond Road, Midland, TX 79703, United States of America",
+      "coordinates": [
+        -102.1234,
+        31.977861
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1234,
+                31.977861
+              ]
+            },
+            "properties": {
+              "formatted": "900 South Raymond Road, Midland, TX 79703, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.4140779883142862,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "5001 Preston Dr, Midland, TX 79707",
+      "resolved_address": "5001 Preston Drive, Midland, TX 79707, United States of America",
+      "coordinates": [
+        -102.152163,
+        32.009876
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.152163,
+                32.009876
+              ]
+            },
+            "properties": {
+              "formatted": "5001 Preston Drive, Midland, TX 79707, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.462713639561787,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "705 N Lee St, Midland, TX 79701",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.066356,
+                32.0055792
+              ]
+            },
+            "properties": {
+              "formatted": "De Zavala Elementary, 705 North Lee Street, Midland, TX 79701, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.5378789456261814,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2800 Moss Ave, Midland, TX 79705",
+      "resolved_address": "2800 Moss Avenue, Midland, TX 79705, United States of America",
+      "coordinates": [
+        -102.119297,
+        32.029558
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.119297,
+                32.029558
+              ]
+            },
+            "properties": {
+              "formatted": "2800 Moss Avenue, Midland, TX 79705, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.4061395269011783,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2115 Hereford Blvd, Midland, TX 79707",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.163209,
+                32.0016579
+              ]
+            },
+            "properties": {
+              "formatted": "Scharbauer Elementary School, 2115 Hereford Boulevard, Midland, TX 79707, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.41435086738069,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "201 W Dakota Ave, Midland, TX 79701",
+      "resolved_address": "201 West Dakota Avenue, Midland Heights, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.07548065306122,
+        31.988152836734695
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.07548065306122,
+                31.988152836734695
+              ]
+            },
+            "properties": {
+              "formatted": "201 West Dakota Avenue, Midland Heights, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.5144858056004387,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "6000 Riverfront Dr, Midland, TX 79706",
+      "resolved_address": "6000 Riverfront Drive, Midland, TX 79706, United States of America",
+      "coordinates": [
+        -102.163169,
+        31.983509
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.163169,
+                31.983509
+              ]
+            },
+            "properties": {
+              "formatted": "6000 Riverfront Drive, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053398090333409594,
+                "popularity": 1.3649746811159693,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "3201 Heritage Blvd, Midland, TX 79703",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 2,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "ambiguous",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.16018,
+                32.009315
+              ]
+            },
+            "properties": {
+              "formatted": "3201 Heritage Boulevard, Midland, TX 79707, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.4613827107731319,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.160049,
+                32.009217
+              ]
+            },
+            "properties": {
+              "formatted": "3201 Heritage Boulevard, Midland, TX 79703, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.4613827107731319,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "3800 W Storey Ave, Midland, TX 79703",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 3,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1300369,
+                31.9943455
+              ]
+            },
+            "properties": {
+              "formatted": "3800 Storey Avenue, Midland, TX 79703, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053398090333409594,
+                "popularity": 1.4639165079426064,
+                "confidence": 0.9,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.9,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0849173,
+                32.0051522
+              ]
+            },
+            "properties": {
+              "formatted": "3800 Storey Avenue, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053398090333409594,
+                "popularity": 1.5644951676080405,
+                "confidence": 0.45,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1389725,
+                31.9885051
+              ]
+            },
+            "properties": {
+              "formatted": "Storey Avenue, Midland, TX 79703, United States of America",
+              "result_type": "street",
+              "rank": {
+                "importance": 0.053398090333409594,
+                "popularity": 1.4159416046002156,
+                "confidence": 0.45,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "match_type": "match_by_street"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2500 Haynes Ave, Midland, TX 79705",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 2,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1170673,
+                32.0300546
+              ]
+            },
+            "properties": {
+              "formatted": "Goddard Junior High, 2500 Haynes Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.3865928580083058,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.1186888,
+                32.0289197
+              ]
+            },
+            "properties": {
+              "formatted": "Goddard Rocket, 2500 Haynes Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.4061395269011783,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "1400 N N St, Midland, TX 79701",
+      "resolved_address": "1400 North N Street, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.10162,
+        32.008075
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.10162,
+                32.008075
+              ]
+            },
+            "properties": {
+              "formatted": "1400 North N Street, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.5511665990629813,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "100 E Gist Ave, Midland, TX 79701",
+      "resolved_address": "100 East Gist Avenue, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.071072,
+        31.980342
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.071072,
+                31.980342
+              ]
+            },
+            "properties": {
+              "formatted": "100 East Gist Avenue, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.467630788199049,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "1400 E Oak Ave, Midland, TX 79705",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0652768,
+                32.0243101
+              ]
+            },
+            "properties": {
+              "formatted": "Legacy Freshman High School, 1400 East Oak Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.458700243560534,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "1310 N FM 1788, Midland, TX 79707",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.2483676,
+                31.969693
+              ]
+            },
+            "properties": {
+              "formatted": "The University of Texas of the Permian Basin - CEED, 1310 North FM 1788, Midland, TX 79707, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.2566368924210964,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2600 FM 1379, Midland, TX 79706",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 5,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.8806899,
+                31.9812662
+              ]
+            },
+            "properties": {
+              "formatted": "2600 FM 1379, Greenwood, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.0533433333333333,
+                "popularity": 1.097873445563012,
+                "confidence": 0.5,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.7814501,
+                31.7682087
+              ]
+            },
+            "properties": {
+              "formatted": "2600 FM 1379, Spraberry, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.0533433333333333,
+                "popularity": 0.9549217379453541,
+                "confidence": 0.5,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.8463548,
+                31.9288435
+              ]
+            },
+            "properties": {
+              "formatted": "2600 TX 158;FM 1379, Spraberry, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053370834668497714,
+                "popularity": 0.9801801133501381,
+                "confidence": 0.16666666666666666,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.3333333333333333,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.077948,
+                31.9973662
+              ]
+            },
+            "properties": {
+              "formatted": "Midland, TX, United States of America",
+              "result_type": "city",
+              "rank": {
+                "importance": 0.5751188121888086,
+                "popularity": 1.6375597962420831,
+                "confidence": 0.25,
+                "confidence_city_level": 1,
+                "match_type": "match_by_city_or_disrict"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.117875,
+                32.020111
+              ]
+            },
+            "properties": {
+              "formatted": "Midland, TX 79706, United States of America",
+              "result_type": "city",
+              "rank": {
+                "popularity": 1.4810557800154962,
+                "confidence": 0.25,
+                "confidence_city_level": 1,
+                "match_type": "match_by_city_or_disrict"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "10800 Highway 307, Midland, TX 79706",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 3,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.897718,
+                32.026444
+              ]
+            },
+            "properties": {
+              "formatted": "10800 F M 307, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.1034818427892115,
+                "confidence": 0.81,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.81,
+                "confidence_building_level": 0.81,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.24471,
+                31.976972
+              ]
+            },
+            "properties": {
+              "formatted": "10800 Hwy 191, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.242869033408976,
+                "confidence": 0,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.89881354351171,
+                32.026923006077
+              ]
+            },
+            "properties": {
+              "formatted": "10800 Nathan Heidelberg Memorial Highway, Greenwood, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.1027347869843407,
+                "confidence": 0,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "2511 FM 1379, Midland, TX 79706",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 5,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.8806899,
+                31.9812662
+              ]
+            },
+            "properties": {
+              "formatted": "2511 FM 1379, Greenwood, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.0533433333333333,
+                "popularity": 1.097873445563012,
+                "confidence": 0.5,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.7814501,
+                31.7682087
+              ]
+            },
+            "properties": {
+              "formatted": "2511 FM 1379, Spraberry, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.0533433333333333,
+                "popularity": 0.9549217379453541,
+                "confidence": 0.5,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -101.8463548,
+                31.9288435
+              ]
+            },
+            "properties": {
+              "formatted": "2511 TX 158;FM 1379, Spraberry, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 0.053370834668497714,
+                "popularity": 0.9801801133501381,
+                "confidence": 0.16666666666666666,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.3333333333333333,
+                "confidence_building_level": 0,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.077948,
+                31.9973662
+              ]
+            },
+            "properties": {
+              "formatted": "Midland, TX, United States of America",
+              "result_type": "city",
+              "rank": {
+                "importance": 0.5751188121888086,
+                "popularity": 1.6375597962420831,
+                "confidence": 0.25,
+                "confidence_city_level": 1,
+                "match_type": "match_by_city_or_disrict"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.117875,
+                32.020111
+              ]
+            },
+            "properties": {
+              "formatted": "Midland, TX 79706, United States of America",
+              "result_type": "city",
+              "rank": {
+                "popularity": 1.4810557800154962,
+                "confidence": 0.25,
+                "confidence_city_level": 1,
+                "match_type": "match_by_city_or_disrict"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "9600 Wright Dr, Midland, TX 79706",
+      "resolved_address": "9600 Wright Drive, Midland, TX 79706, United States of America",
+      "coordinates": [
+        -102.214435,
+        31.940028
+      ],
+      "evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.214435,
+                31.940028
+              ]
+            },
+            "properties": {
+              "formatted": "9600 Wright Drive, Midland, TX 79706, United States of America",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.244687409619993,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "1705 W Missouri Ave, Midland, TX 79701",
+      "resolved_address": "1705 West Missouri Avenue, Midland, TX 79701, United States of America",
+      "coordinates": [
+        -102.092478,
+        31.993315
+      ],
+      "evidence": {
+        "candidate_count": 5,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "reason": null,
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.092478,
+                31.993315
+              ]
+            },
+            "properties": {
+              "formatted": "1705 West Missouri Avenue, Midland, TX 79701, United States of America",
+              "result_type": "building",
+              "rank": {
+                "popularity": 1.6030225566246614,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0926342,
+                31.9929674
+              ]
+            },
+            "properties": {
+              "formatted": "Museum of the Southwest, 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.6030225566246614,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.092461,
+                31.9927532
+              ]
+            },
+            "properties": {
+              "formatted": "Panzon \"Chubby\", 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.6030225566246614,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.092348,
+                31.992962
+              ]
+            },
+            "properties": {
+              "formatted": "Freedom Of Youth, 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.6030225566246614,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0922441,
+                31.9937412
+              ]
+            },
+            "properties": {
+              "formatted": "Dogs, 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.6030225566246614,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input_address": "1500 Interstate 20, Midland, TX 79701",
+      "resolved_address": null,
+      "coordinates": null,
+      "evidence": {
+        "candidate_count": 2,
+        "confidence": null,
+        "confidence_building_level": null,
+        "match_type": null,
+        "result_type": null
+      },
+      "reason": "insufficient_precision",
+      "response": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0839911,
+                31.9722941
+              ]
+            },
+            "properties": {
+              "formatted": "*, 1500 West Interstate 20, Midland, TX 79701, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 6.47570000762496e-05,
+                "popularity": 1.4935718666499003,
+                "confidence": 0.9,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.9,
+                "match_type": "inner_part"
+              }
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -102.0852438,
+                31.9724679
+              ]
+            },
+            "properties": {
+              "formatted": "Permian Basin Petroleum Museum, 1500 West Interstate 20, Midland, TX 79701, United States of America",
+              "result_type": "amenity",
+              "rank": {
+                "importance": 3.500190737769158e-05,
+                "popularity": 1.4271539321884015,
+                "confidence": 0.9,
+                "confidence_city_level": 1,
+                "confidence_street_level": 0.9,
+                "confidence_building_level": 0.9,
+                "match_type": "inner_part"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

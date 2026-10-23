@@ -1,0 +1,374 @@
+{
+  "cap_reached": true,
+  "category": "service",
+  "coverage": "sampled",
+  "duplicate_count": 0,
+  "observed_in_zone_count": 19,
+  "observed_out_of_zone_count": 1,
+  "records": [
+    {
+      "address": "My Community Credit Union, 600 West Louisiana Avenue, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.08140692351311,
+        32.004111749608434
+      ],
+      "geodesic_distance_meters": 737.502,
+      "id": "51098a62c5358559c0597d0cdbbb86004040f00102f90109ec1d18000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+      "name": "My Community Credit Union",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Chase, West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.07969059999999,
+        31.997736599608675
+      ],
+      "geodesic_distance_meters": 445.951,
+      "id": "511c339aa6198559c0596d5771aa6bff3f40f00103f90135c79ef6000000009203054368617365",
+      "name": "Chase",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "My Community Credit Union, 912 North Midkiff Road, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.11761171083407,
+        31.99850949960865
+      ],
+      "geodesic_distance_meters": 3967.013,
+      "id": "512cea44f3868759c05982908d519eff3f40f00102f9013e19c42b000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+      "name": "My Community Credit Union",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Sport Clips, 3208 North Loop 250 West, Midland, TX 79707, United States of America",
+      "categories": [
+        "commercial",
+        "service",
+        "service.beauty",
+        "service.beauty.hairdresser"
+      ],
+      "coordinates": [
+        -102.15720879999999,
+        32.01112999960818
+      ],
+      "geodesic_distance_meters": 7802.477,
+      "id": "512da97fb50f8a59c0592b2934b56c014040f00103f901be7671cb0000000092030b53706f727420436c697073",
+      "name": "Sport Clips",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Valvoline Express Care, 4705 North Midkiff Road, Midland, TX 79705, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.13034775008495,
+        32.03519994960729
+      ],
+      "geodesic_distance_meters": 6500.54,
+      "id": "5136ee169e578859c0592c31946e81044040f00102f901727b75200000000092031656616c766f6c696e6520457870726573732043617265",
+      "name": "Valvoline Express Care",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "First Basin Credit Union, 3316 North Midland Drive, Midland, TX 79707, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.14128410451822,
+        32.01701859960795
+      ],
+      "geodesic_distance_meters": 6488.823,
+      "id": "516d167ccc0a8959c059b45e5caa2d024040f00102f901e2b8ac2400000000920318466972737420426173696e2043726564697420556e696f6e",
+      "name": "First Basin Credit Union",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Lonestar Automotive, 900 North Loop 250 West, Midland, TX 79703, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.15062570022022,
+        31.990615999608952
+      ],
+      "geodesic_distance_meters": 7150.026,
+      "id": "518218fad9a38959c059fd36990299fd3f40f00102f9017cbc8926000000009203134c6f6e6573746172204175746f6d6f74697665",
+      "name": "Lonestar Automotive",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Chase, Courtyard Drive, Midland, TX 79705, United States of America",
+      "categories": [
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.12687209999999,
+        32.03164269960741
+      ],
+      "geodesic_distance_meters": 6001.175,
+      "id": "51961128ac1e8859c05949fc33de0c044040f00103f9010f09ead2010000009203054368617365",
+      "name": "Chase",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Discount Muffler & Automotive, 2324 West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.10058899999999,
+        31.99250379960887
+      ],
+      "geodesic_distance_meters": 2491.628,
+      "id": "519655d80c708659c059d079a0ba14fe3f40f00103f9015eb220810100000092031d446973636f756e74204d7566666c65722026204175746f6d6f74697665",
+      "name": "Discount Muffler & Automotive",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Loop 250 Collision Express, 1608 West Front Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.0887611234053,
+        31.988647999609015
+      ],
+      "geodesic_distance_meters": 1748.848,
+      "id": "51a68b2243ae8559c0599893090918fd3f40f00102f901d28950570000000092031a4c6f6f702032353020436f6c6c6973696f6e2045787072657373",
+      "name": "Loop 250 Collision Express",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Lara's Automotive, 1302 North Lamesa Road, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.0687861947905,
+        32.01234489960813
+      ],
+      "geodesic_distance_meters": 1544.599,
+      "id": "51a84236fe668459c0596f0b868494014040f00102f901942fdc51000000009203114c6172612773204175746f6d6f74697665",
+      "name": "Lara's Automotive",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Carrillo's Automotive, 2501 West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.1016301264343,
+        31.990172299608957
+      ],
+      "geodesic_distance_meters": 2676.464,
+      "id": "51b754a51b818659c059c0398cee7bfd3f40f00102f9017020784e0000000092031543617272696c6c6f2773204175746f6d6f74697665",
+      "name": "Carrillo's Automotive",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Dry Clean Super Center, 4218 West Wadley Avenue, Midland, TX 79707, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.cleaning",
+        "service.cleaning.dry_cleaning"
+      ],
+      "coordinates": [
+        -102.14000622198276,
+        32.01676119960797
+      ],
+      "geodesic_distance_meters": 6365.279,
+      "id": "51c229a8dcf58859c0593814223b25024040f00102f901604e89430000000092031644727920436c65616e2053757065722043656e746572",
+      "name": "Dry Clean Super Center",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "CMC Recycling, 1605 Garden City Highway, Midland, TX 79701, United States of America",
+      "categories": [
+        "service",
+        "service.recycling",
+        "service.recycling.centre"
+      ],
+      "coordinates": [
+        -102.05483545712478,
+        31.98815289960904
+      ],
+      "geodesic_distance_meters": 2339.012,
+      "id": "51c7c0936c828359c059b644a396f7fc3f40f00102f901c1217f4e0000000092030d434d432052656379636c696e67",
+      "name": "CMC Recycling",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Ulta Beauty, 4511 North Midkiff Road, Midland, TX 79705, United States of America",
+      "categories": [
+        "commercial",
+        "commercial.health_and_beauty",
+        "service",
+        "service.beauty",
+        "service.beauty.spa"
+      ],
+      "coordinates": [
+        -102.1315317,
+        32.03082229960745
+      ],
+      "geodesic_distance_meters": 6310.133,
+      "id": "51c978ef036b8859c059986630fcf1034040f00103f901d096c5040200000092030b556c746120426561757479",
+      "name": "Ulta Beauty",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Midland Frame and Wheel, 2407 West Wall Street, Midland, TX 79701, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.10083376073396,
+        31.99121079960893
+      ],
+      "geodesic_distance_meters": 2562.912,
+      "id": "51d82b720f748659c0592ac3affdbffd3f40f00102f9016f20784e000000009203174d69646c616e64204672616d6520616e6420576865656c",
+      "name": "Midland Frame and Wheel",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Soft Suds Auto Spa, 4300 West Wadley Avenue, Midland, TX 79707, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.car_wash"
+      ],
+      "coordinates": [
+        -102.14058422956403,
+        32.01663884960797
+      ],
+      "geodesic_distance_meters": 6413.318,
+      "id": "51e513ff54ff8859c0596474c93821024040f00102f9015d4e894300000000920312536f66742053756473204175746f20537061",
+      "name": "Soft Suds Auto Spa",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "Take 5 Oil Change, 4404 West Wadley Avenue, Midland, TX 79707, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "commercial",
+        "service",
+        "service.vehicle",
+        "service.vehicle.repair",
+        "service.vehicle.repair.car"
+      ],
+      "coordinates": [
+        -102.14232064999999,
+        32.01607564960799
+      ],
+      "geodesic_distance_meters": 6552.341,
+      "id": "51e85212c81b8959c05905aa52c40e024040f00102f901614e89430000000092031154616b652035204f696c204368616e6765",
+      "name": "Take 5 Oil Change",
+      "verdict": "in_zone"
+    },
+    {
+      "address": "My Community Credit Union, 4001 North Big Spring Street, Midland, TX 79705, United States of America",
+      "categories": [
+        "building",
+        "building.commercial",
+        "service",
+        "service.financial",
+        "service.financial.bank"
+      ],
+      "coordinates": [
+        -102.08668465467387,
+        32.03670859960724
+      ],
+      "geodesic_distance_meters": 4246.566,
+      "id": "51eb38cb3d8c8559c059c4650ddeb2044040f00102f9019588920a000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+      "name": "My Community Credit Union",
+      "verdict": "in_zone"
+    }
+  ],
+  "returned_count": 20,
+  "search_extent": {
+    "method": "rectangle",
+    "parameters": {
+      "bbox": [
+        -102.332248,
+        31.700116,
+        -101.764102,
+        32.272319
+      ]
+    }
+  },
+  "status": "ok",
+  "unclassified_count": 0
+}

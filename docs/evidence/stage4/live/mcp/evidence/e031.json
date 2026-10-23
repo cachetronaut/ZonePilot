@@ -1,0 +1,42 @@
+{
+  "approximation": true,
+  "arguments": {
+    "geometry": {
+      "coordinates": [
+        [
+          [
+            -102.2,
+            31.9
+          ],
+          [
+            -102,
+            31.9
+          ],
+          [
+            -102,
+            32.1
+          ],
+          [
+            -102.2,
+            32.1
+          ],
+          [
+            -102.2,
+            31.9
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "operation": "area"
+  },
+  "diagnostic_only": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "data": 419422186.0089799,
+    "type": "number"
+  },
+  "session": "mcp-preflight.json",
+  "tool": "measure_geometry",
+  "tool_use_id": "toolu_019TKojfGBuiFiV4qqyxHG5V"
+}

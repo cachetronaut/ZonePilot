@@ -76,8 +76,7 @@ continuous-polygon methods are rejected.
 Membership is `in_zone` exactly when known normalized time is at most the budget;
 it is `out_of_zone` for larger known time and `unknown` for missing routes.
 The incoming verdict must agree; validation never invents measurements or a
-polygon. Requested MCP competitors remain rejected with
-`agent_competitors_pending` until their route-evidence/extent contract is approved.
+polygon. Requested MCP competitors use the approved [MCP competitor evidence contract](mcp-competitor-contract.md): one business-centered 20,000-metre circle, at most twenty candidates, acquired outbound routes, sampled coverage and import-time artifact verification. The circle is a search extent, never membership.
 
 ## Customers
 

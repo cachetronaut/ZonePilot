@@ -1,0 +1,1251 @@
+{
+  "attributions": [
+    {
+      "source": "Geoapify",
+      "text": "API contracts and location services.",
+      "url": "https://geoapify.com"
+    },
+    {
+      "source": "OpenStreetMap",
+      "text": "Live map data: © OpenStreetMap contributors, ODbL. Synthetic fixtures contain no live map records.",
+      "url": "https://www.openstreetmap.org/copyright"
+    }
+  ],
+  "business": {
+    "coordinates": [
+      -102.075567,
+      31.9997
+    ],
+    "geocode_evidence": {
+      "candidate_count": 1,
+      "confidence": 1,
+      "confidence_building_level": 1,
+      "match_type": "full_match",
+      "result_type": "building"
+    },
+    "input_address": "300 N Loraine St, Midland, TX 79701",
+    "name": "Main Street Plumbing",
+    "resolved_address": "300 North Loraine Street, Downtown Midland Management District, Midland, TX 79701, United States of America"
+  },
+  "competitors": {
+    "cap_reached": true,
+    "category": "service",
+    "coverage": "sampled",
+    "duplicate_count": 0,
+    "observed_in_zone_count": 19,
+    "observed_out_of_zone_count": 1,
+    "records": [
+      {
+        "address": "My Community Credit Union, 600 West Louisiana Avenue, Midland, TX 79701, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "coordinates": [
+          -102.08140692351311,
+          32.004111749608434
+        ],
+        "geodesic_distance_meters": 737.502,
+        "id": "51098a62c5358559c0597d0cdbbb86004040f00102f90109ec1d18000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+        "name": "My Community Credit Union",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Chase, West Wall Street, Midland, TX 79701, United States of America",
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "coordinates": [
+          -102.07969059999999,
+          31.997736599608675
+        ],
+        "geodesic_distance_meters": 445.951,
+        "id": "511c339aa6198559c0596d5771aa6bff3f40f00103f90135c79ef6000000009203054368617365",
+        "name": "Chase",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "My Community Credit Union, 912 North Midkiff Road, Midland, TX 79701, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "coordinates": [
+          -102.11761171083407,
+          31.99850949960865
+        ],
+        "geodesic_distance_meters": 3967.013,
+        "id": "512cea44f3868759c05982908d519eff3f40f00102f9013e19c42b000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+        "name": "My Community Credit Union",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Sport Clips, 3208 North Loop 250 West, Midland, TX 79707, United States of America",
+        "categories": [
+          "commercial",
+          "service",
+          "service.beauty",
+          "service.beauty.hairdresser"
+        ],
+        "coordinates": [
+          -102.15720879999999,
+          32.01112999960818
+        ],
+        "geodesic_distance_meters": 7802.477,
+        "id": "512da97fb50f8a59c0592b2934b56c014040f00103f901be7671cb0000000092030b53706f727420436c697073",
+        "name": "Sport Clips",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Valvoline Express Care, 4705 North Midkiff Road, Midland, TX 79705, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.13034775008495,
+          32.03519994960729
+        ],
+        "geodesic_distance_meters": 6500.54,
+        "id": "5136ee169e578859c0592c31946e81044040f00102f901727b75200000000092031656616c766f6c696e6520457870726573732043617265",
+        "name": "Valvoline Express Care",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "First Basin Credit Union, 3316 North Midland Drive, Midland, TX 79707, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "coordinates": [
+          -102.14128410451822,
+          32.01701859960795
+        ],
+        "geodesic_distance_meters": 6488.823,
+        "id": "516d167ccc0a8959c059b45e5caa2d024040f00102f901e2b8ac2400000000920318466972737420426173696e2043726564697420556e696f6e",
+        "name": "First Basin Credit Union",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Lonestar Automotive, 900 North Loop 250 West, Midland, TX 79703, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.15062570022022,
+          31.990615999608952
+        ],
+        "geodesic_distance_meters": 7150.026,
+        "id": "518218fad9a38959c059fd36990299fd3f40f00102f9017cbc8926000000009203134c6f6e6573746172204175746f6d6f74697665",
+        "name": "Lonestar Automotive",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Chase, Courtyard Drive, Midland, TX 79705, United States of America",
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "coordinates": [
+          -102.12687209999999,
+          32.03164269960741
+        ],
+        "geodesic_distance_meters": 6001.175,
+        "id": "51961128ac1e8859c05949fc33de0c044040f00103f9010f09ead2010000009203054368617365",
+        "name": "Chase",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Discount Muffler & Automotive, 2324 West Wall Street, Midland, TX 79701, United States of America",
+        "categories": [
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.10058899999999,
+          31.99250379960887
+        ],
+        "geodesic_distance_meters": 2491.628,
+        "id": "519655d80c708659c059d079a0ba14fe3f40f00103f9015eb220810100000092031d446973636f756e74204d7566666c65722026204175746f6d6f74697665",
+        "name": "Discount Muffler & Automotive",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Loop 250 Collision Express, 1608 West Front Street, Midland, TX 79701, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.0887611234053,
+          31.988647999609015
+        ],
+        "geodesic_distance_meters": 1748.848,
+        "id": "51a68b2243ae8559c0599893090918fd3f40f00102f901d28950570000000092031a4c6f6f702032353020436f6c6c6973696f6e2045787072657373",
+        "name": "Loop 250 Collision Express",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Lara's Automotive, 1302 North Lamesa Road, Midland, TX 79701, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.0687861947905,
+          32.01234489960813
+        ],
+        "geodesic_distance_meters": 1544.599,
+        "id": "51a84236fe668459c0596f0b868494014040f00102f901942fdc51000000009203114c6172612773204175746f6d6f74697665",
+        "name": "Lara's Automotive",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Carrillo's Automotive, 2501 West Wall Street, Midland, TX 79701, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.1016301264343,
+          31.990172299608957
+        ],
+        "geodesic_distance_meters": 2676.464,
+        "id": "51b754a51b818659c059c0398cee7bfd3f40f00102f9017020784e0000000092031543617272696c6c6f2773204175746f6d6f74697665",
+        "name": "Carrillo's Automotive",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Dry Clean Super Center, 4218 West Wadley Avenue, Midland, TX 79707, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.cleaning",
+          "service.cleaning.dry_cleaning"
+        ],
+        "coordinates": [
+          -102.14000622198276,
+          32.01676119960797
+        ],
+        "geodesic_distance_meters": 6365.279,
+        "id": "51c229a8dcf58859c0593814223b25024040f00102f901604e89430000000092031644727920436c65616e2053757065722043656e746572",
+        "name": "Dry Clean Super Center",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "CMC Recycling, 1605 Garden City Highway, Midland, TX 79701, United States of America",
+        "categories": [
+          "service",
+          "service.recycling",
+          "service.recycling.centre"
+        ],
+        "coordinates": [
+          -102.05483545712478,
+          31.98815289960904
+        ],
+        "geodesic_distance_meters": 2339.012,
+        "id": "51c7c0936c828359c059b644a396f7fc3f40f00102f901c1217f4e0000000092030d434d432052656379636c696e67",
+        "name": "CMC Recycling",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Ulta Beauty, 4511 North Midkiff Road, Midland, TX 79705, United States of America",
+        "categories": [
+          "commercial",
+          "commercial.health_and_beauty",
+          "service",
+          "service.beauty",
+          "service.beauty.spa"
+        ],
+        "coordinates": [
+          -102.1315317,
+          32.03082229960745
+        ],
+        "geodesic_distance_meters": 6310.133,
+        "id": "51c978ef036b8859c059986630fcf1034040f00103f901d096c5040200000092030b556c746120426561757479",
+        "name": "Ulta Beauty",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Midland Frame and Wheel, 2407 West Wall Street, Midland, TX 79701, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.10083376073396,
+          31.99121079960893
+        ],
+        "geodesic_distance_meters": 2562.912,
+        "id": "51d82b720f748659c0592ac3affdbffd3f40f00102f9016f20784e000000009203174d69646c616e64204672616d6520616e6420576865656c",
+        "name": "Midland Frame and Wheel",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Soft Suds Auto Spa, 4300 West Wadley Avenue, Midland, TX 79707, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.car_wash"
+        ],
+        "coordinates": [
+          -102.14058422956403,
+          32.01663884960797
+        ],
+        "geodesic_distance_meters": 6413.318,
+        "id": "51e513ff54ff8859c0596474c93821024040f00102f9015d4e894300000000920312536f66742053756473204175746f20537061",
+        "name": "Soft Suds Auto Spa",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "Take 5 Oil Change, 4404 West Wadley Avenue, Midland, TX 79707, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "service",
+          "service.vehicle",
+          "service.vehicle.repair",
+          "service.vehicle.repair.car"
+        ],
+        "coordinates": [
+          -102.14232064999999,
+          32.01607564960799
+        ],
+        "geodesic_distance_meters": 6552.341,
+        "id": "51e85212c81b8959c05905aa52c40e024040f00102f901614e89430000000092031154616b652035204f696c204368616e6765",
+        "name": "Take 5 Oil Change",
+        "verdict": "in_zone"
+      },
+      {
+        "address": "My Community Credit Union, 4001 North Big Spring Street, Midland, TX 79705, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "coordinates": [
+          -102.08668465467387,
+          32.03670859960724
+        ],
+        "geodesic_distance_meters": 4246.566,
+        "id": "51eb38cb3d8c8559c059c4650ddeb2044040f00102f9019588920a000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+        "name": "My Community Credit Union",
+        "verdict": "in_zone"
+      }
+    ],
+    "returned_count": 20,
+    "search_extent": {
+      "method": "rectangle",
+      "parameters": {
+        "bbox": [
+          -102.332248,
+          31.700116,
+          -101.764102,
+          32.272319
+        ]
+      }
+    },
+    "status": "ok",
+    "unclassified_count": 0
+  },
+  "customers": [
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.08075785714286,
+        31.99625142857143
+      ],
+      "distance_meters": 856.0,
+      "evidence_refs": [
+        "e003",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "615 W Missouri Ave, Midland, TX 79701",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 01",
+      "reference": "DEMO-01",
+      "resolved_address": "615 West Missouri Avenue, Downtown Midland Management District, Midland, TX 79701, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 1,
+      "time_seconds": 81.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.12886042723052,
+        32.011364317804045
+      ],
+      "distance_meters": 6142.0,
+      "evidence_refs": [
+        "e004",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 2,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "3500 Neely Ave, Midland, TX 79707",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 02",
+      "reference": "DEMO-02",
+      "resolved_address": "3500 Neely Avenue, Midland, TX 79707, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 2,
+      "time_seconds": 490.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.12813177220578,
+        31.995025705553658
+      ],
+      "distance_meters": 5590.0,
+      "evidence_refs": [
+        "e005",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "909 Bonham St, Midland, TX 79703",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 03",
+      "reference": "DEMO-03",
+      "resolved_address": "909 Bonham Street, Midland, TX 79703, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 3,
+      "time_seconds": 449.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -101.895762,
+        32.027595
+      ],
+      "distance_meters": 19262.0,
+      "evidence_refs": [
+        "e006",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "2700 FM 1379, Midland, TX 79706",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 04",
+      "reference": "DEMO-04",
+      "resolved_address": "2700 FM 1379, Greenwood, TX 79706, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 4,
+      "time_seconds": 822.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.1234,
+        31.977861
+      ],
+      "distance_meters": 5968.0,
+      "evidence_refs": [
+        "e007",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "900 S Raymond Rd, Midland, TX 79703",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 05",
+      "reference": "DEMO-05",
+      "resolved_address": "900 South Raymond Road, Midland, TX 79703, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 5,
+      "time_seconds": 486.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.152163,
+        32.009876
+      ],
+      "distance_meters": 16869.0,
+      "evidence_refs": [
+        "e008",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "5001 Preston Dr, Midland, TX 79707",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 06",
+      "reference": "DEMO-06",
+      "resolved_address": "5001 Preston Drive, Midland, TX 79707, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 6,
+      "time_seconds": 816.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.119297,
+        32.029558
+      ],
+      "distance_meters": 9863.0,
+      "evidence_refs": [
+        "e009",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "2800 Moss Ave, Midland, TX 79705",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 07",
+      "reference": "DEMO-07",
+      "resolved_address": "2800 Moss Avenue, Midland, TX 79705, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 7,
+      "time_seconds": 607.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.07548065306122,
+        31.988152836734695
+      ],
+      "distance_meters": 1776.0,
+      "evidence_refs": [
+        "e010",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "201 W Dakota Ave, Midland, TX 79701",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 08",
+      "reference": "DEMO-08",
+      "resolved_address": "201 West Dakota Avenue, Midland Heights, Midland, TX 79701, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 8,
+      "time_seconds": 156.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.163169,
+        31.983509
+      ],
+      "distance_meters": 16274.0,
+      "evidence_refs": [
+        "e011",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "6000 Riverfront Dr, Midland, TX 79706",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 09",
+      "reference": "DEMO-09",
+      "resolved_address": "6000 Riverfront Drive, Midland, TX 79706, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 9,
+      "time_seconds": 887.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.10162,
+        32.008075
+      ],
+      "distance_meters": 5246.0,
+      "evidence_refs": [
+        "e012",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "1400 N N St, Midland, TX 79701",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 10",
+      "reference": "DEMO-10",
+      "resolved_address": "1400 North N Street, Midland, TX 79701, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 10,
+      "time_seconds": 386.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.071072,
+        31.980342
+      ],
+      "distance_meters": 3085.0,
+      "evidence_refs": [
+        "e013",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "100 E Gist Ave, Midland, TX 79701",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 11",
+      "reference": "DEMO-11",
+      "resolved_address": "100 East Gist Avenue, Midland, TX 79701, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 11,
+      "time_seconds": 247.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.214435,
+        31.940028
+      ],
+      "distance_meters": 21635.0,
+      "evidence_refs": [
+        "e014",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "9600 Wright Dr, Midland, TX 79706",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 12",
+      "reference": "DEMO-12",
+      "resolved_address": "9600 Wright Drive, Midland, TX 79706, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 12,
+      "time_seconds": 1085.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.092478,
+        31.993315
+      ],
+      "distance_meters": 2214.0,
+      "evidence_refs": [
+        "e015",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 5,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "1705 W Missouri Ave, Midland, TX 79701",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 13",
+      "reference": "DEMO-13",
+      "resolved_address": "1705 West Missouri Avenue, Midland, TX 79701, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 13,
+      "time_seconds": 190.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.140165,
+        32.022708
+      ],
+      "distance_meters": 12587.0,
+      "evidence_refs": [
+        "e016",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "3800 Norwood St, Midland, TX 79707",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 14",
+      "reference": "DEMO-14",
+      "resolved_address": "3800 Norwood Street, Midland, TX 79707, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 14,
+      "time_seconds": 665.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.061321,
+        32.025087
+      ],
+      "distance_meters": 4792.0,
+      "evidence_refs": [
+        "e017",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "1700 E Magnolia Ave, Midland, TX 79705",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 15",
+      "reference": "DEMO-15",
+      "resolved_address": "1700 East Magnolia Avenue, Midland, TX 79705, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 15,
+      "time_seconds": 344.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.133052,
+        32.01044
+      ],
+      "distance_meters": 6331.0,
+      "evidence_refs": [
+        "e018",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "2601 Wedgewood St, Midland, TX 79707",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 16",
+      "reference": "DEMO-16",
+      "resolved_address": "2601 Wedgewood Street, Midland, TX 79707, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 16,
+      "time_seconds": 509.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.108976,
+        32.018071
+      ],
+      "distance_meters": 6881.0,
+      "evidence_refs": [
+        "e019",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "2400 Fannin Ave, Midland, TX 79705",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 17",
+      "reference": "DEMO-17",
+      "resolved_address": "2400 Fannin Avenue, Midland, TX 79705, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 17,
+      "time_seconds": 478.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.139277,
+        31.975557
+      ],
+      "distance_meters": 13939.0,
+      "evidence_refs": [
+        "e020",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "4800 Graceland Dr, Midland, TX 79703",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 18",
+      "reference": "DEMO-18",
+      "resolved_address": "4800 Graceland Drive, Midland, TX 79703, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 18,
+      "time_seconds": 722.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.11804277580553,
+        32.036252252035105
+      ],
+      "distance_meters": 10820.0,
+      "evidence_refs": [
+        "e021",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "2503 W Loop 250 N, Midland, TX 79705",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 19",
+      "reference": "DEMO-19",
+      "resolved_address": "2503 West Loop 250 North, Midland, TX 79705, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 19,
+      "time_seconds": 569.0,
+      "verdict": "in_zone"
+    },
+    {
+      "borderline": false,
+      "coordinates": [
+        -102.07694,
+        31.996331
+      ],
+      "distance_meters": 492.0,
+      "evidence_refs": [
+        "e022",
+        "e023"
+      ],
+      "geocode_evidence": {
+        "candidate_count": 1,
+        "confidence": 1,
+        "confidence_building_level": 1,
+        "match_type": "full_match",
+        "result_type": "building"
+      },
+      "geocode_reason": null,
+      "geocode_status": "resolved",
+      "input_address": "301 W Missouri Ave, Midland, TX 79701",
+      "membership_route_disagreement": false,
+      "name": "Fictional Customer 20",
+      "reference": "DEMO-20",
+      "resolved_address": "301 West Missouri Avenue, Downtown Midland Management District, Midland, TX 79701, United States of America",
+      "route_status": "ok",
+      "route_within_budget": true,
+      "row_id": 20,
+      "time_seconds": 59.0,
+      "verdict": "in_zone"
+    }
+  ],
+  "data_mode": "live",
+  "errors": [],
+  "evidence": [
+    {
+      "artifact": "evidence/e001.json",
+      "id": "e001",
+      "kind": "rest",
+      "operation": "geocode_business",
+      "sha256": "e644ac3a0ba8255675dbdf4b29bd2fa56fc776d07a8bed1a8ed2d83718a93613"
+    },
+    {
+      "artifact": "evidence/e002.json",
+      "id": "e002",
+      "kind": "rest",
+      "operation": "isoline",
+      "sha256": "29a17d2ab0ffbe562082d23dcf27a18f33e03d2eee1d7e76ff2970bdb5a97b95"
+    },
+    {
+      "artifact": "evidence/e003.json",
+      "id": "e003",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "faf7a7e83da4c669c715ad3cad4596370ef40856af672274649cde296ceed8cb"
+    },
+    {
+      "artifact": "evidence/e004.json",
+      "id": "e004",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "bca98f620ae0534fbe29b8ea800522c4da242eda35cb7e31ca9b26caacd1c78e"
+    },
+    {
+      "artifact": "evidence/e005.json",
+      "id": "e005",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "90456d5246060ca64b6e03a3d6344c4219d71ccd782ddf9c26740c65a5b53c2b"
+    },
+    {
+      "artifact": "evidence/e006.json",
+      "id": "e006",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "b67fba8ab7a0a46f83796fe23cb3af40420be8f1827eb97febd03363fb3b3552"
+    },
+    {
+      "artifact": "evidence/e007.json",
+      "id": "e007",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "bf52c3065cd042e406f5a809dd08aa55f9056c6a1eff789acbe10f53730759db"
+    },
+    {
+      "artifact": "evidence/e008.json",
+      "id": "e008",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "039ea9e88358c2bed1ed7cb9a7e1a28c42d7812dc4bf790363ad6ef5a8b58bbe"
+    },
+    {
+      "artifact": "evidence/e009.json",
+      "id": "e009",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "848379d22a2858782d240fed52cb52411baad5cea2e10ce19f1a9ac12e00ccfe"
+    },
+    {
+      "artifact": "evidence/e010.json",
+      "id": "e010",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "7236b9ebed089b83a59de26d5462a5327c66449c6f4712740670756610d4ffa1"
+    },
+    {
+      "artifact": "evidence/e011.json",
+      "id": "e011",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "a2b15edd04ac655ac3777d2ac1ca291a50a3ffaf14c5846ecc064c1c2b44f84e"
+    },
+    {
+      "artifact": "evidence/e012.json",
+      "id": "e012",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "2ea3bbc54a40153c2e8698cb2880f96f5eb4ad3091cc96f42ce27dd943674c70"
+    },
+    {
+      "artifact": "evidence/e013.json",
+      "id": "e013",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "640e1c61819a7228c2bf32920b78d275e11cd713b72b698c4f4abe60e4914586"
+    },
+    {
+      "artifact": "evidence/e014.json",
+      "id": "e014",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "7a8ec7f2b031901a091f4722d592e8e8c30b95c3aa4ae940e22f86fc68bce9b2"
+    },
+    {
+      "artifact": "evidence/e015.json",
+      "id": "e015",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "9bdcdcfca0a85a55f744c906439ce7b48411b1af3e91dbf7b1d4898f616bd82e"
+    },
+    {
+      "artifact": "evidence/e016.json",
+      "id": "e016",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "0f8a84dabd7abc44d9a8f5b27a077e3e36415b63316cf1efce3d105ab1903a50"
+    },
+    {
+      "artifact": "evidence/e017.json",
+      "id": "e017",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "7311dbbc592ff4d5757e6eb2dc0e2a54aa8d4242eeaea024263a372077803d37"
+    },
+    {
+      "artifact": "evidence/e018.json",
+      "id": "e018",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "bcaf578e1180c2136616827c8777d3471fa3257aae6859ad081b21ac8d6f5582"
+    },
+    {
+      "artifact": "evidence/e019.json",
+      "id": "e019",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "8a70a83837d8369afe929b7388a1fb64542e317c37396525867ea6687e0d5db5"
+    },
+    {
+      "artifact": "evidence/e020.json",
+      "id": "e020",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "fb01e21876cedf9e2e5be9c6bdfcaa17660919ad45836ad26e7a9ae4359f8937"
+    },
+    {
+      "artifact": "evidence/e021.json",
+      "id": "e021",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "61a41b2fe9156bc4453dd66caebeb38e9e71ee959ac915fe3219c4c525f106d5"
+    },
+    {
+      "artifact": "evidence/e022.json",
+      "id": "e022",
+      "kind": "rest",
+      "operation": "geocode_customer",
+      "sha256": "09d9c58d35b4b2870cab063fde88738e8377621d114edea399ee7f8f2126acd0"
+    },
+    {
+      "artifact": "evidence/e023.json",
+      "id": "e023",
+      "kind": "rest",
+      "operation": "route_matrix",
+      "sha256": "ff1525e77f4380e58b5094b7805205811d6cd1d55a4b1e9d339401cdd3d78c33"
+    },
+    {
+      "artifact": "evidence/e024.json",
+      "id": "e024",
+      "kind": "rest",
+      "operation": "places",
+      "sha256": "a4135d82fe51394df8d34608e48499e1c91808cc93dd430cc4729af994193d86"
+    }
+  ],
+  "path": "cli",
+  "run_status": "complete",
+  "run_timestamp_utc": "2026-10-23T19:57:31Z",
+  "schema_version": "1.0",
+  "settings": {
+    "boundary_rule": "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees.",
+    "budget_seconds": 1200,
+    "direction": "outbound",
+    "mode": "drive",
+    "route_type": "balanced",
+    "traffic": "free_flow",
+    "units": "metric"
+  },
+  "summary": {
+    "borderline": 0,
+    "classified_denominator": 20,
+    "disagreements": 0,
+    "in_zone": 20,
+    "in_zone_percent": 100.0,
+    "known_routes": 20,
+    "max_time_row_ids": [
+      12
+    ],
+    "max_time_seconds": 1085.0,
+    "median_in_zone_seconds": 488.0,
+    "missing_routes": 0,
+    "out_of_zone": 0,
+    "out_of_zone_percent": 0.0,
+    "resolved": 20,
+    "total": 20,
+    "unknown_membership": 0,
+    "unresolved": 0
+  },
+  "warnings": [
+    "Competitor coverage is sampled, at most 20 candidates and no pagination.",
+    "The category service is broad; these candidates are not verified plumbing competitors.",
+    "HTTP attempts: 25; isoline polls: 0; billed credits unavailable."
+  ],
+  "zone": {
+    "approximation": false,
+    "evidence_refs": [
+      "e002"
+    ],
+    "limitations": [
+      "Outbound free-flow road-time estimate; no live traffic, return trip or profitability model.",
+      "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees."
+    ],
+    "method": "geoapify_isoline",
+    "parameters": {
+      "boundary_tolerance_degrees": 1e-09,
+      "range_seconds": 1200
+    }
+  }
+}

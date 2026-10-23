@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-23",
+  "path": "mcp",
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "client": "Claude Code 2.1.309",
+  "exit_code": 0,
+  "elapsed_seconds": 14.89,
+  "prompt": "approximation=true. You are running the ZonePilot shipped agent pack's preflight, discovery and origin-resolution steps. All output must start approximation=true. Owner authorizes a bounded attempt of the shipped fictional sample, not publication of real returned premises. No shell, file access, installations or external writes. Use only the configured Geoapify hosted MCP tools. Report the names of available Geoapify tools from the client inventory. If available, call geocode_address EXACTLY ONCE with query=\"90000 Imaginary Fixture Lane, Midland TX (fictional)\" and limit=5. Do not call any other tool. Accept an origin only if exactly one building candidate has confidence and confidence_building_level both at least 0.95 and valid coordinates. Output ONLY tool name, status, candidate count, result types, confidence values, eligibility and whether subsequent steps must stop. Do not output returned addresses, coordinates, identifiers, account information, headers, secrets or local paths. The intended inputs are Main Street Plumbing, Midland TX, 20 fictional customers, 1200 seconds outbound drive/free_flow/balanced/metric. If origin fails, stop without route/Places/geometry calls or reports. Method route_time_at_points, approximation=true; Route-time classification only at measured points; no continuous zone. Explicitly state that zero customer rows were evaluated and full comparison/nine-tool evidence remain pending. Never claim a connection succeeded from configuration alone.",
+  "config": {
+    "mcpServers": {
+      "geoapify": {
+        "type": "http",
+        "url": "https://api.geoapify.com/v1/mcp",
+        "headers": {
+          "x-api-key": "${GEOAPIFY_API_KEY}"
+        }
+      }
+    }
+  },
+  "session_events": [
+    {
+      "event": "client_initialization",
+      "tools": [
+        "mcp__geoapify__calculate_route",
+        "mcp__geoapify__calculate_route_matrix",
+        "mcp__geoapify__combine_geometries",
+        "mcp__geoapify__evaluate_spatial_relation",
+        "mcp__geoapify__geocode_address",
+        "mcp__geoapify__geocode_structured_address",
+        "mcp__geoapify__get_timezone",
+        "mcp__geoapify__list_place_categories",
+        "mcp__geoapify__measure_geometry",
+        "mcp__geoapify__reverse_geocode_coordinates",
+        "mcp__geoapify__search_places",
+        "mcp__geoapify__transform_geometry"
+      ],
+      "mcp_servers": [
+        {
+          "name": "geoapify",
+          "status": "connected",
+          "source": "dynamic"
+        }
+      ]
+    },
+    {
+      "event": "tool_use",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "90000 Imaginary Fixture Lane, Midland TX (fictional)",
+        "limit": 5
+      }
+    },
+    {
+      "event": "tool_result",
+      "is_error": false,
+      "content": "omitted before persistence: potentially real returned map records; see assistant decision metadata"
+    },
+    {
+      "event": "assistant_text",
+      "text": "approximation=true\n\n**Available Geoapify tools (from the client inventory):** calculate_route, calculate_route_matrix, combine_geometries, evaluate_spatial_relation, geocode_address, geocode_structured_address, get_timezone, list_place_categories, measure_geometry, reverse_geocode_coordinates, search_places, transform_geometry. That's 12 tools, and all are under the `mcp__geoapify__` prefix.\n\n**Origin resolution result**\n- **Tool called:** geocode_address, exactly once, with limit=5. No other tool was called.\n- **Status:** the call succeeded and got a response from the hosted MCP server. The connection is confirmed by this actual response, not just by the configuration.\n- **Candidate count:** 5\n- **Result types:** city, city, city, city, city. None were building-level.\n- **Confidence values:** 0.25, 0.25, 0, 0, 0\n- **confidence_building_level:** none of the candidates had this field.\n- **Eligibility:** no candidate qualifies, so the origin is rejected. A candidate needed to be building-level with confidence \u2265 0.95 and confidence_building_level \u2265 0.95, and none was.\n\n**Must the next steps stop?** Yes. I made no route, matrix, Places or geometry calls and produced no report.\n\n**Run state**\n- **Intended inputs (not run):** Main Street Plumbing, Midland TX; 20 fictional customers; 1200 s outbound drive, free_flow, balanced, metric.\n- **Method:** route_time_at_points, approximation=true. Points are classified by route time only where they were measured, and no continuous zone is inferred.\n- **Customer rows evaluated:** 0.\n- **Still pending:** the full comparison and the evidence for all nine tools."
+    },
+    {
+      "event": "client_result",
+      "is_error": false,
+      "subtype": "success",
+      "text": "approximation=true\n\n**Available Geoapify tools (from the client inventory):** calculate_route, calculate_route_matrix, combine_geometries, evaluate_spatial_relation, geocode_address, geocode_structured_address, get_timezone, list_place_categories, measure_geometry, reverse_geocode_coordinates, search_places, transform_geometry. That's 12 tools, and all are under the `mcp__geoapify__` prefix.\n\n**Origin resolution result**\n- **Tool called:** geocode_address, exactly once, with limit=5. No other tool was called.\n- **Status:** the call succeeded and got a response from the hosted MCP server. The connection is confirmed by this actual response, not just by the configuration.\n- **Candidate count:** 5\n- **Result types:** city, city, city, city, city. None were building-level.\n- **Confidence values:** 0.25, 0.25, 0, 0, 0\n- **confidence_building_level:** none of the candidates had this field.\n- **Eligibility:** no candidate qualifies, so the origin is rejected. A candidate needed to be building-level with confidence \u2265 0.95 and confidence_building_level \u2265 0.95, and none was.\n\n**Must the next steps stop?** Yes. I made no route, matrix, Places or geometry calls and produced no report.\n\n**Run state**\n- **Intended inputs (not run):** Main Street Plumbing, Midland TX; 20 fictional customers; 1200 s outbound drive, free_flow, balanced, metric.\n- **Method:** route_time_at_points, approximation=true. Points are classified by route time only where they were measured, and no continuous zone is inferred.\n- **Customer rows evaluated:** 0.\n- **Still pending:** the full comparison and the evidence for all nine tools.",
+      "permission_denials": false
+    }
+  ],
+  "stderr": "",
+  "capture_policy": "No session persistence. Raw stdout held in memory only; tool results omitted before saving. Key, local paths and emails redacted from retained text. No screenshots captured."
+}

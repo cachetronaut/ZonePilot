@@ -48,3 +48,18 @@ Isoline documentation describes HTTP 202 and retrieval by ID, but the pinned Ope
 | `api-specs/places/places-api-openapi-specs.json` | `777c9c10b3aaae648e791dd95972b4b46c8cc6dffa96ab6d1a4cabb4a132edf3` |
 | `api-specs/route-matrix/route-matrix-api-openapi-specs.json` | `a2171512e921c77d67bb9cfd002e0d1b0a44cbeee90b6cdbd47d5397a8904dda` |
 | `api-specs/routing/routing-api-openapi-specs.json` | `20029c716cb51ebb1d3618a8dddb98464d54010528da2ebb3ed737c521efcad4` |
+
+## Stage 4 authenticated inventory, 2026-10-23
+
+Claude Code 2.1.309 discovered twelve hosted tools, adding get_timezone to the eleven pinned/public names. No isoline tool was present. See [sanitized client inventory and origin invocation](evidence/stage4/agent-session.json), approximation=true. The public MCP table checked the same day still listed eleven names. The pinned revision and original hashes above are preserved as build provenance. Additional tool schemas were not used or substituted for the nine required tools.
+
+The origin tool was invoked once but returned no eligible building. This does not establish the full workflow or approval of real map records. Codex's independent smoke did not pass.
+
+
+## Completed Stage 4 calls after owner amendment
+
+The current [live evidence](evidence/stage4/README.md) supersedes the failed-origin acceptance status above while preserving its history. The final CLI uses a real REST Isoline with14,758 positions, three rings and no simplification. No202poll occurred in the completed run; the asynchronous-response case remains locally tested, not observed live. The completed run recorded25HTTP attempts; billed credits were unavailable.
+
+Claude Code completed all nine promised tools across captured phases, including customer/competitor matrices and separate synthetic geometry diagnostics. The authenticated inventory remains twelve tools with no isoline. Claude's stream exposed a JSON text copy of the structured result; normalization validates that typed payload and the captured arguments, rather than relying on assistant prose or claiming a separate structuredContent capture. Codex's successful independent smoke retained its structured_content object as well.
+
+The live list_place_categories response contains 833 categories. There is no plumbing category or general trade-services umbrella; specific trades such as service.electrician and service.carpenter do exist. The broad service sample is not a verified plumbing competitor set. Public data locations and returned place identities are explicitly labeled as real/live-derived under the owner amendment; fictional identities do not imply affiliation.

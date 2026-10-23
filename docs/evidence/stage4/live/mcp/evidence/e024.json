@@ -1,0 +1,318 @@
+{
+  "approximation": true,
+  "arguments": {
+    "mode": "drive",
+    "sources": [
+      {
+        "lat": 31.9997,
+        "lon": -102.075567
+      }
+    ],
+    "targets": [
+      {
+        "lat": 32.0010482,
+        "lon": -102.0762161
+      },
+      {
+        "lat": 31.9997352,
+        "lon": -102.0784227
+      },
+      {
+        "lat": 31.9969224,
+        "lon": -102.0737131
+      },
+      {
+        "lat": 31.9981412,
+        "lon": -102.0784008
+      },
+      {
+        "lat": 31.9971187,
+        "lon": -102.0772192
+      },
+      {
+        "lat": 32.0032292,
+        "lon": -102.0760059
+      },
+      {
+        "lat": 31.9977556,
+        "lon": -102.0789909
+      },
+      {
+        "lat": 31.9986006,
+        "lon": -102.0798982
+      },
+      {
+        "lat": 31.9977366,
+        "lon": -102.0796906
+      },
+      {
+        "lat": 31.9977008,
+        "lon": -102.0801792
+      },
+      {
+        "lat": 32.0029884,
+        "lon": -102.079062
+      },
+      {
+        "lat": 31.9971187,
+        "lon": -102.080078
+      },
+      {
+        "lat": 31.9989613,
+        "lon": -102.0814194
+      },
+      {
+        "lat": 32.0045931,
+        "lon": -102.0779059
+      },
+      {
+        "lat": 31.9937975,
+        "lon": -102.0754059
+      },
+      {
+        "lat": 31.993926663726327,
+        "lon": -102.07790468045857
+      },
+      {
+        "lat": 32.0041118,
+        "lon": -102.0814069
+      },
+      {
+        "lat": 32.00034157158431,
+        "lon": -102.0656298029267
+      },
+      {
+        "lat": 32.0107154,
+        "lon": -102.0790375
+      },
+      {
+        "lat": 31.9898431,
+        "lon": -102.0664714
+      }
+    ],
+    "traffic": "free_flow",
+    "type": "balanced",
+    "units": "metric"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "distance_units": "meters",
+    "sources": [
+      {
+        "lat": 31.999697,
+        "lon": -102.075663
+      }
+    ],
+    "sources_to_targets": [
+      [
+        {
+          "distance": 153,
+          "source_index": 0,
+          "target_index": 0,
+          "time": 15
+        },
+        {
+          "distance": 273,
+          "source_index": 0,
+          "target_index": 1,
+          "time": 25
+        },
+        {
+          "distance": 447,
+          "source_index": 0,
+          "target_index": 2,
+          "time": 56
+        },
+        {
+          "distance": 532,
+          "source_index": 0,
+          "target_index": 3,
+          "time": 57
+        },
+        {
+          "distance": 400,
+          "source_index": 0,
+          "target_index": 4,
+          "time": 48
+        },
+        {
+          "distance": 395,
+          "source_index": 0,
+          "target_index": 5,
+          "time": 40
+        },
+        {
+          "distance": 556,
+          "source_index": 0,
+          "target_index": 6,
+          "time": 67
+        },
+        {
+          "distance": 763,
+          "source_index": 0,
+          "target_index": 7,
+          "time": 80
+        },
+        {
+          "distance": 615,
+          "source_index": 0,
+          "target_index": 8,
+          "time": 69
+        },
+        {
+          "distance": 618,
+          "source_index": 0,
+          "target_index": 9,
+          "time": 70
+        },
+        {
+          "distance": 775,
+          "source_index": 0,
+          "target_index": 10,
+          "time": 78
+        },
+        {
+          "distance": 686,
+          "source_index": 0,
+          "target_index": 11,
+          "time": 68
+        },
+        {
+          "distance": 587,
+          "source_index": 0,
+          "target_index": 12,
+          "time": 57
+        },
+        {
+          "distance": 863,
+          "source_index": 0,
+          "target_index": 13,
+          "time": 68
+        },
+        {
+          "distance": 940,
+          "source_index": 0,
+          "target_index": 14,
+          "time": 88
+        },
+        {
+          "distance": 1604,
+          "source_index": 0,
+          "target_index": 15,
+          "time": 156
+        },
+        {
+          "distance": 1062,
+          "source_index": 0,
+          "target_index": 16,
+          "time": 100
+        },
+        {
+          "distance": 1126,
+          "source_index": 0,
+          "target_index": 17,
+          "time": 83
+        },
+        {
+          "distance": 1551,
+          "source_index": 0,
+          "target_index": 18,
+          "time": 112
+        },
+        {
+          "distance": 2517,
+          "source_index": 0,
+          "target_index": 19,
+          "time": 213
+        }
+      ]
+    ],
+    "targets": [
+      {
+        "lat": 32.001059,
+        "lon": -102.075704
+      },
+      {
+        "lat": 31.99953,
+        "lon": -102.078411
+      },
+      {
+        "lat": 31.997336,
+        "lon": -102.073718
+      },
+      {
+        "lat": 31.998132,
+        "lon": -102.0787
+      },
+      {
+        "lat": 31.997451,
+        "lon": -102.07723
+      },
+      {
+        "lat": 32.003234,
+        "lon": -102.075767
+      },
+      {
+        "lat": 31.997747,
+        "lon": -102.078946
+      },
+      {
+        "lat": 31.998445,
+        "lon": -102.079893
+      },
+      {
+        "lat": 31.997734,
+        "lon": -102.079906
+      },
+      {
+        "lat": 31.997703,
+        "lon": -102.079906
+      },
+      {
+        "lat": 32.002845,
+        "lon": -102.079061
+      },
+      {
+        "lat": 31.99712,
+        "lon": -102.079896
+      },
+      {
+        "lat": 31.998966,
+        "lon": -102.081138
+      },
+      {
+        "lat": 32.004752,
+        "lon": -102.077911
+      },
+      {
+        "lat": 31.993305,
+        "lon": -102.075391
+      },
+      {
+        "lat": 31.993926,
+        "lon": -102.077904
+      },
+      {
+        "lat": 32.00406,
+        "lon": -102.08155
+      },
+      {
+        "lat": 32.000341,
+        "lon": -102.065629
+      },
+      {
+        "lat": 32.010821,
+        "lon": -102.079063
+      },
+      {
+        "lat": 31.989836,
+        "lon": -102.066788
+      }
+    ],
+    "time_units": "seconds",
+    "units": "metric"
+  },
+  "session": "mcp-customers.json",
+  "tool": "calculate_route_matrix",
+  "tool_use_id": "toolu_013nWQZhUiNWxdiYSrzJVgmR"
+}

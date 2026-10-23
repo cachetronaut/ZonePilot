@@ -1,0 +1,318 @@
+{
+  "approximation": true,
+  "arguments": {
+    "mode": "drive",
+    "sources": [
+      {
+        "lat": 31.9997,
+        "lon": -102.075567
+      }
+    ],
+    "targets": [
+      {
+        "lat": 31.99625142857143,
+        "lon": -102.08075785714286
+      },
+      {
+        "lat": 32.011364317804045,
+        "lon": -102.12886042723052
+      },
+      {
+        "lat": 31.995025705553658,
+        "lon": -102.12813177220578
+      },
+      {
+        "lat": 32.027595,
+        "lon": -101.895762
+      },
+      {
+        "lat": 31.977861,
+        "lon": -102.1234
+      },
+      {
+        "lat": 32.009876,
+        "lon": -102.152163
+      },
+      {
+        "lat": 32.029558,
+        "lon": -102.119297
+      },
+      {
+        "lat": 31.988152836734695,
+        "lon": -102.07548065306122
+      },
+      {
+        "lat": 31.983509,
+        "lon": -102.163169
+      },
+      {
+        "lat": 32.008075,
+        "lon": -102.10162
+      },
+      {
+        "lat": 31.980342,
+        "lon": -102.071072
+      },
+      {
+        "lat": 31.940028,
+        "lon": -102.214435
+      },
+      {
+        "lat": 31.993315,
+        "lon": -102.092478
+      },
+      {
+        "lat": 32.022708,
+        "lon": -102.140165
+      },
+      {
+        "lat": 32.025087,
+        "lon": -102.061321
+      },
+      {
+        "lat": 32.01044,
+        "lon": -102.133052
+      },
+      {
+        "lat": 32.018071,
+        "lon": -102.108976
+      },
+      {
+        "lat": 31.975557,
+        "lon": -102.139277
+      },
+      {
+        "lat": 32.036252252035105,
+        "lon": -102.11804277580553
+      },
+      {
+        "lat": 31.996331,
+        "lon": -102.07694
+      }
+    ],
+    "traffic": "free_flow",
+    "type": "balanced",
+    "units": "metric"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "distance_units": "meters",
+    "sources": [
+      {
+        "lat": 31.999697,
+        "lon": -102.075663
+      }
+    ],
+    "sources_to_targets": [
+      [
+        {
+          "distance": 856,
+          "source_index": 0,
+          "target_index": 0,
+          "time": 81
+        },
+        {
+          "distance": 6142,
+          "source_index": 0,
+          "target_index": 1,
+          "time": 490
+        },
+        {
+          "distance": 5590,
+          "source_index": 0,
+          "target_index": 2,
+          "time": 449
+        },
+        {
+          "distance": 19262,
+          "source_index": 0,
+          "target_index": 3,
+          "time": 822
+        },
+        {
+          "distance": 5968,
+          "source_index": 0,
+          "target_index": 4,
+          "time": 486
+        },
+        {
+          "distance": 16869,
+          "source_index": 0,
+          "target_index": 5,
+          "time": 816
+        },
+        {
+          "distance": 9863,
+          "source_index": 0,
+          "target_index": 6,
+          "time": 607
+        },
+        {
+          "distance": 1776,
+          "source_index": 0,
+          "target_index": 7,
+          "time": 156
+        },
+        {
+          "distance": 16274,
+          "source_index": 0,
+          "target_index": 8,
+          "time": 887
+        },
+        {
+          "distance": 5246,
+          "source_index": 0,
+          "target_index": 9,
+          "time": 386
+        },
+        {
+          "distance": 3085,
+          "source_index": 0,
+          "target_index": 10,
+          "time": 247
+        },
+        {
+          "distance": 21635,
+          "source_index": 0,
+          "target_index": 11,
+          "time": 1085
+        },
+        {
+          "distance": 2214,
+          "source_index": 0,
+          "target_index": 12,
+          "time": 190
+        },
+        {
+          "distance": 12587,
+          "source_index": 0,
+          "target_index": 13,
+          "time": 665
+        },
+        {
+          "distance": 4792,
+          "source_index": 0,
+          "target_index": 14,
+          "time": 344
+        },
+        {
+          "distance": 6331,
+          "source_index": 0,
+          "target_index": 15,
+          "time": 509
+        },
+        {
+          "distance": 6881,
+          "source_index": 0,
+          "target_index": 16,
+          "time": 478
+        },
+        {
+          "distance": 13939,
+          "source_index": 0,
+          "target_index": 17,
+          "time": 722
+        },
+        {
+          "distance": 10820,
+          "source_index": 0,
+          "target_index": 18,
+          "time": 569
+        },
+        {
+          "distance": 492,
+          "source_index": 0,
+          "target_index": 19,
+          "time": 59
+        }
+      ]
+    ],
+    "targets": [
+      {
+        "lat": 31.996333,
+        "lon": -102.08076
+      },
+      {
+        "lat": 32.011322,
+        "lon": -102.128846
+      },
+      {
+        "lat": 31.995042,
+        "lon": -102.128053
+      },
+      {
+        "lat": 32.027618,
+        "lon": -101.895654
+      },
+      {
+        "lat": 31.97785,
+        "lon": -102.123376
+      },
+      {
+        "lat": 32.009958,
+        "lon": -102.152189
+      },
+      {
+        "lat": 32.029478,
+        "lon": -102.119271
+      },
+      {
+        "lat": 31.98807,
+        "lon": -102.075478
+      },
+      {
+        "lat": 31.983515,
+        "lon": -102.163169
+      },
+      {
+        "lat": 32.008373,
+        "lon": -102.101717
+      },
+      {
+        "lat": 31.979913,
+        "lon": -102.070877
+      },
+      {
+        "lat": 31.939975,
+        "lon": -102.21436
+      },
+      {
+        "lat": 31.993188,
+        "lon": -102.093008
+      },
+      {
+        "lat": 32.022724,
+        "lon": -102.140144
+      },
+      {
+        "lat": 32.025168,
+        "lon": -102.061332
+      },
+      {
+        "lat": 32.010462,
+        "lon": -102.132958
+      },
+      {
+        "lat": 32.017991,
+        "lon": -102.10895
+      },
+      {
+        "lat": 31.976184,
+        "lon": -102.139476
+      },
+      {
+        "lat": 32.036171,
+        "lon": -102.118016
+      },
+      {
+        "lat": 31.996412,
+        "lon": -102.076942
+      }
+    ],
+    "time_units": "seconds",
+    "units": "metric"
+  },
+  "session": "mcp-final-customers.json",
+  "tool": "calculate_route_matrix",
+  "tool_use_id": "toolu_01HcE7Vpu5n2LwaA9CcW4cti"
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-23",
+  "data_mode": "live",
+  "purpose": "One geocoding call to verify environment-only Keychain credential",
+  "operation": "GET /v1/geocode/search",
+  "arguments": {"text": "90000 Imaginary Fixture Lane, Midland TX (fictional)", "limit": 5, "format": "geojson"},
+  "http_status": 200,
+  "http_attempts": 1,
+  "candidate_count": 5,
+  "candidates": [
+    {"result_type": "city", "confidence": 0.25, "confidence_building_level": null},
+    {"result_type": "city", "confidence": 0.25, "confidence_building_level": null},
+    {"result_type": "city", "confidence": 0, "confidence_building_level": null},
+    {"result_type": "city", "confidence": 0, "confidence_building_level": null},
+    {"result_type": "city", "confidence": 0, "confidence_building_level": null}
+  ],
+  "eligible_buildings": 0,
+  "redactions": ["Returned addresses, coordinates and unrelated provider fields were omitted before persistence because live map-record publication remains unapproved. Authentication headers and credential were never captured."],
+  "scope": "Sanitized decision metadata, not a complete raw response or successful business geocode",
+  "attribution": "Geoapify; underlying map data remains separately attributed to OpenStreetMap contributors."
+}

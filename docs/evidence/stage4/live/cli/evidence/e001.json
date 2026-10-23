@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.075567,
+          31.9997
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "300 North Loraine Street, Downtown Midland Management District, Midland, TX 79701, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.6300150916456089
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

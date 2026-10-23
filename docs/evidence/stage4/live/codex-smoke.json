@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-23",
+  "path": "mcp",
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "client": "Codex CLI 0.163.0",
+  "exit_code": 0,
+  "prompt": "approximation=true. Perform exactly one Geoapify hosted MCP smoke call. Use available MCP tool discovery if needed; tools may be deferred. Find geoapify geocode_address and call it once with query=\"300 N Loraine St, Midland, TX 79701\", limit=5. Use no shell/file/network/search tools except MCP tool discovery and this hosted Geoapify geocoder. No installations/plans/subagents. Do not read, print or mention credentials, headers, local paths, personal emails or phone numbers. The key is already provided by an environment-backed server config. Return the actual tool call status, count, result_type, confidence and confidence_building_level and accepted coordinates. Do not say success without a completed successful invocation. Prefix every output approximation=true. Route-time classification only at measured points; no continuous zone. Owner authorizes this live geocoding of a public demo location for a fictional business.",
+  "config_override": "mcp_servers.geoapify={url=\"https://api.geoapify.com/v1/mcp\",env_http_headers={\"x-api-key\"=\"GEOAPIFY_API_KEY\"},enabled_tools=[\"geocode_address\"],required=true,startup_timeout_sec=20,tool_timeout_sec=20}",
+  "events": [
+    {
+      "event": "assistant_text",
+      "text": "approximation=true. I\u2019ll discover the hosted Geoapify geocoder and invoke it once with the specified query and limit.\n"
+    },
+    {
+      "event": "item.started",
+      "tool": "geocode_address",
+      "server": "geoapify",
+      "arguments": {
+        "query": "300 N Loraine St, Midland, TX 79701",
+        "limit": 5
+      },
+      "status": "in_progress",
+      "error_present": false,
+      "error": null,
+      "result": null
+    },
+    {
+      "event": "item.completed",
+      "tool": "geocode_address",
+      "server": "geoapify",
+      "arguments": {
+        "query": "300 N Loraine St, Midland, TX 79701",
+        "limit": 5
+      },
+      "status": "failed",
+      "error_present": true,
+      "error": "{'message': 'MCP tool call requires approval, but approval policy is never'}",
+      "result": null
+    },
+    {
+      "event": "assistant_text",
+      "text": "approximation=true. Status: blocked\u2014tool returned \u201cMCP tool call requires approval, but approval policy is never.\u201d Exactly one invocation attempted; no successful geocoding completed. Count, result_type, confidence, confidence_building_level: unavailable. Accepted coordinates: none."
+    }
+  ],
+  "stderr": "Reading additional input from stdin...\n",
+  "capture_policy": "Ephemeral client; no persistent config changes; raw stdout held in memory only; actual tool results retained after sanitization; paths/emails/key redacted."
+}

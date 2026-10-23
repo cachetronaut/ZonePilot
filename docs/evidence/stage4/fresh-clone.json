@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-23",
+  "platform": "macOS arm64",
+  "clone_source": "https://github.com/cachetronaut/ZonePilot.git",
+  "revision": "5169b2755814d333e5ac37541b5d8a9450bcf2da",
+  "fresh_remote_clone": true,
+  "key_source": "macOS Keychain into parent process environment only; absent from offline subprocesses",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "5169b2755814d333e5ac37541b5d8a9450bcf2da\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3.15",
+        "--version"
+      ],
+      "status": "not_installed"
+    },
+    {
+      "command": [
+        "python3.14",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.14.9\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3.14",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".......................................................................................................................................\n----------------------------------------------------------------------\nRan 135 tests in 0.808s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3.14",
+        "-m",
+        "zonepilot.cli",
+        "--replay",
+        "tests/fixtures/sample/run.json",
+        "--output-dir",
+        "reports/demo"
+      ],
+      "exit_code": 0,
+      "stdout": "complete: report.json and report.md published in the selected output directory.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3.14",
+        "-m",
+        "zonepilot.cli",
+        "--business-address",
+        "90000 Imaginary Fixture Lane, Midland TX (fictional)",
+        "--business-name",
+        "Main Street Plumbing",
+        "--minutes",
+        "20",
+        "--customers",
+        "tests/fixtures/sample/sample_customers.csv",
+        "--competitor-category",
+        "service",
+        "--output-dir",
+        "reports/live-attempt"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "origin_unresolved: The business address did not resolve to one sufficiently precise building.\n"
+    }
+  ],
+  "offline_golden_byte_matches": {
+    "report.json": true,
+    "report.md": true
+  },
+  "offline_synthetic_summary": {
+    "borderline": 2,
+    "classified_denominator": 20,
+    "disagreements": 2,
+    "in_zone": 13,
+    "in_zone_percent": 65.0,
+    "known_routes": 20,
+    "max_time_row_ids": [
+      19,
+      20
+    ],
+    "max_time_seconds": 2600.0,
+    "median_in_zone_seconds": 800.0,
+    "missing_routes": 0,
+    "out_of_zone": 7,
+    "out_of_zone_percent": 35.0,
+    "resolved": 20,
+    "total": 20,
+    "unknown_membership": 0,
+    "unresolved": 0
+  },
+  "live_report_bundle_exists": false,
+  "live_customers_evaluated": 0,
+  "live_in_zone_percent": null,
+  "live_median_in_zone_seconds": null,
+  "live_request_accounting": "Origin geocode only; exact CLI subprocess did not expose HTTP attempt count. Client cap is three attempts for this operation.",
+  "target_runtime_and_linux_windows": "pending",
+  "temporary_clone_removed_on_exit": true
+}

@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.214435,
+          31.940028
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "9600 Wright Drive, Midland, TX 79706, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.244687409619993
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

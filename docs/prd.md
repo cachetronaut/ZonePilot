@@ -14,6 +14,16 @@
 
 **Status:** Reviewed design, with explicit pre-build and submission gates in Section 17. This is not evidence that the product has been built or accepted.
 
+## Owner amendment for Stage 4, 2026-10-23
+
+This amendment supersedes earlier B03 and retained-history stop statements below. The owner approved real publicly listed Midland street addresses as demonstration locations while keeping the business name and all twenty customer identities fictional. Label addresses and provider results as real/live-derived, never wholly fictional; no affiliation or actual customer relationship is implied. Offline fixtures remain authored synthetic data. This resolves the earlier input/public-evidence prohibition for the explicitly labeled demonstration; the conservative unique-building geocode rule remains unchanged.
+
+Live Isoline verification also established a 14,758-position response. The implementation now supports up to 20,000 positions and 32 rings with a 2,000,000 candidate-pair work budget, preserving full topology checks, coordinates, holes and boundary tolerance; see [live geometry contract](live-geometry-contract.md). This supersedes the earlier 2,000-position implementation limit.
+
+The owner requests live competitor counts on both paths. For the MCP point-time method, the build coordinator specifies one `service` category search centered on the accepted origin, radius 20,000 metres, limit twenty and no pagination. The circle is only a candidate extent. Classify unique valid candidates by acquired outbound driving times under the shared settings and budget, with missing routes unclassified. Persist and validate the normalized candidate/route evidence against reported counts and records. Preserve sampled coverage and disclose that broad service candidates are not verified plumbing competitors. See [MCP competitor evidence contract](mcp-competitor-contract.md).
+
+Current working files and current branch history must scan clean for owner identity, personal emails, the actual key and local paths. Retained old PR #1 history is an owner pre-publication item, not an instruction to rewrite history. Document GitHub Support purge or delete-and-recreate from clean squashed history as the two options. Keep the repository private until the owner resolves this. Private Stage 4 merge is permitted after recorded live results, a clean Sol xhigh review and no breaking changes. Public visibility, dev.to posting, email and license changes remain owner-only actions.
+
 ## 1. Executive summary
 
 ZonePilot helps a single-location service business decide whether a customer falls within its chosen outbound driving-time budget. It reports evidence for an owner's serve, decline or reprice decision. It does not calculate profit, prescribe a surcharge or guarantee arrival time. Labor cost, job duration, pricing, live traffic and return journeys are outside the model.

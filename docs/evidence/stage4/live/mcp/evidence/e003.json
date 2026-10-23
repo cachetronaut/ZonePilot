@@ -1,0 +1,101 @@
+{
+  "approximation": true,
+  "arguments": {
+    "limit": 5,
+    "query": "3500 Neely Ave, Midland, TX 79707"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "count": 2,
+    "query": "3500 Neely Ave, Midland, TX 79707",
+    "results": [
+      {
+        "address_line1": "3500 Neely Avenue",
+        "address_line2": "Midland, TX 79707, United States of America",
+        "bbox": {
+          "lat1": 32.0113143,
+          "lat2": 32.0114143,
+          "lon1": -102.1289104,
+          "lon2": -102.1288104
+        },
+        "city": "Midland",
+        "confidence": 1,
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "3500 Neely Avenue, Midland, TX 79707, United States of America",
+        "housenumber": "3500",
+        "lat": 32.011364317804045,
+        "lon": -102.12886042723052,
+        "place_id": "51092dce3f3f8859c059a5a7ce6274014040f00102f9019ffb414e00000000c00203",
+        "postcode": "79707",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.4882454455741718
+        },
+        "result_type": "building",
+        "state": "Texas",
+        "street": "Neely Avenue",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      },
+      {
+        "address_line1": "Legacy Senior High School",
+        "address_line2": "3500 Neely Avenue, Midland, TX 79707, United States of America",
+        "bbox": {
+          "lat1": 32.0104056,
+          "lat2": 32.0152929,
+          "lon1": -102.1334344,
+          "lon2": -102.1267203
+        },
+        "city": "Midland",
+        "confidence": 1,
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "Legacy Senior High School, 3500 Neely Avenue, Midland, TX 79707, United States of America",
+        "housenumber": "3500",
+        "lat": 32.0134603,
+        "lon": -102.1295237,
+        "place_id": "51a4e3c51d4a8859c059ad252e11b9014040f00102f901548ae41700000000c002019203194c65676163792053656e696f722048696768205363686f6f6c",
+        "postcode": "79707",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 6.47570000762496e-05,
+          "match_type": "inner_part",
+          "popularity": 1.4975291927883851
+        },
+        "result_type": "amenity",
+        "state": "Texas",
+        "street": "Neely Avenue",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      }
+    ]
+  },
+  "session": "mcp-customers.json",
+  "tool": "geocode_address",
+  "tool_use_id": "toolu_01KHzu4igeDejXrGRTGjE2rj"
+}

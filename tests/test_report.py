@@ -471,6 +471,289 @@ class CompetitorTests(unittest.TestCase):
         report.finalize(value)
 
 
+class MCPCompetitorTests(unittest.TestCase):
+    """Authored route evidence proves membership without acquiring any live data."""
+
+    def case(self):
+        value = agent_input()
+        origin = value["business"]["coordinates"]
+        extent = {"method": "circle", "parameters": {
+            "center": origin[:], "radius_meters": 20000,
+        }}
+        candidates = [{
+            "id": identifier, "name": "Synthetic " + identifier,
+            "address": None, "categories": ["service"], "coordinates": origin[:],
+            "route_status": "ok", "time_seconds": seconds, "distance_meters": 50,
+        } for identifier, seconds in (("a", 0), ("b", 1200), ("c", 1200.000001))]
+        records = [{**{key: candidate[key] for key in (
+            "id", "name", "address", "categories", "coordinates")},
+            "verdict": "in_zone", "geodesic_distance_meters": 0,
+        } for candidate in candidates[:2]]
+        value["competitors"] = {
+            "status": "ok", "category": "service", "search_extent": extent,
+            "coverage": "sampled", "cap_reached": False, "returned_count": 3,
+            "duplicate_count": 0, "unclassified_count": 0,
+            "observed_in_zone_count": 2, "observed_out_of_zone_count": 1,
+            "records": records,
+        }
+        evidence = {
+            "representation": "mcp_competitor_classification", "approximation": True, "category": "service",
+            "search_extent": copy.deepcopy(extent),
+            "settings": {key: val for key, val in value["settings"].items()
+                         if key != "boundary_rule"},
+            "max_candidates": 20, "pagination": False, "search_status": "ok",
+            "returned_count": 3, "duplicate_count": 0, "invalid_coordinate_count": 0,
+            "candidates": candidates,
+        }
+        supplied = artifacts(value)
+        value["evidence"].append({
+            "id": "mcp-competitors", "kind": "synthetic",
+            "operation": "mcp_competitor_classification",
+            "artifact": "evidence/mcp-competitors.json", "sha256": "0" * 64,
+        })
+        self.seal(value, evidence, supplied)
+        return value, evidence, supplied
+
+    def seal(self, value, evidence, supplied, raw=None):
+        content = report.dumps(evidence).encode() if raw is None else raw
+        entry = value["evidence"][-1]
+        entry["sha256"] = hashlib.sha256(content).hexdigest()
+        supplied[entry["artifact"]] = content
+
+    def publish(self, value, supplied):
+        result = report.finalize(value)
+        with tempfile.TemporaryDirectory() as temporary:
+            target = Path(temporary) / "output"
+            report.write_bundle(result, target, supplied)
+            self.assertEqual(json.loads((target / "report.json").read_bytes()), result)
+        return result
+
+    def reject(self, value, supplied):
+        with tempfile.TemporaryDirectory() as temporary:
+            with self.assertRaises(report.ReportError):
+                report.write_bundle(report.finalize(value), Path(temporary) / "output", supplied)
+            self.assertEqual(list(Path(temporary).iterdir()), [])
+
+    def test_known_in_out_and_equal_times_publish_exact_membership(self):
+        value, _, supplied = self.case()
+        result = self.publish(value, supplied)
+        self.assertEqual(result["competitors"]["observed_in_zone_count"], 2)
+        self.assertEqual(result["competitors"]["observed_out_of_zone_count"], 1)
+        self.assertEqual([r["id"] for r in result["competitors"]["records"]], ["a", "b"])
+        self.assertEqual(result["run_status"], "complete")
+        self.assertEqual(result["schema_version"], "1.0")
+        self.assertEqual(set(result), set(example()))
+
+    def test_nonzero_geodesic_is_preserved_separately_from_route_distance(self):
+        value, evidence, supplied = self.case()
+        evidence["candidates"][0]["coordinates"] = [0.01, 0]
+        value["competitors"]["records"][0].update(
+            coordinates=[0.01, 0], geodesic_distance_meters=1111.951)
+        self.seal(value, evidence, supplied)
+        result = self.publish(value, supplied)
+        self.assertEqual(result["competitors"]["records"][0]["geodesic_distance_meters"], 1111.951)
+        self.assertEqual(evidence["candidates"][0]["distance_meters"], 50)
+
+    def test_missing_and_failed_routes_are_partial_not_outside(self):
+        for status in ("no_route", "error"):
+            value, evidence, supplied = self.case()
+            evidence["candidates"][0].update(route_status=status, time_seconds=None, distance_meters=None)
+            value["competitors"].update(status="partial", observed_in_zone_count=1,
+                                        unclassified_count=1, records=value["competitors"]["records"][1:])
+            self.seal(value, evidence, supplied)
+            with self.subTest(status=status):
+                result = self.publish(value, supplied)
+                self.assertEqual(result["run_status"], "partial")
+                self.assertEqual(result["competitors"]["observed_out_of_zone_count"], 1)
+
+    def test_discarded_duplicates_and_invalid_coordinates_are_accounted_for(self):
+        value, evidence, supplied = self.case()
+        evidence.update(returned_count=6, duplicate_count=2, invalid_coordinate_count=1)
+        value["competitors"].update(status="partial", returned_count=6, duplicate_count=2, unclassified_count=1)
+        self.seal(value, evidence, supplied)
+        self.assertEqual(self.publish(value, supplied)["competitors"]["unclassified_count"], 1)
+        for candidates in ([evidence["candidates"][0], evidence["candidates"][0], evidence["candidates"][2]],
+                           list(reversed(evidence["candidates"]))):
+            changed = copy.deepcopy(evidence)
+            changed["candidates"] = candidates
+            self.seal(value, changed, supplied)
+            self.reject(value, supplied)
+
+    def test_empty_success_and_failed_search_remain_distinct(self):
+        for failed in (False, True):
+            value, evidence, supplied = self.case()
+            count = None if failed else 0
+            evidence.update(search_status="unavailable" if failed else "ok", candidates=[],
+                            returned_count=count, duplicate_count=count, invalid_coordinate_count=count)
+            value["competitors"].update(status="unavailable" if failed else "ok",
+                records=[], coverage=None if failed else "sampled", cap_reached=None if failed else False,
+                returned_count=count, duplicate_count=count, unclassified_count=count,
+                observed_in_zone_count=count, observed_out_of_zone_count=count)
+            self.seal(value, evidence, supplied)
+            result = self.publish(value, supplied)
+            self.assertEqual(result["run_status"], "partial" if failed else "complete")
+            self.assertEqual(result["competitors"]["observed_in_zone_count"], count)
+
+    def test_cap_is_raw_returned_count_and_any_supported_category_is_allowed(self):
+        value, evidence, supplied = self.case()
+        evidence.update(category="service.locksmith", returned_count=20, duplicate_count=17)
+        value["competitors"].update(category="service.locksmith", returned_count=20, duplicate_count=17, cap_reached=True)
+        self.seal(value, evidence, supplied)
+        self.assertTrue(self.publish(value, supplied)["competitors"]["cap_reached"])
+
+    def test_missing_index_missing_bytes_and_multiple_classification_entries_fail(self):
+        for mutation in ("index", "bytes", "multiple"):
+            value, _, supplied = self.case()
+            entry = value["evidence"][-1]
+            if mutation == "index":
+                value["evidence"].pop()
+                supplied.pop(entry["artifact"])
+            elif mutation == "bytes":
+                supplied.pop(entry["artifact"])
+            else:
+                value["evidence"].append({**entry, "id": "second-classification"})
+            with self.subTest(mutation=mutation):
+                self.reject(value, supplied)
+
+    def test_bad_search_extents_fail_even_when_report_and_artifact_agree(self):
+        for extent in (
+            {"method": "proximity", "parameters": {"center": [0, 0]}},
+            {"method": "rectangle", "parameters": {"bbox": [-1, -1, 1, 1]}},
+            {"method": "circle", "parameters": {"center": [1, 2], "radius_meters": 20000}},
+            *({"method": "circle", "parameters": {"center": [0, 0], "radius_meters": radius}}
+              for radius in (0, 19999, 20001, True)),
+        ):
+            value, evidence, supplied = self.case()
+            value["competitors"]["search_extent"] = evidence["search_extent"] = extent
+            self.seal(value, evidence, supplied)
+            with self.subTest(extent=extent):
+                self.reject(value, supplied)
+
+    def test_artifact_settings_category_and_limits_cannot_contradict_report(self):
+        paths = [
+            (("settings", key), bad) for key, bad in (
+                ("budget_seconds", 600), ("mode", "walk"), ("traffic", "live"),
+                ("route_type", "short"), ("units", "imperial"), ("direction", "inbound"),
+            )
+        ] + [((key,), bad) for key, bad in (
+            ("category", "service.locksmith"), ("category", "unsupported"),
+            ("max_candidates", 21), ("max_candidates", True), ("pagination", True),
+            ("pagination", 0), ("search_status", "unavailable"),
+            ("representation", "invented"), ("returned_count", 4),
+            ("duplicate_count", 1), ("invalid_coordinate_count", 1),
+        )] + [(("search_extent", "parameters", "radius_meters"), 100)]
+        for path, bad in paths:
+            value, evidence, supplied = self.case()
+            at(evidence, path[:-1])[path[-1]] = bad
+            self.seal(value, evidence, supplied)
+            with self.subTest(path=path, bad=bad):
+                self.reject(value, supplied)
+
+    def test_falsified_self_consistent_counts_or_record_membership_fail(self):
+        for mutation in ("counts", "outside-record", "metadata", "coordinates", "distance", "omit-route"):
+            value, evidence, supplied = self.case()
+            section = value["competitors"]
+            if mutation == "counts":
+                section.update(observed_in_zone_count=1, observed_out_of_zone_count=2)
+                section["records"].pop()
+            elif mutation == "outside-record":
+                section["records"][1].update(id="c", name="Synthetic c")
+            elif mutation == "metadata":
+                section["records"][0]["address"] = "Invented replacement"
+            elif mutation == "coordinates":
+                section["records"][0]["coordinates"] = [0.01, 0]
+                section["records"][0]["geodesic_distance_meters"] = report._geodesic(
+                    value["business"]["coordinates"], [0.01, 0])
+            elif mutation == "distance":
+                section["records"][0]["geodesic_distance_meters"] = 50
+            else:
+                evidence["candidates"].pop()
+            self.seal(value, evidence, supplied)
+            with self.subTest(mutation=mutation):
+                self.reject(value, supplied)
+
+    def test_invalid_route_measurements_and_candidates_fail(self):
+        for updates in (
+            {"route_status": "not_attempted", "time_seconds": None, "distance_meters": None},
+            {"route_status": "no_route"}, {"route_status": []},
+            {"time_seconds": None}, {"distance_meters": None},
+            {"time_seconds": -1}, {"time_seconds": True}, {"time_seconds": "1200"},
+            {"time_seconds": 1.1234567}, {"distance_meters": -1},
+            {"coordinates": [181, 0]}, {"coordinates": [False, 0]},
+            {"id": ""}, {"id": "synthetic-id:incorrect"},
+            {"name": {}}, {"categories": [""]}, {"verdict": "in_zone"},
+        ):
+            value, evidence, supplied = self.case()
+            evidence["candidates"][0].update(updates)
+            self.seal(value, evidence, supplied)
+            with self.subTest(updates=updates):
+                self.reject(value, supplied)
+
+    def test_fallback_id_matches_existing_coordinate_and_name_hash(self):
+        value, evidence, supplied = self.case()
+        candidate = evidence["candidates"][-1]
+        canonical = json.dumps([candidate["coordinates"], candidate["name"]],
+                               sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+        candidate["id"] = "synthetic-id:" + hashlib.sha256(canonical.encode()).hexdigest()
+        self.seal(value, evidence, supplied)
+        self.publish(value, supplied)
+        candidate["name"] = "Changed identity"
+        self.seal(value, evidence, supplied)
+        self.reject(value, supplied)
+
+    def test_every_artifact_object_requires_exact_fields_and_numbers_reject_bool(self):
+        _, baseline, _ = self.case()
+        for path, item in walk(baseline):
+            mutations = []
+            if isinstance(item, dict):
+                mutations = [(key, None) for key in item] + [("unexpected", "added")]
+            elif type(item) in (int, float):
+                mutations = [(None, True)]
+            for key, bad in mutations:
+                value, evidence, supplied = self.case()
+                if key is None:
+                    at(evidence, path[:-1])[path[-1]] = bad
+                elif bad is None:
+                    del at(evidence, path)[key]
+                else:
+                    at(evidence, path)[key] = bad
+                self.seal(value, evidence, supplied)
+                with self.subTest(path=path, key=key):
+                    self.reject(value, supplied)
+
+    def test_malformed_artifacts_fail_with_safe_diagnostic_even_when_hash_matches(self):
+        for raw in (b'{"x":1,"x":2}', b'{"x":NaN}', b'{"x":Infinity}',
+                    b'PRIVATE_SENTINEL malformed', b'\xff', b'[]', b'null'):
+            value, evidence, supplied = self.case()
+            self.seal(value, evidence, supplied, raw)
+            with self.assertRaises(report.ReportError) as caught:
+                report._verify_artifacts(report.finalize(value), supplied)
+            self.assertEqual(caught.exception.code, "invalid_artifact")
+            self.assertNotIn("PRIVATE_SENTINEL", str(caught.exception))
+
+    def test_keyless_import_publishes_routes_and_rejects_falsified_membership(self):
+        for partial in (False, True):
+            value, evidence, supplied = self.case()
+            if partial:
+                evidence["candidates"][-1].update(route_status="no_route", time_seconds=None, distance_meters=None)
+                value["competitors"].update(status="partial", observed_out_of_zone_count=0, unclassified_count=1)
+                self.seal(value, evidence, supplied)
+            with tempfile.TemporaryDirectory() as temporary:
+                base = Path(temporary)
+                source = base / "agent.json"
+                source.write_text(report.dumps(value), encoding="utf-8")
+                for name, content in supplied.items():
+                    target = base / name
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(content)
+                with patch.dict(os.environ, {}, clear=True), patch("socket.socket", side_effect=AssertionError("network used")):
+                    self.assertEqual(report.main(["--import-agent", str(source), "--output-dir", str(base / "output")]), 3 if partial else 0)
+                    value["competitors"]["records"][0]["name"] = "Falsified"
+                    source.write_text(report.dumps(value), encoding="utf-8")
+                    with self.assertRaises(report.ReportError):
+                        report._read_import(source)
+
+
 class MarkdownTests(unittest.TestCase):
     def test_every_json_field_and_value_is_independently_accessible(self):
         for name in ("complete", "partial"):

@@ -1,0 +1,59 @@
+{
+  "approximation": true,
+  "arguments": {
+    "limit": 5,
+    "query": "2503 W Loop 250 N, Midland, TX 79705"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "count": 1,
+    "query": "2503 W Loop 250 N, Midland, TX 79705",
+    "results": [
+      {
+        "address_line1": "2503 West Loop 250 North",
+        "address_line2": "Midland, TX 79705, United States of America",
+        "bbox": {
+          "lat1": 32.0362023,
+          "lat2": 32.0363023,
+          "lon1": -102.1180928,
+          "lon2": -102.1179928
+        },
+        "city": "Midland",
+        "confidence": 1,
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "2503 West Loop 250 North, Midland, TX 79705, United States of America",
+        "housenumber": "2503",
+        "lat": 32.036252252035105,
+        "lon": -102.11804277580553,
+        "place_id": "51496749038e8759c059d572eee9a3044040f00102f9011ca7fe3400000000c00203",
+        "postcode": "79705",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.3768189999995792
+        },
+        "result_type": "building",
+        "state": "Texas",
+        "street": "West Loop 250 North",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      }
+    ]
+  },
+  "session": "mcp-customers.json",
+  "tool": "geocode_address",
+  "tool_use_id": "toolu_01M9WShb4EEcka13zhFMxE31"
+}

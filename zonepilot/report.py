@@ -22,6 +22,7 @@ from urllib.parse import urlsplit
 # Owner approved the point-only method on 2026-10-23; sampled hulls remain unapproved.
 APPROVED_AGENT_METHOD = "route_time_at_points"
 AGENT_LIMITATION = "Route-time classification only at measured points; no continuous zone."
+MCP_COMPETITOR_OPERATION = "mcp_competitor_classification"
 BOUNDARY_RULE = (
     "All ring boundaries are in zone; segment-distance tolerance 1e-9 degrees."
 )
@@ -31,7 +32,6 @@ _DIAGNOSTICS = {
     "serialization_failed": "The value cannot be serialized as finite JSON.",
     "invalid_import": "Agent input must contain acquired MCP evidence only.",
     "agent_method_pending": "The agent membership method requires B02 approval.",
-    "agent_competitors_pending": "The agent competitor evidence contract requires approval.",
     "invalid_artifact": "Evidence paths, contents, or checksums are invalid.",
     "input_read_failed": "The agent evidence input could not be read.",
     "output_exists": "The output destination already exists.",
@@ -363,11 +363,17 @@ def _competitors(report: dict) -> None:
             {"category", "search_extent", "coverage", "cap_reached"} | _COMP_COUNTS
         )) and not section["records"])
         return
-    if report["path"] == "mcp":
-        raise ReportError("agent_competitors_pending")
     _string(section["category"], blank=False)
     _require(supported_category(section["category"]))
     _extent(section["search_extent"], report["path"])
+    if report["path"] == "mcp":
+        _require(section["search_extent"] == {
+            "method": "circle", "parameters": {
+                "center": report["business"]["coordinates"], "radius_meters": 20000,
+            },
+        })
+        _require(sum(item["operation"] == MCP_COMPETITOR_OPERATION
+                     for item in report["evidence"]) == 1, "invalid_artifact")
     if status == "unavailable":
         _require(all(section[field] is None for field in (
             {"coverage", "cap_reached"} | _COMP_COUNTS
@@ -632,12 +638,105 @@ def render_markdown(report: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _verify_mcp_competitors(report: dict, artifacts: dict[str, bytes]) -> None:
+    """Bind sampled competitor counts and records to acquired point-route evidence."""
+    section = report["competitors"]
+    if report["path"] != "mcp" or section["status"] == "not_requested":
+        return
+    try:
+        entries = [item for item in report["evidence"]
+                   if item["operation"] == MCP_COMPETITOR_OPERATION]
+        _require(len(entries) == 1)
+        evidence = json.loads(
+            artifacts[entries[0]["artifact"]].decode("utf-8"),
+            object_pairs_hook=_no_duplicate_keys, parse_constant=_reject_constant,
+        )
+        _json_value(evidence)
+        _object(evidence, {
+            "representation", "approximation", "category", "search_extent", "settings",
+            "max_candidates", "pagination", "search_status", "returned_count",
+            "duplicate_count", "invalid_coordinate_count", "candidates",
+        })
+        _require(evidence["representation"] == MCP_COMPETITOR_OPERATION and evidence["approximation"] is True)
+        _require(supported_category(evidence["category"]))
+        _require(evidence["category"] == section["category"])
+        _extent(evidence["search_extent"], "mcp")
+        _require(evidence["search_extent"] == section["search_extent"])
+        settings = _object(evidence["settings"], set(report["settings"]) - {"boundary_rule"})
+        _integer(settings["budget_seconds"])
+        _require(settings == {key: report["settings"][key] for key in settings})
+        _integer(evidence["max_candidates"])
+        _require(evidence["max_candidates"] == 20 and evidence["pagination"] is False)
+        _require(evidence["search_status"] in {"ok", "unavailable"})
+        candidates = evidence["candidates"]
+        _require(type(candidates) is list and len(candidates) <= 20)
+        counts = ("returned_count", "duplicate_count", "invalid_coordinate_count")
+        if evidence["search_status"] == "unavailable":
+            _require(section["status"] == "unavailable" and not candidates)
+            _require(all(evidence[key] is None for key in counts))
+            return
+        _require(section["status"] in {"ok", "partial"})
+        for key in counts:
+            _integer(evidence[key], 20)
+        _require(evidence["returned_count"] == evidence["duplicate_count"]
+                 + evidence["invalid_coordinate_count"] + len(candidates))
+        _require(all(evidence[key] == section[key]
+                     for key in ("returned_count", "duplicate_count")))
+        identifiers = []
+        records = []
+        outside = 0
+        unknown = evidence["invalid_coordinate_count"]
+        identity_fields = {"id", "name", "address", "categories", "coordinates"}
+        for candidate in candidates:
+            _object(candidate, identity_fields | {
+                "route_status", "time_seconds", "distance_meters",
+            })
+            _string(candidate["id"], blank=False)
+            identifiers.append(candidate["id"])
+            _string(candidate["name"], nullable=True)
+            _string(candidate["address"], nullable=True)
+            _strings(candidate["categories"])
+            _point(candidate["coordinates"])
+            if candidate["id"].startswith("synthetic-id:"):
+                canonical = json.dumps(
+                    [candidate["coordinates"], candidate["name"]], sort_keys=True,
+                    separators=(",", ":"), ensure_ascii=False, allow_nan=False,
+                )
+                _require(candidate["id"] == "synthetic-id:" + hashlib.sha256(
+                    canonical.encode("utf-8")).hexdigest())
+            _require(candidate["route_status"] in {"ok", "no_route", "error"})
+            if candidate["route_status"] != "ok":
+                _require(candidate["time_seconds"] is None
+                         and candidate["distance_meters"] is None)
+                unknown += 1
+                continue
+            _measurement(candidate["time_seconds"])
+            _measurement(candidate["distance_meters"])
+            if Decimal(str(candidate["time_seconds"])) > settings["budget_seconds"]:
+                outside += 1
+                continue
+            records.append({
+                **{key: candidate[key] for key in identity_fields},
+                "verdict": "in_zone",
+                "geodesic_distance_meters": _geodesic(
+                    report["business"]["coordinates"], candidate["coordinates"]),
+            })
+        _require(identifiers == sorted(set(identifiers)))
+        _require(section["observed_in_zone_count"] == len(records))
+        _require(section["observed_out_of_zone_count"] == outside)
+        _require(section["unclassified_count"] == unknown)
+        _require(section["records"] == records)
+    except (ValueError, TypeError, KeyError, OverflowError, RecursionError, ArithmeticError):
+        raise ReportError("invalid_artifact") from None
+
+
 def _verify_artifacts(report: dict, artifacts: object) -> dict[str, bytes]:
     expected = _artifact_index(report)
     _require(type(artifacts) is dict and set(artifacts) == set(expected), "invalid_artifact")
     for path, content in artifacts.items():
         _require(type(content) is bytes, "invalid_artifact")
         _require(hashlib.sha256(content).hexdigest() == expected[path], "invalid_artifact")
+    _verify_mcp_competitors(report, artifacts)
     return artifacts
 
 

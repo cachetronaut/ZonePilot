@@ -1,0 +1,47 @@
+{
+  "approximation": true,
+  "arguments": {
+    "geometry_scope": "none",
+    "mode": "drive",
+    "traffic": "free_flow",
+    "type": "balanced",
+    "units": "metric",
+    "waypoints": [
+      {
+        "lat": 31.9997,
+        "lon": -102.075567
+      },
+      {
+        "lat": 31.99625142857143,
+        "lon": -102.08075785714286
+      }
+    ]
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "distance": 856,
+    "distance_units": "meters",
+    "legs": [
+      {
+        "distance": 856,
+        "time": 81.539
+      }
+    ],
+    "time": 81.539,
+    "time_units": "seconds",
+    "units": "metric",
+    "waypoints": [
+      {
+        "lat": 31.9997,
+        "lon": -102.075567
+      },
+      {
+        "lat": 31.996251,
+        "lon": -102.080757
+      }
+    ]
+  },
+  "session": "mcp-customers.json",
+  "tool": "calculate_route",
+  "tool_use_id": "toolu_01QaUPneJkgz3ATUamQ68R34"
+}

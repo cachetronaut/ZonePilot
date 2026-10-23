@@ -1,0 +1,50 @@
+{
+  "approximation": true,
+  "arguments": {
+    "lat": 31.9997,
+    "lon": -102.075567
+  },
+  "diagnostic_only": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "coordinates": {
+      "lat": 31.9997,
+      "lon": -102.075567
+    },
+    "count": 1,
+    "results": [
+      {
+        "address_line1": "300 North Loraine Street",
+        "address_line2": "Midland, TX 79701, United States of America",
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "300 North Loraine Street, Midland, TX 79701, United States of America",
+        "housenumber": "300",
+        "lat": 31.999996,
+        "lon": -102.075362,
+        "place_id": "511d5723bbd28459c0597d21e4bcffff3f40c00203e203466f70656e6164647265737365733a616464726573733a75732f74782f7374617465776964652d6164647265737365732d73746174653a35626339613465393638636531666635",
+        "postcode": "79701",
+        "rank": {
+          "popularity": 1.6300150916456089
+        },
+        "result_type": "building",
+        "state": "Texas",
+        "street": "North Loraine Street",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      }
+    ]
+  },
+  "session": "mcp-preflight.json",
+  "tool": "reverse_geocode_coordinates",
+  "tool_use_id": "toolu_016nXUsW8RJLaihWsuynqAah"
+}

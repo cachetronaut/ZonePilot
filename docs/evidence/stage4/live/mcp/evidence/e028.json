@@ -1,0 +1,52 @@
+{
+  "approximation": true,
+  "arguments": {
+    "geometry": {
+      "coordinates": [
+        [
+          [
+            -102.2,
+            31.9
+          ],
+          [
+            -102,
+            31.9
+          ],
+          [
+            -102,
+            32.1
+          ],
+          [
+            -102.2,
+            32.1
+          ],
+          [
+            -102.2,
+            31.9
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "operation": "center"
+  },
+  "diagnostic_only": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "data": {
+      "geometry": {
+        "coordinates": [
+          -102.1,
+          32
+        ],
+        "type": "Point"
+      },
+      "properties": {},
+      "type": "Feature"
+    },
+    "type": "geojson"
+  },
+  "session": "mcp-preflight.json",
+  "tool": "transform_geometry",
+  "tool_use_id": "toolu_01RtM8EfXoD4Jhho8LGw6FwW"
+}

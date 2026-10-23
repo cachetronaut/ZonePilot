@@ -1,0 +1,695 @@
+{
+  "date": "2026-10-23",
+  "path": "mcp",
+  "data_mode": "live",
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "client": "Claude Code 2.1.309",
+  "exit_code": 0,
+  "elapsed_seconds": 129.52,
+  "prompt": "approximation=true. Continue ZonePilot shipped agent prompt steps 2,3,4 using the 2026-10-23 owner amendment. Every text output MUST start approximation=true. Method route_time_at_points; Route-time classification only at measured points; no continuous zone. All business/customer identities are fictional; listed addresses are real public demo locations with no affiliation. No shell, files, installs, credentials, local paths or other tools. Use only configured hosted Geoapify MCP. Actual tool errors remain visible, no guesses. Tool results are recorded by the client harness, so do not copy huge raw responses into final text.\nThe previous hosted-client origin geocode (not REST) accepted exactly one building: query 300 N Loraine St, Midland, TX 79701, coordinates lon=-102.075567 lat=31.9997, rank confidence=1 confidence_building_level=1 result_type=building. Keep that origin. Settings outbound drive, traffic free_flow, type balanced, units metric, budget1200 seconds, no avoid options.\n1. Call geocode_address query equal to each of these 20 exact addresses, limit=5. Send only the address, never the fictional name/reference. One call each. You may issue independent calls together. Accept exactly one eligible valid-coordinate building with rank.confidence and rank.confidence_building_level both >=0.95. Preserve rejected rows. INPUT ORDER:\n[\n  {\n    \"row_id\": 1,\n    \"address\": \"615 W Missouri Ave, Midland, TX 79701\"\n  },\n  {\n    \"row_id\": 2,\n    \"address\": \"3500 Neely Ave, Midland, TX 79707\"\n  },\n  {\n    \"row_id\": 3,\n    \"address\": \"909 Bonham St, Midland, TX 79703\"\n  },\n  {\n    \"row_id\": 4,\n    \"address\": \"700 S Jackson St, Midland, TX 79701\"\n  },\n  {\n    \"row_id\": 5,\n    \"address\": \"900 S Raymond Rd, Midland, TX 79703\"\n  },\n  {\n    \"row_id\": 6,\n    \"address\": \"5001 Preston Dr, Midland, TX 79707\"\n  },\n  {\n    \"row_id\": 7,\n    \"address\": \"2800 Moss Ave, Midland, TX 79705\"\n  },\n  {\n    \"row_id\": 8,\n    \"address\": \"201 W Dakota Ave, Midland, TX 79701\"\n  },\n  {\n    \"row_id\": 9,\n    \"address\": \"6000 Riverfront Dr, Midland, TX 79706\"\n  },\n  {\n    \"row_id\": 10,\n    \"address\": \"1400 N N St, Midland, TX 79701\"\n  },\n  {\n    \"row_id\": 11,\n    \"address\": \"100 E Gist Ave, Midland, TX 79701\"\n  },\n  {\n    \"row_id\": 12,\n    \"address\": \"9600 Wright Dr, Midland, TX 79706\"\n  },\n  {\n    \"row_id\": 13,\n    \"address\": \"1705 W Missouri Ave, Midland, TX 79701\"\n  },\n  {\n    \"row_id\": 14,\n    \"address\": \"3800 Norwood St, Midland, TX 79707\"\n  },\n  {\n    \"row_id\": 15,\n    \"address\": \"1700 E Magnolia Ave, Midland, TX 79705\"\n  },\n  {\n    \"row_id\": 16,\n    \"address\": \"2601 Wedgewood St, Midland, TX 79707\"\n  },\n  {\n    \"row_id\": 17,\n    \"address\": \"2400 Fannin Ave, Midland, TX 79705\"\n  },\n  {\n    \"row_id\": 18,\n    \"address\": \"4800 Graceland Dr, Midland, TX 79703\"\n  },\n  {\n    \"row_id\": 19,\n    \"address\": \"2503 W Loop 250 N, Midland, TX 79705\"\n  },\n  {\n    \"row_id\": 20,\n    \"address\": \"301 W Missouri Ave, Midland, TX 79701\"\n  }\n]\n2. After all geocodes, call calculate_route_matrix exactly once, sources=[{lon:-102.075567,lat:31.9997}], targets objects {lon,lat} in accepted row order. mode=drive, units=metric, type=balanced, traffic=free_flow. Use schema-supported field names. Match cells by indexes, null/missing routes unknown, never zero. Call calculate_route once to the first resolved customer using identical settings. Record route diagnostic versus matrix, don't replace it.\n3. The prior list_place_categories returned 833 and supports service. Call search_places ONCE categories=[\"service\"], circle centered at accepted origin radius=20000 metres, limit20, no pagination. Use exact advertised schema fields for the circle. This is only candidate search extent, NOT a service-zone polygon; broad services do NOT prove plumbing competitors. Deduplicate by place_id (fallback exact coordinates+name); keep unique valid-coordinate candidates. Then call calculate_route_matrix ONCE from origin to all these unique candidates in provider order with identical drive/free_flow/balanced/metric settings. Every valid candidate must be attempted. Classify time<=1200 inside, >1200 outside, missing/error unknown. Retain invalid/duplicates counts. Never imply exhaustive coverage, always sampled and cap reached if20 returned.\n4. Final concise table for20 rows with row_id, coordinates, geocode acceptance, outbound time/distance, in/out/unknown. Include count evaluated, percentage among known classifications, in-zone median, farthest/ties, borderline >1200 and <=1320, outliers all out-of-zone, candidate counts (inside/outside/unknown/duplicates). Use only actual measurements; the local deterministic importer independently calculates official values. No continuous zone, no interpolation. Stop after these calls. All outputs approximation=true.\n",
+  "config": {
+    "mcpServers": {
+      "geoapify": {
+        "type": "http",
+        "url": "https://api.geoapify.com/v1/mcp",
+        "headers": {
+          "x-api-key": "${GEOAPIFY_API_KEY}"
+        }
+      }
+    }
+  },
+  "session_events": [
+    {
+      "event": "client_initialization",
+      "tools": [
+        "mcp__geoapify__calculate_route",
+        "mcp__geoapify__calculate_route_matrix",
+        "mcp__geoapify__combine_geometries",
+        "mcp__geoapify__evaluate_spatial_relation",
+        "mcp__geoapify__geocode_address",
+        "mcp__geoapify__geocode_structured_address",
+        "mcp__geoapify__get_timezone",
+        "mcp__geoapify__list_place_categories",
+        "mcp__geoapify__measure_geometry",
+        "mcp__geoapify__reverse_geocode_coordinates",
+        "mcp__geoapify__search_places",
+        "mcp__geoapify__transform_geometry"
+      ],
+      "mcp_servers": [
+        {
+          "name": "geoapify",
+          "status": "connected",
+          "source": "dynamic"
+        }
+      ],
+      "approximation": true
+    },
+    {
+      "event": "assistant_text",
+      "text": "approximation=true. Step 1 first: geocoding all 20 addresses.",
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01W6jAHi2SMSMYeqgwf8wA2E",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "615 W Missouri Ave, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01KHzu4igeDejXrGRTGjE2rj",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "3500 Neely Ave, Midland, TX 79707",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01FWregPUaQ4RFWMWa9P9oP5",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "909 Bonham St, Midland, TX 79703",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01UroThF28nRhhYVokqwa7oX",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "700 S Jackson St, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_011aaURpKTVLv4TEdru2xjxn",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "900 S Raymond Rd, Midland, TX 79703",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01W6jAHi2SMSMYeqgwf8wA2E",
+      "is_error": false,
+      "content": "{\"query\":\"615 W Missouri Ave, Midland, TX 79701\",\"count\":1,\"results\":[{\"formatted\":\"615 West Missouri Avenue, Downtown Midland Management District, Midland, TX 79701, United States of America\",\"address_line1\":\"615 West Missouri Avenue\",\"address_line2\":\"Downtown Midland Management District, Midland, TX 79701, United States of America\",\"lon\":-102.08075785714286,\"lat\":31.99625142857143,\"place_id\":\"51b6d400232b8559c059bd4e68550aff3f40f00102f9016c71420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.6232540558363553,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"615\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.0808079,\"lat1\":31.9962014,\"lon2\":-102.0807079,\"lat2\":31.9963014}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01NtWUQB9fr4Eu6xV5UsbVHD",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "5001 Preston Dr, Midland, TX 79707",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_017r65zawDY3w9KUFdYGPENv",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "2800 Moss Ave, Midland, TX 79705",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01PnTR8Zrzn43nuYWDGZH1p6",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "201 W Dakota Ave, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01CAraCwKEsqEoG5Q7SzPwdq",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "6000 Riverfront Dr, Midland, TX 79706",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01KHzu4igeDejXrGRTGjE2rj",
+      "is_error": false,
+      "content": "{\"query\":\"3500 Neely Ave, Midland, TX 79707\",\"count\":2,\"results\":[{\"formatted\":\"3500 Neely Avenue, Midland, TX 79707, United States of America\",\"address_line1\":\"3500 Neely Avenue\",\"address_line2\":\"Midland, TX 79707, United States of America\",\"lon\":-102.12886042723052,\"lat\":32.011364317804045,\"place_id\":\"51092dce3f3f8859c059a5a7ce6274014040f00102f9019ffb414e00000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.4882454455741718,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"3500\",\"street\":\"Neely Avenue\",\"postcode\":\"79707\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.1289104,\"lat1\":32.0113143,\"lon2\":-102.1288104,\"lat2\":32.0114143}},{\"formatted\":\"Legacy Senior High School, 3500 Neely Avenue, Midland, TX 79707, United States of America\",\"address_line1\":\"Legacy Senior High School\",\"address_line2\":\"3500 Neely Avenue, Midland, TX 79707, United States of America\",\"lon\":-102.1295237,\"lat\":32.0134603,\"place_id\":\"51a4e3c51d4a8859c059ad252e11b9014040f00102f901548ae41700000000c002019203194c65676163792053656e696f722048696768205363686f6f6c\",\"result_type\":\"amenity\",\"rank\":{\"importance\":6.47570000762496e-05,\"popularity\":1.4975291927883851,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"inner_part\"},\"confidence\":1,\"housenumber\":\"3500\",\"street\":\"Neely Avenue\",\"postcode\":\"79707\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.1334344,\"lat1\":32.0104056,\"lon2\":-102.1267203,\"lat2\":32.0152929}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01BuDHWgY83rZxZ9iSZAcNDq",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "1400 N N St, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01R3XZMCQAXtUrAx6q9NDpes",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "100 E Gist Ave, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01LU4n8eNSSi4W3imLJLjhLK",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "9600 Wright Dr, Midland, TX 79706",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01RdqBnvi4igrGu5je9fwsbY",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "1705 W Missouri Ave, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01FWregPUaQ4RFWMWa9P9oP5",
+      "is_error": false,
+      "content": "{\"query\":\"909 Bonham St, Midland, TX 79703\",\"count\":1,\"results\":[{\"formatted\":\"909 Bonham Street, Midland, TX 79703, United States of America\",\"address_line1\":\"909 Bonham Street\",\"address_line2\":\"Midland, TX 79703, United States of America\",\"lon\":-102.12813177220578,\"lat\":31.995025705553658,\"place_id\":\"51f3cc9a4f338859c05944083001bafe3f40f00102f9018b67420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.476102030462063,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"909\",\"street\":\"Bonham Street\",\"postcode\":\"79703\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.1281818,\"lat1\":31.9949757,\"lon2\":-102.1280818,\"lat2\":31.9950757}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01Cog8oMFVDyhtTos3T55Ne3",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "3800 Norwood St, Midland, TX 79707",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_012AYSk9vV2DwfdRjQYTbs3r",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "1700 E Magnolia Ave, Midland, TX 79705",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01PC9AXktsR758C4d9eRfLmm",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "2601 Wedgewood St, Midland, TX 79707",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01BURGaQpUeKDasfNygAadLY",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "2400 Fannin Ave, Midland, TX 79705",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01NwwwqzNBn1fnN5DJhJAyQ7",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "4800 Graceland Dr, Midland, TX 79703",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01M9WShb4EEcka13zhFMxE31",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "2503 W Loop 250 N, Midland, TX 79705",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01K8QzmrXZgPMPkAZQw1DrXQ",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "301 W Missouri Ave, Midland, TX 79701",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01UroThF28nRhhYVokqwa7oX",
+      "is_error": false,
+      "content": "{\"query\":\"700 S Jackson St, Midland, TX 79701\",\"count\":1,\"results\":[{\"formatted\":\"700 South Street, Midland, TX 79701, United States of America\",\"address_line1\":\"700 South Street\",\"address_line2\":\"Midland, TX 79701, United States of America\",\"lon\":-102.066954,\"lat\":32.002198,\"place_id\":\"5187156ef9488459c059ed0e290648004040f00102f9014a6e420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.5536362882370232,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"700\",\"street\":\"South Street\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.067004,\"lat1\":32.002148,\"lon2\":-102.066904,\"lat2\":32.002248}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_011aaURpKTVLv4TEdru2xjxn",
+      "is_error": false,
+      "content": "{\"query\":\"900 S Raymond Rd, Midland, TX 79703\",\"count\":1,\"results\":[{\"formatted\":\"900 South Raymond Road, Midland, TX 79703, United States of America\",\"address_line1\":\"900 South Raymond Road\",\"address_line2\":\"Midland, TX 79703, United States of America\",\"lon\":-102.1234,\"lat\":31.977861,\"place_id\":\"51e4141dc9e58759c059ab08371955fa3f40f00102f901b986b01a00000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.4140779883142862,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"900\",\"street\":\"South Raymond Road\",\"postcode\":\"79703\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.12345,\"lat1\":31.977811,\"lon2\":-102.12335,\"lat2\":31.977911}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01NtWUQB9fr4Eu6xV5UsbVHD",
+      "is_error": false,
+      "content": "{\"query\":\"5001 Preston Dr, Midland, TX 79707\",\"count\":1,\"results\":[{\"formatted\":\"5001 Preston Drive, Midland, TX 79707, United States of America\",\"address_line1\":\"5001 Preston Drive\",\"address_line2\":\"Midland, TX 79707, United States of America\",\"lon\":-102.152163,\"lat\":32.009876,\"place_id\":\"51522ae109bd8959c059f581e49d43014040f00102f9014275420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.462713639561787,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"5001\",\"street\":\"Preston Drive\",\"postcode\":\"79707\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.152213,\"lat1\":32.009826,\"lon2\":-102.152113,\"lat2\":32.009926}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_017r65zawDY3w9KUFdYGPENv",
+      "is_error": false,
+      "content": "{\"query\":\"2800 Moss Ave, Midland, TX 79705\",\"count\":1,\"results\":[{\"formatted\":\"2800 Moss Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"2800 Moss Avenue\",\"address_line2\":\"Midland, TX 79705, United States of America\",\"lon\":-102.119297,\"lat\":32.029558,\"place_id\":\"51b360e28fa28759c059e7aa798ec8034040f00102f901355b420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.4061395269011783,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"2800\",\"street\":\"Moss Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.119347,\"lat1\":32.029508,\"lon2\":-102.119247,\"lat2\":32.029608}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01PnTR8Zrzn43nuYWDGZH1p6",
+      "is_error": false,
+      "content": "{\"query\":\"201 W Dakota Ave, Midland, TX 79701\",\"count\":1,\"results\":[{\"formatted\":\"201 West Dakota Avenue, Midland Heights, Midland, TX 79701, United States of America\",\"address_line1\":\"201 West Dakota Avenue\",\"address_line2\":\"Midland Heights, Midland, TX 79701, United States of America\",\"lon\":-102.07548065306122,\"lat\":31.988152836734695,\"place_id\":\"513c18ceacd48459c059a3399595f7fc3f40f00102f9012764420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.5144858056004387,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"201\",\"street\":\"West Dakota Avenue\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.0755307,\"lat1\":31.9881028,\"lon2\":-102.0754307,\"lat2\":31.9882028}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01CAraCwKEsqEoG5Q7SzPwdq",
+      "is_error": false,
+      "content": "{\"query\":\"6000 Riverfront Dr, Midland, TX 79706\",\"count\":1,\"results\":[{\"formatted\":\"6000 Riverfront Drive, Midland, TX 79706, United States of America\",\"address_line1\":\"6000 Riverfront Drive\",\"address_line2\":\"Midland, TX 79706, United States of America\",\"lon\":-102.163169,\"lat\":31.983509,\"place_id\":\"5125ae635c718a59c0595952ee3ec7fb3f40c00203e2031f6d697865643a616464726573733a706f6c796c696e653a3231303332373539\",\"result_type\":\"building\",\"rank\":{\"importance\":0.053398090333409594,\"popularity\":1.3649746811159693,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"6000\",\"street\":\"Riverfront Drive\",\"postcode\":\"79706\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.165438,\"lat1\":31.9834821,\"lon2\":-102.1614197,\"lat2\":31.9845852}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01BuDHWgY83rZxZ9iSZAcNDq",
+      "is_error": false,
+      "content": "{\"query\":\"1400 N N St, Midland, TX 79701\",\"count\":1,\"results\":[{\"formatted\":\"1400 North N Street, Midland, TX 79701, United States of America\",\"address_line1\":\"1400 North N Street\",\"address_line2\":\"Midland, TX 79701, United States of America\",\"lon\":-102.10162,\"lat\":32.008075,\"place_id\":\"51a6272cf1808659c0592575029a08014040c00203e203466f70656e6164647265737365733a616464726573733a75732f74782f7374617465776964652d6164647265737365732d73746174653a39313334356565303731333262326434\",\"result_type\":\"building\",\"rank\":{\"popularity\":1.5511665990629813,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"1400\",\"street\":\"North N Street\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01R3XZMCQAXtUrAx6q9NDpes",
+      "is_error": false,
+      "content": "{\"query\":\"100 E Gist Ave, Midland, TX 79701\",\"count\":1,\"results\":[{\"formatted\":\"100 East Gist Avenue, Midland, TX 79701, United States of America\",\"address_line1\":\"100 East Gist Avenue\",\"address_line2\":\"Midland, TX 79701, United States of America\",\"lon\":-102.071072,\"lat\":31.980342,\"place_id\":\"5153ea92718c8459c0592ee57cb1f7fa3f40c00203e203466f70656e6164647265737365733a616464726573733a75732f74782f7374617465776964652d6164647265737365732d73746174653a34396563383434646538373731343666\",\"result_type\":\"building\",\"rank\":{\"popularity\":1.467630788199049,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"100\",\"street\":\"East Gist Avenue\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01LU4n8eNSSi4W3imLJLjhLK",
+      "is_error": false,
+      "content": "{\"query\":\"9600 Wright Dr, Midland, TX 79706\",\"count\":1,\"results\":[{\"formatted\":\"9600 Wright Drive, Midland, TX 79706, United States of America\",\"address_line1\":\"9600 Wright Drive\",\"address_line2\":\"Midland, TX 79706, United States of America\",\"lon\":-102.214435,\"lat\":31.940028,\"place_id\":\"518907944db98d59c0590553cdaca5f03f40f00102f9015291dc1700000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.244687409619993,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"9600\",\"street\":\"Wright Drive\",\"postcode\":\"79706\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.214485,\"lat1\":31.939978,\"lon2\":-102.214385,\"lat2\":31.940078}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01RdqBnvi4igrGu5je9fwsbY",
+      "is_error": false,
+      "content": "{\"query\":\"1705 W Missouri Ave, Midland, TX 79701\",\"count\":5,\"results\":[{\"formatted\":\"1705 West Missouri Avenue, Midland, TX 79701, United States of America\",\"address_line1\":\"1705 West Missouri Avenue\",\"address_line2\":\"Midland, TX 79701, United States of America\",\"lon\":-102.092478,\"lat\":31.993315,\"place_id\":\"515e66d828eb8559c05951a04fe449fe3f40c00203e203466f70656e6164647265737365733a616464726573733a75732f74782f7374617465776964652d6164647265737365732d73746174653a37313635333637373939393737616164\",\"result_type\":\"building\",\"rank\":{\"popularity\":1.6030225566246614,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"1705\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"}},{\"formatted\":\"Museum of the Southwest, 1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"Museum of the Southwest\",\"address_line2\":\"1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"lon\":-102.0926342,\"lat\":31.9929674,\"place_id\":\"516fdffeb7ed8559c05981fe8c1c33fe3f40f00102f9012d9bab1800000000c002019203174d757365756d206f662074686520536f75746877657374\",\"result_type\":\"amenity\",\"rank\":{\"importance\":6.47570000762496e-05,\"popularity\":1.6030225566246614,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"inner_part\"},\"confidence\":1,\"housenumber\":\"1705\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.0935501,\"lat1\":31.9920305,\"lon2\":-102.0915725,\"lat2\":31.9939132}},{\"formatted\":\"Panzon \\\"Chubby\\\", 1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"Panzon \\\"Chubby\\\"\",\"address_line2\":\"1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"lon\":-102.092461,\"lat\":31.9927532,\"place_id\":\"51f3c98ae1ea8559c059d5ffde1225fe3f40f00103f901c8d3230b01000000c0020192030f50616e7a6f6e202243687562627922\",\"result_type\":\"amenity\",\"rank\":{\"importance\":6.47570000762496e-05,\"popularity\":1.6030225566246614,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"inner_part\"},\"confidence\":1,\"housenumber\":\"1705\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.092511,\"lat1\":31.9927032,\"lon2\":-102.092411,\"lat2\":31.9928032}},{\"formatted\":\"Freedom Of Youth, 1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"Freedom Of Youth\",\"address_line2\":\"1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"lon\":-102.092348,\"lat\":31.992962,\"place_id\":\"5177f69507e98559c059b62bf4c132fe3f40f00103f90108d4230b01000000c0020192031046726565646f6d204f6620596f757468\",\"result_type\":\"amenity\",\"rank\":{\"importance\":6.47570000762496e-05,\"popularity\":1.6030225566246614,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"inner_part\"},\"confidence\":1,\"housenumber\":\"1705\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.092398,\"lat1\":31.992912,\"lon2\":-102.092298,\"lat2\":31.993012}},{\"formatted\":\"Dogs, 1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"Dogs\",\"address_line2\":\"1705 West Missouri Avenue, Midland, TX 79705, United States of America\",\"lon\":-102.0922441,\"lat\":31.9937412,\"place_id\":\"51ef2fcc53e78559c05913b0c2d265fe3f40f00103f90116d4230b01000000c00201920304446f6773\",\"result_type\":\"amenity\",\"rank\":{\"importance\":6.47570000762496e-05,\"popularity\":1.6030225566246614,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"inner_part\"},\"confidence\":1,\"housenumber\":\"1705\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.0922941,\"lat1\":31.9936912,\"lon2\":-102.0921941,\"lat2\":31.9937912}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01Cog8oMFVDyhtTos3T55Ne3",
+      "is_error": false,
+      "content": "{\"query\":\"3800 Norwood St, Midland, TX 79707\",\"count\":1,\"results\":[{\"formatted\":\"3800 Norwood Street, Midland, TX 79707, United States of America\",\"address_line1\":\"3800 Norwood Street\",\"address_line2\":\"Midland, TX 79707, United States of America\",\"lon\":-102.140165,\"lat\":32.022708,\"place_id\":\"51cec29e76f88859c059c5ad8218e8024040f00102f901435d420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.5000210285931157,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"3800\",\"street\":\"Norwood Street\",\"postcode\":\"79707\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.140215,\"lat1\":32.022658,\"lon2\":-102.140115,\"lat2\":32.022758}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_012AYSk9vV2DwfdRjQYTbs3r",
+      "is_error": false,
+      "content": "{\"query\":\"1700 E Magnolia Ave, Midland, TX 79705\",\"count\":1,\"results\":[{\"formatted\":\"1700 East Magnolia Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"1700 East Magnolia Avenue\",\"address_line2\":\"Midland, TX 79705, United States of America\",\"lon\":-102.061321,\"lat\":32.025087,\"place_id\":\"51b763eaaeec8359c0590247020d36034040f00102f9016a7c420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.412604828216278,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"1700\",\"street\":\"East Magnolia Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.061371,\"lat1\":32.025037,\"lon2\":-102.061271,\"lat2\":32.025137}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01PC9AXktsR758C4d9eRfLmm",
+      "is_error": false,
+      "content": "{\"query\":\"2601 Wedgewood St, Midland, TX 79707\",\"count\":1,\"results\":[{\"formatted\":\"2601 Wedgewood Street, Midland, TX 79707, United States of America\",\"address_line1\":\"2601 Wedgewood Street\",\"address_line2\":\"Midland, TX 79707, United States of America\",\"lon\":-102.133052,\"lat\":32.01044,\"place_id\":\"51b72a89ec838859c059fe48111956014040f00102f9017781420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.49619826399973,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"2601\",\"street\":\"Wedgewood Street\",\"postcode\":\"79707\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.133102,\"lat1\":32.01039,\"lon2\":-102.133002,\"lat2\":32.01049}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01BURGaQpUeKDasfNygAadLY",
+      "is_error": false,
+      "content": "{\"query\":\"2400 Fannin Ave, Midland, TX 79705\",\"count\":1,\"results\":[{\"formatted\":\"2400 Fannin Avenue, Midland, TX 79705, United States of America\",\"address_line1\":\"2400 Fannin Avenue\",\"address_line2\":\"Midland, TX 79705, United States of America\",\"lon\":-102.108976,\"lat\":32.018071,\"place_id\":\"5121037976f98659c059c500892650024040f00102f9012f7b420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.48177448156137,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"2400\",\"street\":\"Fannin Avenue\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.109026,\"lat1\":32.018021,\"lon2\":-102.108926,\"lat2\":32.018121}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01NwwwqzNBn1fnN5DJhJAyQ7",
+      "is_error": false,
+      "content": "{\"query\":\"4800 Graceland Dr, Midland, TX 79703\",\"count\":1,\"results\":[{\"formatted\":\"4800 Graceland Drive, Midland, TX 79703, United States of America\",\"address_line1\":\"4800 Graceland Drive\",\"address_line2\":\"Midland, TX 79703, United States of America\",\"lon\":-102.139277,\"lat\":31.975557,\"place_id\":\"51710514eae98859c0594562821abef93f40c00203e203466f70656e6164647265737365733a616464726573733a75732f74782f7374617465776964652d6164647265737365732d73746174653a38623534303935666665646264363365\",\"result_type\":\"building\",\"rank\":{\"popularity\":1.393269218663782,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"4800\",\"street\":\"Graceland Drive\",\"postcode\":\"79703\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01M9WShb4EEcka13zhFMxE31",
+      "is_error": false,
+      "content": "{\"query\":\"2503 W Loop 250 N, Midland, TX 79705\",\"count\":1,\"results\":[{\"formatted\":\"2503 West Loop 250 North, Midland, TX 79705, United States of America\",\"address_line1\":\"2503 West Loop 250 North\",\"address_line2\":\"Midland, TX 79705, United States of America\",\"lon\":-102.11804277580553,\"lat\":32.036252252035105,\"place_id\":\"51496749038e8759c059d572eee9a3044040f00102f9011ca7fe3400000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.3768189999995792,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"2503\",\"street\":\"West Loop 250 North\",\"postcode\":\"79705\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.1180928,\"lat1\":32.0362023,\"lon2\":-102.1179928,\"lat2\":32.0363023}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01K8QzmrXZgPMPkAZQw1DrXQ",
+      "is_error": false,
+      "content": "{\"query\":\"301 W Missouri Ave, Midland, TX 79701\",\"count\":1,\"results\":[{\"formatted\":\"301 West Missouri Avenue, Downtown Midland Management District, Midland, TX 79701, United States of America\",\"address_line1\":\"301 West Missouri Avenue\",\"address_line2\":\"Downtown Midland Management District, Midland, TX 79701, United States of America\",\"lon\":-102.07694,\"lat\":31.996331,\"place_id\":\"5145f0bf95ec8459c059b1fd648c0fff3f40f00102f9016c71420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.630360153239778,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"301\",\"street\":\"West Missouri Avenue\",\"postcode\":\"79701\",\"city\":\"Midland\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-102.07699,\"lat1\":31.996281,\"lon2\":-102.07689,\"lat2\":31.996381}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01C6xpFKcY7VWSaXF6pJj71x",
+      "name": "mcp__geoapify__calculate_route_matrix",
+      "arguments": {
+        "sources": [
+          {
+            "lon": -102.075567,
+            "lat": 31.9997
+          }
+        ],
+        "targets": [
+          {
+            "lon": -102.08075785714286,
+            "lat": 31.99625142857143
+          },
+          {
+            "lon": -102.12886042723052,
+            "lat": 32.011364317804045
+          },
+          {
+            "lon": -102.12813177220578,
+            "lat": 31.995025705553658
+          },
+          {
+            "lon": -102.1234,
+            "lat": 31.977861
+          },
+          {
+            "lon": -102.152163,
+            "lat": 32.009876
+          },
+          {
+            "lon": -102.119297,
+            "lat": 32.029558
+          },
+          {
+            "lon": -102.07548065306122,
+            "lat": 31.988152836734695
+          },
+          {
+            "lon": -102.163169,
+            "lat": 31.983509
+          },
+          {
+            "lon": -102.10162,
+            "lat": 32.008075
+          },
+          {
+            "lon": -102.071072,
+            "lat": 31.980342
+          },
+          {
+            "lon": -102.214435,
+            "lat": 31.940028
+          },
+          {
+            "lon": -102.092478,
+            "lat": 31.993315
+          },
+          {
+            "lon": -102.140165,
+            "lat": 32.022708
+          },
+          {
+            "lon": -102.061321,
+            "lat": 32.025087
+          },
+          {
+            "lon": -102.133052,
+            "lat": 32.01044
+          },
+          {
+            "lon": -102.108976,
+            "lat": 32.018071
+          },
+          {
+            "lon": -102.139277,
+            "lat": 31.975557
+          },
+          {
+            "lon": -102.11804277580553,
+            "lat": 32.036252252035105
+          },
+          {
+            "lon": -102.07694,
+            "lat": 31.996331
+          }
+        ],
+        "mode": "drive",
+        "units": "metric",
+        "type": "balanced",
+        "traffic": "free_flow"
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01C6xpFKcY7VWSaXF6pJj71x",
+      "is_error": false,
+      "content": "{\"sources\":[{\"lat\":31.999697,\"lon\":-102.075663}],\"targets\":[{\"lat\":31.996333,\"lon\":-102.08076},{\"lat\":32.011322,\"lon\":-102.128846},{\"lat\":31.995042,\"lon\":-102.128053},{\"lat\":31.97785,\"lon\":-102.123376},{\"lat\":32.009958,\"lon\":-102.152189},{\"lat\":32.029478,\"lon\":-102.119271},{\"lat\":31.98807,\"lon\":-102.075478},{\"lat\":31.983515,\"lon\":-102.163169},{\"lat\":32.008373,\"lon\":-102.101717},{\"lat\":31.979913,\"lon\":-102.070877},{\"lat\":31.939975,\"lon\":-102.21436},{\"lat\":31.993188,\"lon\":-102.093008},{\"lat\":32.022724,\"lon\":-102.140144},{\"lat\":32.025168,\"lon\":-102.061332},{\"lat\":32.010462,\"lon\":-102.132958},{\"lat\":32.017991,\"lon\":-102.10895},{\"lat\":31.976184,\"lon\":-102.139476},{\"lat\":32.036171,\"lon\":-102.118016},{\"lat\":31.996412,\"lon\":-102.076942}],\"sources_to_targets\":[[{\"distance\":856,\"time\":81,\"source_index\":0,\"target_index\":0},{\"distance\":6142,\"time\":490,\"source_index\":0,\"target_index\":1},{\"distance\":5590,\"time\":449,\"source_index\":0,\"target_index\":2},{\"distance\":5968,\"time\":486,\"source_index\":0,\"target_index\":3},{\"distance\":16869,\"time\":816,\"source_index\":0,\"target_index\":4},{\"distance\":9863,\"time\":607,\"source_index\":0,\"target_index\":5},{\"distance\":1776,\"time\":156,\"source_index\":0,\"target_index\":6},{\"distance\":16274,\"time\":887,\"source_index\":0,\"target_index\":7},{\"distance\":5246,\"time\":386,\"source_index\":0,\"target_index\":8},{\"distance\":3085,\"time\":247,\"source_index\":0,\"target_index\":9},{\"distance\":21635,\"time\":1085,\"source_index\":0,\"target_index\":10},{\"distance\":2214,\"time\":190,\"source_index\":0,\"target_index\":11},{\"distance\":12587,\"time\":665,\"source_index\":0,\"target_index\":12},{\"distance\":4792,\"time\":344,\"source_index\":0,\"target_index\":13},{\"distance\":6331,\"time\":509,\"source_index\":0,\"target_index\":14},{\"distance\":6881,\"time\":478,\"source_index\":0,\"target_index\":15},{\"distance\":13939,\"time\":722,\"source_index\":0,\"target_index\":16},{\"distance\":10820,\"time\":569,\"source_index\":0,\"target_index\":17},{\"distance\":492,\"time\":59,\"source_index\":0,\"target_index\":18}]],\"units\":\"metric\",\"distance_units\":\"meters\",\"time_units\":\"seconds\"}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01QaUPneJkgz3ATUamQ68R34",
+      "name": "mcp__geoapify__calculate_route",
+      "arguments": {
+        "waypoints": [
+          {
+            "lon": -102.075567,
+            "lat": 31.9997
+          },
+          {
+            "lon": -102.08075785714286,
+            "lat": 31.99625142857143
+          }
+        ],
+        "mode": "drive",
+        "units": "metric",
+        "type": "balanced",
+        "traffic": "free_flow",
+        "geometry_scope": "none"
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01QaUPneJkgz3ATUamQ68R34",
+      "is_error": false,
+      "content": "{\"distance\":856,\"units\":\"metric\",\"distance_units\":\"meters\",\"time\":81.539,\"time_units\":\"seconds\",\"waypoints\":[{\"lat\":31.9997,\"lon\":-102.075567},{\"lat\":31.996251,\"lon\":-102.080757}],\"legs\":[{\"distance\":856,\"time\":81.539}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_019HyWqGZvyqvfoPV1DSVGqi",
+      "name": "mcp__geoapify__search_places",
+      "arguments": {
+        "category": "service",
+        "lat": 31.9997,
+        "lon": -102.075567,
+        "radius_meters": 20000,
+        "limit": 20
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_019HyWqGZvyqvfoPV1DSVGqi",
+      "is_error": false,
+      "content": "{\"category\":\"service\",\"coordinates\":{\"lat\":31.9997,\"lon\":-102.075567},\"radius_meters\":20000,\"count\":20,\"results\":[{\"name\":\"Bank of America\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Ohio Avenue\",\"lon\":-102.0762161,\"lat\":32.0010482,\"state_code\":\"TX\",\"formatted\":\"Bank of America, West Ohio Avenue, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Bank of America\",\"brand_details\":{\"wikidata\":\"Q487907\"},\"distance\":162,\"place_id\":\"516e3b7eb9e08459c059ea84ef5822004040f00103f9015f6b9cf40000000092030f42616e6b206f6620416d6572696361\"},{\"name\":\"City Bank Midland\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Homestead\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Illinois Avenue\",\"housenumber\":\"400\",\"lon\":-102.0784227,\"lat\":31.9997352,\"state_code\":\"TX\",\"formatted\":\"City Bank Midland, 400 West Illinois Avenue, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"website\":\"https://www.city.bank/locations/details/midland\",\"opening_hours\":\"Mo-Fr 09:00-17:00\",\"distance\":270,\"place_id\":\"51e6f0a4e0048559c059a1fa62a5eeff3f40f00103f90119a0a6a502000000920311436974792042616e6b204d69646c616e64\"},{\"name\":\"United States Post Office\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"East Wall Street\",\"housenumber\":\"100\",\"lon\":-102.0737131,\"lat\":31.9969224,\"state_code\":\"TX\",\"formatted\":\"United States Post Office, 100 East Wall Street, Midland, TX 79701, United States of America\",\"categories\":[\"building\",\"building.facility\",\"service\",\"service.post\",\"service.post.office\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"website\":\"https://tools.usps.com/go/POLocatorAction!input.action\",\"brand\":\"United States Post Office\",\"brand_details\":{\"wikidata\":\"Q668687\"},\"operator\":\"United States Postal Service\",\"operator_details\":{\"type\":\"public\",\"wikidata\":\"Q668687\",\"wikipedia\":\"en:United States Postal Service\",\"website\":\"https://www.usps.com\"},\"name_other\":{\"short_name\":\"USPS\"},\"distance\":304,\"place_id\":\"51ae6a1cb7b78459c05920f86e4e36ff3f40f00102f9013e6bc10d00000000920319556e697465642053746174657320506f7374204f6666696365\"},{\"name\":\"Community National Bank\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"North Big Spring Street\",\"lon\":-102.0784008,\"lat\":31.9981412,\"state_code\":\"TX\",\"formatted\":\"Community National Bank, North Big Spring Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"distance\":319,\"place_id\":\"51bcfec984048559c059011c812e86ff3f40f00103f901737c9cf400000000920317436f6d6d756e697479204e6174696f6e616c2042616e6b\"},{\"name\":\"Bank of America\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Wall Street\",\"housenumber\":\"303\",\"lon\":-102.0772192,\"lat\":31.9971187,\"state_code\":\"TX\",\"formatted\":\"Bank of America, 303 West Wall Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"website\":\"https://locators.bankofamerica.com/tx/midland/financial-centers-midland-12409.html\",\"brand\":\"Bank of America\",\"brand_details\":{\"wikidata\":\"Q487907\"},\"distance\":326,\"place_id\":\"51e3a7cc28f18459c059a60ccd2b43ff3f40f00103f901170def6c0000000092030f42616e6b206f6620416d6572696361\"},{\"name\":\"Loraine Center / Midland Police Department\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Homestead\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"North Loraine Street\",\"housenumber\":\"601\",\"lon\":-102.0760059,\"lat\":32.0032292,\"state_code\":\"TX\",\"formatted\":\"Loraine Center / Midland Police Department, 601 North Loraine Street, Midland, TX 79701, United States of America\",\"categories\":[\"building\",\"building.facility\",\"service\",\"service.police\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"distance\":369,\"place_id\":\"511b5fd247dd8459c059f75a7dd069004040f00101f9018df55d000000000092032a4c6f7261696e652043656e746572202f204d69646c616e6420506f6c696365204465706172746d656e74\"},{\"name\":\"Frost Bank\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Homestead\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"North Marienfeld Street\",\"lon\":-102.0789909,\"lat\":31.9977556,\"state_code\":\"TX\",\"formatted\":\"Frost Bank, North Marienfeld Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Frost Bank\",\"brand_details\":{\"wikidata\":\"Q5506152\"},\"distance\":389,\"place_id\":\"519f0bd92f0e8559c0595ab835e96cff3f40f00103f9018c6b9cf40000000092030a46726f73742042616e6b\"},{\"name\":\"Wells Fargo\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Texas Avenue\",\"lon\":-102.0798982,\"lat\":31.9986006,\"state_code\":\"TX\",\"formatted\":\"Wells Fargo, West Texas Avenue, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Wells Fargo\",\"brand_details\":{\"wikidata\":\"Q744149\"},\"distance\":427,\"place_id\":\"519800570d1d8559c059ca15f549a4ff3f40f00103f9011344ef6c0000000092030b57656c6c7320466172676f\"},{\"name\":\"Chase\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Wall Street\",\"lon\":-102.0796906,\"lat\":31.9977366,\"state_code\":\"TX\",\"formatted\":\"Chase, West Wall Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"website\":\"https://locator.chase.com/tx/midland/500-w-wall-st\",\"opening_hours\":\"Mo-Fr 09:00-17:00; Sa-Su closed\",\"brand\":\"Chase\",\"brand_details\":{\"wikidata\":\"Q524629\"},\"distance\":446,\"place_id\":\"511c339aa6198559c0596d5771aa6bff3f40f00103f90135c79ef6000000009203054368617365\"},{\"name\":\"Frost Bank\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Wall Street\",\"lon\":-102.0801792,\"lat\":31.9977008,\"state_code\":\"TX\",\"formatted\":\"Frost Bank, West Wall Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Frost Bank\",\"brand_details\":{\"wikidata\":\"Q5506152\"},\"distance\":489,\"place_id\":\"517174f0a7218559c0592983d15169ff3f40f00103f9017c01cbf10000000092030a46726f73742042616e6b\"},{\"name\":\"Security Bank\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79703\",\"district\":\"Homestead\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Michigan Avenue\",\"lon\":-102.079062,\"lat\":32.0029884,\"state_code\":\"TX\",\"formatted\":\"Security Bank, West Michigan Avenue, Midland, TX 79703, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Security Bank\",\"brand_details\":{\"wikidata\":\"Q7444945\"},\"distance\":492,\"place_id\":\"51ce16105a0f8559c059fa4a83ec61004040f00103f901fb469cf40000000092030d53656375726974792042616e6b\"},{\"name\":\"Prosperity Bank\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Original Town\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"West Wall Street\",\"lon\":-102.080078,\"lat\":31.9971187,\"state_code\":\"TX\",\"formatted\":\"Prosperity Bank, West Wall Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Prosperity Bank\",\"brand_details\":{\"wikidata\":\"Q7250893\"},\"distance\":513,\"place_id\":\"5143c879ff1f8559c059a60ccd2b43ff3f40f00103f9018f6b9cf40000000092030f50726f737065726974792042616e6b\"},{\"name\":\"Wells Fargo\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Homestead\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"North Carrizo Street\",\"lon\":-102.0814194,\"lat\":31.9989613,\"state_code\":\"TX\",\"formatted\":\"Wells Fargo, North Carrizo Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"Wells Fargo\",\"brand_details\":{\"wikidata\":\"Q744149\"},\"distance\":559,\"place_id\":\"51a210b7f9358559c059e9c97fedbbff3f40f00103f901916b9cf40000000092030b57656c6c7320466172676f\"},{\"name\":\"BB&T\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Atrium\",\"street\":\"West Kansas Avenue\",\"lon\":-102.0779059,\"lat\":32.0045931,\"state_code\":\"TX\",\"formatted\":\"BB&T, West Kansas Avenue, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"brand\":\"BB&T\",\"brand_details\":{\"wikidata\":\"Q795486\"},\"name_other\":{\"official_name\":\"Branch Banking and Trust Company\"},\"distance\":586,\"place_id\":\"51962a0769fc8459c0597f4db68196004040f00103f9016f599cf40000000092030442422654\"},{\"name\":\"Midland County Detention Center\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Southern\",\"street\":\"West Washington Avenue\",\"lon\":-102.0754059,\"lat\":31.9937975,\"state_code\":\"TX\",\"formatted\":\"Midland County Detention Center, West Washington Avenue, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.police\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"distance\":655,\"place_id\":\"513a9b4473d38459c0599baa4f8369fe3f40f00103f9018b6287f20000000092031f4d69646c616e6420436f756e747920446574656e74696f6e2043656e746572\"},{\"ref\":\"TX 349 Bus\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"suburb\":\"Downtown Midland Management District\",\"street\":\"South Big Spring Street\",\"lon\":-102.07790468045857,\"lat\":31.993926663726327,\"state_code\":\"TX\",\"formatted\":\"South Big Spring Street, Midland, TX 79701, United States of America\",\"mappedTo\":{\"lon\":-102.07790468045857,\"lat\":31.993926663726327},\"categories\":[\"service\",\"service.advertising\",\"service.advertising.billboard\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"distance\":672,\"place_id\":\"511b71b7daf98459c05938c67d5072fe3f40f00103f9014f9e238702000000\"},{\"name\":\"My Community Credit Union\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Homestead\",\"street\":\"West Louisiana Avenue\",\"housenumber\":\"600\",\"lon\":-102.0814069,\"lat\":32.0041118,\"state_code\":\"TX\",\"formatted\":\"My Community Credit Union, 600 West Louisiana Avenue, Midland, TX 79701, United States of America\",\"categories\":[\"building\",\"building.commercial\",\"service\",\"service.financial\",\"service.financial.bank\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"website\":\"https://www.mccu.coop/about-connect/location-details.html?id=13317&title=main-office-downtown&location-information=main-office-downtown-600-w-louisiana-ave--midland-tx-79701\",\"opening_hours\":\"Mo-Tu 09:00-17:00; We 10:00-17:00; Th 09:00-17:00; Fr 09:00-18:00\",\"distance\":710,\"place_id\":\"51098a62c5358559c0597d0cdbbb86004040f00102f90109ec1d18000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e\"},{\"ref\":\"I 20 Bus\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Nueva La Jolla\",\"street\":\"East Front Street\",\"lon\":-102.0656298029267,\"lat\":32.00034157158431,\"state_code\":\"TX\",\"formatted\":\"East Front Street, Midland, TX 79701, United States of America\",\"mappedTo\":{\"lon\":-102.0656298029267,\"lat\":32.00034157158431},\"categories\":[\"service\",\"service.advertising\",\"service.advertising.billboard\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"distance\":935,\"place_id\":\"51fda36fd2348459c059781b3d2311004040f00103f901329f238702000000\"},{\"name\":\"Iron Press Cleaners\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"Homestead\",\"street\":\"North Big Spring Street\",\"housenumber\":\"1309\",\"lon\":-102.0790375,\"lat\":32.0107154,\"state_code\":\"TX\",\"formatted\":\"Iron Press Cleaners, 1309 North Big Spring Street, Midland, TX 79701, United States of America\",\"categories\":[\"commercial\",\"service\",\"service.cleaning\",\"service.cleaning.dry_cleaning\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"website\":\"https://www.ironpresscleaners.com\",\"commercial\":{\"type\":\"dry_cleaning\"},\"distance\":1265,\"place_id\":\"51166a4df30e8559c059bd70491f5f014040f00103f9016ded12de0200000092031349726f6e20507265737320436c65616e657273\"},{\"name\":\"Midland Fire Department Station #2\",\"country\":\"United States\",\"country_code\":\"us\",\"state\":\"Texas\",\"county\":\"Midland County\",\"city\":\"Midland\",\"postcode\":\"79701\",\"district\":\"South Park\",\"street\":\"South Mineola Street\",\"lon\":-102.0664714,\"lat\":31.9898431,\"state_code\":\"TX\",\"formatted\":\"Midland Fire Department Station #2, South Mineola Street, Midland, TX 79701, United States of America\",\"categories\":[\"service\",\"service.fire_station\"],\"datasource\":{\"sourcename\":\"openstreetmap\",\"attribution\":\"© OpenStreetMap contributors\",\"license\":\"Open Database License\",\"url\":\"https://www.openstreetmap.org/copyright\"},\"distance\":1334,\"place_id\":\"51a3474211418459c059e6fd7c5b66fd3f40f00102f901b456eb17000000009203224d69646c616e642046697265204465706172746d656e742053746174696f6e202332\"}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_013nWQZhUiNWxdiYSrzJVgmR",
+      "name": "mcp__geoapify__calculate_route_matrix",
+      "arguments": {
+        "sources": [
+          {
+            "lon": -102.075567,
+            "lat": 31.9997
+          }
+        ],
+        "targets": [
+          {
+            "lon": -102.0762161,
+            "lat": 32.0010482
+          },
+          {
+            "lon": -102.0784227,
+            "lat": 31.9997352
+          },
+          {
+            "lon": -102.0737131,
+            "lat": 31.9969224
+          },
+          {
+            "lon": -102.0784008,
+            "lat": 31.9981412
+          },
+          {
+            "lon": -102.0772192,
+            "lat": 31.9971187
+          },
+          {
+            "lon": -102.0760059,
+            "lat": 32.0032292
+          },
+          {
+            "lon": -102.0789909,
+            "lat": 31.9977556
+          },
+          {
+            "lon": -102.0798982,
+            "lat": 31.9986006
+          },
+          {
+            "lon": -102.0796906,
+            "lat": 31.9977366
+          },
+          {
+            "lon": -102.0801792,
+            "lat": 31.9977008
+          },
+          {
+            "lon": -102.079062,
+            "lat": 32.0029884
+          },
+          {
+            "lon": -102.080078,
+            "lat": 31.9971187
+          },
+          {
+            "lon": -102.0814194,
+            "lat": 31.9989613
+          },
+          {
+            "lon": -102.0779059,
+            "lat": 32.0045931
+          },
+          {
+            "lon": -102.0754059,
+            "lat": 31.9937975
+          },
+          {
+            "lon": -102.07790468045857,
+            "lat": 31.993926663726327
+          },
+          {
+            "lon": -102.0814069,
+            "lat": 32.0041118
+          },
+          {
+            "lon": -102.0656298029267,
+            "lat": 32.00034157158431
+          },
+          {
+            "lon": -102.0790375,
+            "lat": 32.0107154
+          },
+          {
+            "lon": -102.0664714,
+            "lat": 31.9898431
+          }
+        ],
+        "mode": "drive",
+        "units": "metric",
+        "type": "balanced",
+        "traffic": "free_flow"
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_013nWQZhUiNWxdiYSrzJVgmR",
+      "is_error": false,
+      "content": "{\"sources\":[{\"lat\":31.999697,\"lon\":-102.075663}],\"targets\":[{\"lat\":32.001059,\"lon\":-102.075704},{\"lat\":31.99953,\"lon\":-102.078411},{\"lat\":31.997336,\"lon\":-102.073718},{\"lat\":31.998132,\"lon\":-102.0787},{\"lat\":31.997451,\"lon\":-102.07723},{\"lat\":32.003234,\"lon\":-102.075767},{\"lat\":31.997747,\"lon\":-102.078946},{\"lat\":31.998445,\"lon\":-102.079893},{\"lat\":31.997734,\"lon\":-102.079906},{\"lat\":31.997703,\"lon\":-102.079906},{\"lat\":32.002845,\"lon\":-102.079061},{\"lat\":31.99712,\"lon\":-102.079896},{\"lat\":31.998966,\"lon\":-102.081138},{\"lat\":32.004752,\"lon\":-102.077911},{\"lat\":31.993305,\"lon\":-102.075391},{\"lat\":31.993926,\"lon\":-102.077904},{\"lat\":32.00406,\"lon\":-102.08155},{\"lat\":32.000341,\"lon\":-102.065629},{\"lat\":32.010821,\"lon\":-102.079063},{\"lat\":31.989836,\"lon\":-102.066788}],\"sources_to_targets\":[[{\"distance\":153,\"time\":15,\"source_index\":0,\"target_index\":0},{\"distance\":273,\"time\":25,\"source_index\":0,\"target_index\":1},{\"distance\":447,\"time\":56,\"source_index\":0,\"target_index\":2},{\"distance\":532,\"time\":57,\"source_index\":0,\"target_index\":3},{\"distance\":400,\"time\":48,\"source_index\":0,\"target_index\":4},{\"distance\":395,\"time\":40,\"source_index\":0,\"target_index\":5},{\"distance\":556,\"time\":67,\"source_index\":0,\"target_index\":6},{\"distance\":763,\"time\":80,\"source_index\":0,\"target_index\":7},{\"distance\":615,\"time\":69,\"source_index\":0,\"target_index\":8},{\"distance\":618,\"time\":70,\"source_index\":0,\"target_index\":9},{\"distance\":775,\"time\":78,\"source_index\":0,\"target_index\":10},{\"distance\":686,\"time\":68,\"source_index\":0,\"target_index\":11},{\"distance\":587,\"time\":57,\"source_index\":0,\"target_index\":12},{\"distance\":863,\"time\":68,\"source_index\":0,\"target_index\":13},{\"distance\":940,\"time\":88,\"source_index\":0,\"target_index\":14},{\"distance\":1604,\"time\":156,\"source_index\":0,\"target_index\":15},{\"distance\":1062,\"time\":100,\"source_index\":0,\"target_index\":16},{\"distance\":1126,\"time\":83,\"source_index\":0,\"target_index\":17},{\"distance\":1551,\"time\":112,\"source_index\":0,\"target_index\":18},{\"distance\":2517,\"time\":213,\"source_index\":0,\"target_index\":19}]],\"units\":\"metric\",\"distance_units\":\"meters\",\"time_units\":\"seconds\"}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "assistant_text",
+      "text": "approximation=true\n\n# ZonePilot steps 2–4: 19 of 20 customers are within 1200 s of the origin\n\nAll 19 customers that geocoded cleanly can be reached by car within the 1200-second limit. One address was rejected, and none of the 20 nearby places found is a plumber. These numbers come from route times at single points only, with no continuous zone. The local importer still calculates the official values.\n\n**Settings:** origin 300 N Loraine St (lon −102.075567, lat 31.9997), outbound drive, free_flow, balanced, metric, no avoid options. Times are in seconds and distances in metres.\n\n## Customer table\n\n| row | lon, lat | geocode | time s | dist m | class |\n|---|---|---|---|---|---|\n| 1 | −102.080758, 31.996251 | accepted | 81 | 856 | in |\n| 2 | −102.128860, 32.011364 | accepted (1 building, 1 amenity ignored) | 490 | 6142 | in |\n| 3 | −102.128132, 31.995026 | accepted | 449 | 5590 | in |\n| 4 | — | **rejected**: returned \"700 South Street\", not S Jackson St (confidence was 1) | — | — | not evaluated |\n| 5 | −102.123400, 31.977861 | accepted | 486 | 5968 | in |\n| 6 | −102.152163, 32.009876 | accepted | 816 | 16869 | in |\n| 7 | −102.119297, 32.029558 | accepted | 607 | 9863 | in |\n| 8 | −102.075481, 31.988153 | accepted | 156 | 1776 | in |\n| 9 | −102.163169, 31.983509 | accepted | 887 | 16274 | in |\n| 10 | −102.101620, 32.008075 | accepted | 386 | 5246 | in |\n| 11 | −102.071072, 31.980342 | accepted | 247 | 3085 | in |\n| 12 | −102.214435, 31.940028 | accepted | 1085 | 21635 | in |\n| 13 | −102.092478, 31.993315 | accepted (1 building, 4 amenities ignored) | 190 | 2214 | in |\n| 14 | −102.140165, 32.022708 | accepted | 665 | 12587 | in |\n| 15 | −102.061321, 32.025087 | accepted | 344 | 4792 | in |\n| 16 | −102.133052, 32.010440 | accepted | 509 | 6331 | in |\n| 17 | −102.108976, 32.018071 | accepted | 478 | 6881 | in |\n| 18 | −102.139277, 31.975557 | accepted | 722 | 13939 | in |\n| 19 | −102.118043, 32.036252 | accepted | 569 | 10820 | in |\n| 20 | −102.076940, 31.996331 | accepted | 59 | 492 | in |\n\n**Decision for you:** I rejected row 4 even though its confidence scores were both 1, because the street in the result doesn't match the input. A plain threshold check would have accepted it. Please confirm the rejection, or give a corrected address.\n\n## Summary\n- **Customers evaluated:** 19 of 20 (1 rejected at geocoding).\n- **Classification:** 19 in, 0 out, 0 unknown, so 100% of known results are in the zone.\n- **Median time in the zone:** 486 s (row 5).\n- **Farthest:** row 12, 1085 s / 21635 m, with no ties.\n- **Close to the limit (over 1200 s and up to 1320 s):** none.\n- **Out-of-zone outliers:** none.\n- **Route check vs matrix (row 1):** the single route gave 856 m / 81.539 s and the matrix gave 856 m / 81 s. They agree, and the matrix value is the one kept.\n\n## Nearby place candidates\nI ran one search for category `service`, up to 20000 m from the origin with a limit of 20. It used the tool's actual fields (lat/lon/radius_meters/category); the tool has no circle field.\n- **Returned:** 20, which is the cap, so this is a sample and not a full count.\n- **Duplicates / invalid coordinates:** 0 / 0. All 20 were routed.\n- **Classification:** 20 inside (the longest is 213 s), 0 outside, 0 unknown.\n- The results are banks, post or police sites, billboards, a fire station and a dry cleaner. **None are plumbing competitors**, and this search doesn't show whether any plumbers exist nearby.\n\nI've stopped here. The calls made were 20 geocodes, 2 matrices, 1 route and 1 place search.",
+      "approximation": true
+    },
+    {
+      "event": "client_result",
+      "is_error": false,
+      "subtype": "success",
+      "text": "approximation=true\n\n# ZonePilot steps 2–4: 19 of 20 customers are within 1200 s of the origin\n\nAll 19 customers that geocoded cleanly can be reached by car within the 1200-second limit. One address was rejected, and none of the 20 nearby places found is a plumber. These numbers come from route times at single points only, with no continuous zone. The local importer still calculates the official values.\n\n**Settings:** origin 300 N Loraine St (lon −102.075567, lat 31.9997), outbound drive, free_flow, balanced, metric, no avoid options. Times are in seconds and distances in metres.\n\n## Customer table\n\n| row | lon, lat | geocode | time s | dist m | class |\n|---|---|---|---|---|---|\n| 1 | −102.080758, 31.996251 | accepted | 81 | 856 | in |\n| 2 | −102.128860, 32.011364 | accepted (1 building, 1 amenity ignored) | 490 | 6142 | in |\n| 3 | −102.128132, 31.995026 | accepted | 449 | 5590 | in |\n| 4 | — | **rejected**: returned \"700 South Street\", not S Jackson St (confidence was 1) | — | — | not evaluated |\n| 5 | −102.123400, 31.977861 | accepted | 486 | 5968 | in |\n| 6 | −102.152163, 32.009876 | accepted | 816 | 16869 | in |\n| 7 | −102.119297, 32.029558 | accepted | 607 | 9863 | in |\n| 8 | −102.075481, 31.988153 | accepted | 156 | 1776 | in |\n| 9 | −102.163169, 31.983509 | accepted | 887 | 16274 | in |\n| 10 | −102.101620, 32.008075 | accepted | 386 | 5246 | in |\n| 11 | −102.071072, 31.980342 | accepted | 247 | 3085 | in |\n| 12 | −102.214435, 31.940028 | accepted | 1085 | 21635 | in |\n| 13 | −102.092478, 31.993315 | accepted (1 building, 4 amenities ignored) | 190 | 2214 | in |\n| 14 | −102.140165, 32.022708 | accepted | 665 | 12587 | in |\n| 15 | −102.061321, 32.025087 | accepted | 344 | 4792 | in |\n| 16 | −102.133052, 32.010440 | accepted | 509 | 6331 | in |\n| 17 | −102.108976, 32.018071 | accepted | 478 | 6881 | in |\n| 18 | −102.139277, 31.975557 | accepted | 722 | 13939 | in |\n| 19 | −102.118043, 32.036252 | accepted | 569 | 10820 | in |\n| 20 | −102.076940, 31.996331 | accepted | 59 | 492 | in |\n\n**Decision for you:** I rejected row 4 even though its confidence scores were both 1, because the street in the result doesn't match the input. A plain threshold check would have accepted it. Please confirm the rejection, or give a corrected address.\n\n## Summary\n- **Customers evaluated:** 19 of 20 (1 rejected at geocoding).\n- **Classification:** 19 in, 0 out, 0 unknown, so 100% of known results are in the zone.\n- **Median time in the zone:** 486 s (row 5).\n- **Farthest:** row 12, 1085 s / 21635 m, with no ties.\n- **Close to the limit (over 1200 s and up to 1320 s):** none.\n- **Out-of-zone outliers:** none.\n- **Route check vs matrix (row 1):** the single route gave 856 m / 81.539 s and the matrix gave 856 m / 81 s. They agree, and the matrix value is the one kept.\n\n## Nearby place candidates\nI ran one search for category `service`, up to 20000 m from the origin with a limit of 20. It used the tool's actual fields (lat/lon/radius_meters/category); the tool has no circle field.\n- **Returned:** 20, which is the cap, so this is a sample and not a full count.\n- **Duplicates / invalid coordinates:** 0 / 0. All 20 were routed.\n- **Classification:** 20 inside (the longest is 213 s), 0 outside, 0 unknown.\n- The results are banks, post or police sites, billboards, a fire station and a dry cleaner. **None are plumbing competitors**, and this search doesn't show whether any plumbers exist nearby.\n\nI've stopped here. The calls made were 20 geocodes, 2 matrices, 1 route and 1 place search.",
+      "permission_denials": [],
+      "approximation": true
+    }
+  ],
+  "stderr": "",
+  "capture_policy": "No session persistence. Tool arguments/results retained after recursive credential, local-path and email redaction. Raw stdout held in memory only. Synthetic geometry is diagnostic only. No screenshots. Contact objects removed from parsed hosted JSON copies before committing. Client tool JSON is retained as a sanitized text projection, not a separately captured structuredContent field.",
+  "completed_at_utc": "2026-10-23T19:53:35Z",
+  "completed_at_utc_source": "Local artifact write time immediately after ephemeral client exit."
+}

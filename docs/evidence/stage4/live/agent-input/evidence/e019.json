@@ -1,0 +1,52 @@
+{
+  "approximation": true,
+  "arguments": {
+    "limit": 5,
+    "query": "4800 Graceland Dr, Midland, TX 79703"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "count": 1,
+    "query": "4800 Graceland Dr, Midland, TX 79703",
+    "results": [
+      {
+        "address_line1": "4800 Graceland Drive",
+        "address_line2": "Midland, TX 79703, United States of America",
+        "city": "Midland",
+        "confidence": 1,
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "4800 Graceland Drive, Midland, TX 79703, United States of America",
+        "housenumber": "4800",
+        "lat": 31.975557,
+        "lon": -102.139277,
+        "place_id": "51710514eae98859c0594562821abef93f40c00203e203466f70656e6164647265737365733a616464726573733a75732f74782f7374617465776964652d6164647265737365732d73746174653a38623534303935666665646264363365",
+        "postcode": "79703",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "match_type": "full_match",
+          "popularity": 1.393269218663782
+        },
+        "result_type": "building",
+        "state": "Texas",
+        "street": "Graceland Drive",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      }
+    ]
+  },
+  "session": "mcp-customers.json",
+  "tool": "geocode_address",
+  "tool_use_id": "toolu_01NwwwqzNBn1fnN5DJhJAyQ7"
+}

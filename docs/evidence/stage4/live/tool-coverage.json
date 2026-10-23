@@ -1,0 +1,225 @@
+{
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "required_tools_succeeded": 9,
+  "claude_tool_invocations": 33,
+  "tools": {
+    "geocode_address": [
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_01ALcyzkPa15SPb5hQQ5Kcyu",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01W6jAHi2SMSMYeqgwf8wA2E",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01KHzu4igeDejXrGRTGjE2rj",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01FWregPUaQ4RFWMWa9P9oP5",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01UroThF28nRhhYVokqwa7oX",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_011aaURpKTVLv4TEdru2xjxn",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01NtWUQB9fr4Eu6xV5UsbVHD",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_017r65zawDY3w9KUFdYGPENv",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01PnTR8Zrzn43nuYWDGZH1p6",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01CAraCwKEsqEoG5Q7SzPwdq",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01BuDHWgY83rZxZ9iSZAcNDq",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01R3XZMCQAXtUrAx6q9NDpes",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01LU4n8eNSSi4W3imLJLjhLK",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01RdqBnvi4igrGu5je9fwsbY",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01Cog8oMFVDyhtTos3T55Ne3",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_012AYSk9vV2DwfdRjQYTbs3r",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01PC9AXktsR758C4d9eRfLmm",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01BURGaQpUeKDasfNygAadLY",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01NwwwqzNBn1fnN5DJhJAyQ7",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01M9WShb4EEcka13zhFMxE31",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01K8QzmrXZgPMPkAZQw1DrXQ",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-final-customers.json",
+        "tool_use_id": "toolu_01XHERMX9vZCpZ81vnqSuhBi",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "reverse_geocode_coordinates": [
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_016nXUsW8RJLaihWsuynqAah",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "list_place_categories": [
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_01AXM4pgeS4zGruQh9UzAH9o",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "transform_geometry": [
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_01RtM8EfXoD4Jhho8LGw6FwW",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "evaluate_spatial_relation": [
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_01EzoppXJ3GxU3VA3J3wcN1A",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_01PgERAAAY6aCsFgAvGL5YwA",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "measure_geometry": [
+      {
+        "session": "mcp-preflight.json",
+        "tool_use_id": "toolu_019TKojfGBuiFiV4qqyxHG5V",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "calculate_route_matrix": [
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01C6xpFKcY7VWSaXF6pJj71x",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_013nWQZhUiNWxdiYSrzJVgmR",
+        "status": "success",
+        "approximation": true
+      },
+      {
+        "session": "mcp-final-customers.json",
+        "tool_use_id": "toolu_01HcE7Vpu5n2LwaA9CcW4cti",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "calculate_route": [
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_01QaUPneJkgz3ATUamQ68R34",
+        "status": "success",
+        "approximation": true
+      }
+    ],
+    "search_places": [
+      {
+        "session": "mcp-customers.json",
+        "tool_use_id": "toolu_019HyWqGZvyqvfoPV1DSVGqi",
+        "status": "success",
+        "approximation": true
+      }
+    ]
+  },
+  "note": "Geometry invocations use authored synthetic diagnostic geometry only; their returned values are live hosted results. Preliminary nineteen-target matrix is not used for final customer reports."
+}

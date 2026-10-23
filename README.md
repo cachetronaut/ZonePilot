@@ -8,7 +8,11 @@ Built for the [Geoapify Open Geospatial Program](https://geoapify.com). This rep
 
 The offline CLI is implemented with stock Python and zero dependencies. No pip installation or build step is needed. Minimum supported Python is 3.14.9; the build/test target is 3.15.1. Local execution has used Python 3.14.9 on macOS arm64. Python 3.15.1 is not installed here; target-runtime and Linux/Windows checks are PENDING.
 
-Live runs are PENDING: GEOAPIFY_API_KEY was absent during this build. Synthetic fixtures are authored examples, not recorded successful API calls. The owner approved the B02 point-time agent method on 2026-10-23. B01 account entitlement, B03 permitted live sample/evidence, and B04 authenticated client proof remain open; MCP competitor evidence/extent is also pending. See [build decisions](docs/build-decisions.md), [local evidence](docs/evidence/local-checks.md) and the [PRD](docs/prd.md).
+Stage 4 live reports on October 23, 2026 evaluated all twenty fictional customer identities at labeled public Midland demo locations. Both paths classified 20/20 in zone (100%), with median in-zone drive time 488 seconds (8m 8s). The farthest was DEMO-12 at 1,085 seconds (18m 5s), 21,635 metres; no customer was outside or borderline. Sampled broad-service candidates: CLI 19 in zone, MCP 20. These are not verified plumbing competitors. [Live comparison and row-level evidence](docs/evidence/stage4/live/comparison.md).
+
+Claude Code 2.1.309 completed all nine hosted tools; Codex CLI 0.163.0 passed a separate geocode smoke call. MCP is always `approximation=true`: route-time classification only at measured points; no continuous zone. [Evidence index](docs/evidence/stage4/README.md) preserves earlier failures separately from successful reports and offline fixtures.
+
+The repository stays private. Current-tree/current-branch privacy checks are required before merge; old PR #1 retained owner-identity text is an owner pre-publication item, with GitHub Support purge or delete-and-recreate from clean squashed history as the two options. Screenshots, target-runtime/platform checks and public submission remain owner steps. See [submission pack](SUBMISSION.md), [tutorial](TUTORIAL.md), [local checks](docs/evidence/local-checks.md) and [PRD](docs/prd.md).
 
 ## Reproduce the offline example
 
@@ -26,17 +30,25 @@ Open `reports/demo/report.json` and `reports/demo/report.md`. The bundle also co
 
 The fixture is Main Street Plumbing, Midland TX with twenty fictional customers on Imaginary Fixture Lane. It exercises inside, outside, boundary, borderline, disagreement, zero-time and tied-maximum cases. Its simple authored rectangle is not a real road-time zone. Live execution requires a real Geoapify Isoline response. See [fixture provenance](tests/fixtures/sample/README.md).
 
-## Live run contract, pending approved inputs
+## Live run contract
 
-Before running live, close PRD B01 and B03. `data/sample_business.json` and `data/sample_customers.csv` are intentionally pending because the PRD reserves those paths for approved live-demo inputs. Do not present the offline fixture as geocodable live data.
+[Demo provenance](data/README.md) identifies real public locations used for fictional identities. Main Street Plumbing is fictional and is not based at City Hall; `300 N Loraine St, Midland, TX 79701` is only its demo origin. No public location is an actual customer or affiliated with this project. `data/sample_business.json` records settings and labeling; `data/sample_customers.csv` contains twenty fictional customer names/references at the approved demo addresses.
 
-Once approved, the command shape is:
+On this owner's macOS machine, retrieve the existing Keychain item directly into the environment and stop if lookup fails:
 
 ```sh
-python3.15 -m zonepilot.cli --business-address '<approved fictional address>' --business-name 'Main Street Plumbing' --minutes 20 --customers data/sample_customers.csv --competitor-category service --output-dir reports/live-demo
+set +x
+GEOAPIFY_API_KEY="$(security find-generic-password -a geoapify -s GEOAPIFY_API_KEY -w 2>/dev/null)" || exit 2
+export GEOAPIFY_API_KEY
+python3.14 -B -m zonepilot.cli --business-address '300 N Loraine St, Midland, TX 79701' --business-name 'Main Street Plumbing' --minutes 20 --customers data/sample_customers.csv --competitor-category service --output-dir reports/live-demo
+unset GEOAPIFY_API_KEY
 ```
 
-This shape is not a runnable approved sample. `service` is a broad category, not a verified plumbing category. The official snapshot contains no plumber/plumbing entry. Choose a supported category deliberately and keep the limitation visible.
+Use an installed supported interpreter; no installation is required. The recorded run exited 0 and published `report.json`, `report.md` and hashed evidence. Read the [live report](docs/evidence/stage4/live/cli/report.md) and [comparison](docs/evidence/stage4/live/comparison.md). Both searches are capped at twenty, without pagination; `service` is broad and does not identify verified plumbing competitors. Live values can change with upstream data.
+
+The earlier invented origin failed with `origin_unresolved`; [historical evidence](docs/evidence/stage4/live-cli.json) is retained. It is not the current sample. The final real sample has no outside or borderline customer, so those branches remain demonstrated by the authored offline fixture rather than claimed as live outcomes.
+
+The fresh-clone Stage 4 check is recorded in the [evidence index](docs/evidence/stage4/README.md). Before PR #4 merges, reviewers must select `stage4/submission-pack` when cloning; after merge, the normal default-branch clone contains these files.
 
 Set the key only in the process environment. For POSIX shells, this masked prompt passes the secret directly into the process environment without putting a literal key in shell history:
 
@@ -61,7 +73,7 @@ Output defaults to `reports/run/report.json`, `reports/run/report.md` and `repor
 
 ## Interpretation and limits
 
-Only a unique building candidate with both confidence measures at least 0.95 is accepted. Unresolved customers remain visible. Polygon/MultiPolygon membership includes every exterior and hole boundary within 1e-9 degrees; strict hole interiors are outside. Geometry validation rejects malformed topology, ambiguous touching rings/components, antimeridian spans, latitudes beyond 85 degrees, and shapes above 2,000 positions or 32 rings.
+Only a unique building candidate with both confidence measures at least 0.95 is accepted. Unresolved customers remain visible. Polygon/MultiPolygon membership includes every exterior and hole boundary within 1e-9 degrees; strict hole interiors are outside. Geometry validation rejects malformed topology, ambiguous touching rings/components, antimeridian spans, latitudes beyond 85 degrees, and shapes above 20,000 positions or 32 rings, or a 2,000,000-pair topology-work budget. [Full live geometry contract](docs/live-geometry-contract.md).
 
 The authoritative CLI verdict is local polygon membership. Measured time supplies separate within-budget, borderline and disagreement fields. Borderline means strictly over the budget and at most 110 percent of it. Missing route data is null, never zero. The model uses free-flow, balanced, outbound driving without avoid options. It does not estimate congestion, return travel, profit or prices.
 
@@ -73,13 +85,13 @@ Requests use a 10-second socket timeout, 120-second run deadline and 60-attempt 
 
 [Client snippets](zonepilot/agent/README.md) cover Claude Code, Codex CLI and Cursor with environment-backed headers. [Sequenced prompts](zonepilot/agent/prompts.md) name all nine promised tools, normalization, diagnostic geometry, comparison and export steps. Every MCP output labels the approximation.
 
-The owner approved `route_time_at_points`: known outbound time at or below the budget is in zone, larger known time is outside, and unknown routes have unknown membership. It classifies supplied customer points only, with no continuous polygon. Every agent report retains `approximation=true` and the required no-continuous-zone limitation. Sampled-boundary methods and requested MCP competitor sections remain rejected. Agent import makes no network calls:
+The owner approved `route_time_at_points`: known outbound time at or below the budget is in zone, larger known time is outside, and unknown routes have unknown membership. It classifies supplied customer points only, with no continuous polygon. Every agent report retains `approximation=true` and the required no-continuous-zone limitation. Sampled-boundary methods remain rejected. Requested MCP competitors use the [approved evidence contract](docs/mcp-competitor-contract.md): one 20,000-metre circle search, acquired outbound routes for unique valid candidates and import-time checks of counts/records. The circle determines only the candidate extent. Agent import makes no network calls:
 
 ```sh
 python3.15 -m zonepilot.report --import-agent evidence.json --output-dir reports/agent
 ```
 
-The importer accepts valid acquired point-time evidence without a key and writes both reports. This offline capability does not establish a live Stage 3 acceptance check. AI clients and subscriptions are separate prerequisites, outside the zero-dependency Python claim.
+The importer accepts valid acquired point-time evidence without a key and writes both reports. The [live hosted bundle](docs/evidence/stage4/live/mcp/report.md) was produced by this keyless importer from captured client results, with no REST measurements substituted. AI clients and subscriptions are separate prerequisites, outside the zero-dependency Python claim.
 
 ## Manual acceptance checklist
 
@@ -91,13 +103,16 @@ The [test record](docs/evidence/local-checks.md) maps tested cases and pending g
 - [x] Category validation and bounded sampled competitor handling: FR-17–19, AC-05.
 - [x] Shared strict reports, aggregation, escaping and deterministic publication: FR-13, FR-20–23, AC-06.
 - [x] Incremental [PROMPTLOG.md](PROMPTLOG.md): FR-27, CR-12. Genuine build failures are distinguished from controlled negative tests.
-- [ ] Approved twenty-customer live sample and live run: FR-04, AC-08, B01/B03.
-- [x] Owner-approved point-time method and offline importer contract: FR-12, B02 customer classification.
-- [ ] Full comparison, nine hosted calls and second-client smoke: FR-25–26, AC-07, B04; competitor evidence/extent remains pending.
-- [ ] Authenticated setup/screenshots, tutorial feedback and evidence: FR-28, AC-10.
-- [ ] Python 3.15.1 and Linux/Windows command verification: NFR-06, AC-09. Python 3.14.9 macOS verified.
-- [ ] Final [tutorial](TUTORIAL.md), dev.to URL and synchronized revision: CR-06–08, CR-13–14, CR-17, AC-10.
-- [ ] Owner-controlled public release, final license-holder confirmation and submission sweep: CR-03, NFR-09, AC-11. Repository stays private.
+- [x] Approved labeled twenty-customer live sample and complete run: FR-04 input artifact and AC-08 execution portion, B01/B03. Full AC-08 acceptance retains the outcome-diversity gap below. [CLI report](docs/evidence/stage4/live/cli/report.md): 20 evaluated, 100% in zone, 488-second median; 25 HTTP attempts, no Isoline polling. Billed credits were not available.
+- [ ] FR-04 live outcome diversity: this run has zero outside/borderline customers. Those cases pass in synthetic fixtures only; no live result was manufactured.
+- [x] Owner-approved point-time method and sampled MCP competitor contract: FR-12, B02.
+- [x] Complete identical-input comparison, all nine hosted tools and second-client smoke: FR-25–26, AC-07, B04. [MCP comparison, approximation=true](docs/evidence/stage4/live/comparison.md); [Codex success](docs/evidence/stage4/live/codex-smoke-approved.json).
+- [ ] Actual credential-free setup screenshots in both clients: FR-28, AC-10, CR-14. Live text/config evidence is present; screenshots remain owner handoff.
+- [x] Current [fresh remote clone check](docs/evidence/stage4/live/fresh-clone.json), revision `4a250b7`: 156 tests, byte-identical synthetic and captured MCP reports, successful live CLI with the same 20/20 in-zone result and 488-second median. PR branch selected before merge; temporary clone removed.
+- [ ] Python 3.15.1 and Linux/Windows command verification: NFR-06, AC-09. Current verified runtime is macOS Python 3.14.9.
+- [x] [Tutorial](TUTORIAL.md) with setup, live comparison, three evidenced failures, lessons and Geoapify feedback; [dev.to draft](docs/drafts/devto.md) saved locally. Both README and tutorial link to geoapify.com.
+- [ ] Owner publication and final program acceptance: public repo, screenshots, dev.to URL and synchronized revision, final license-holder confirmation, submission email. [SUBMISSION.md](SUBMISSION.md) maps every Section 8 item.
+- [ ] Retained PR #1 privacy disposition before publication. Current-tree/current-branch scan is separate from the three old retained blobs; the repository MUST stay private until the owner resolves them. [Scan evidence](docs/evidence/stage4/privacy-scan.json).
 
 [Schema](docs/report-schema.md) · [API provenance](docs/api-provenance.md) · [PRD review log](docs/prd-review-log.md)
 

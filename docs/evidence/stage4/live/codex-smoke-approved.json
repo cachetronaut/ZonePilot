@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-23",
+  "path": "mcp",
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "client": "Codex CLI 0.163.0",
+  "exit_code": 0,
+  "prompt": "approximation=true. Perform exactly one Geoapify hosted MCP smoke call. Use available MCP tool discovery if needed; tools may be deferred. Find geoapify geocode_address and call it once with query=\"300 N Loraine St, Midland, TX 79701\", limit=5. Use no shell/file/network/search tools except MCP tool discovery and this hosted Geoapify geocoder. No installations/plans/subagents. Do not read, print or mention credentials, headers, local paths, personal emails or phone numbers. The key is already provided by an environment-backed server config. Return the actual tool call status, count, result_type, confidence and confidence_building_level and accepted coordinates. Do not say success without a completed successful invocation. Prefix every output approximation=true. Route-time classification only at measured points; no continuous zone. Owner authorizes this live geocoding of a public demo location for a fictional business.",
+  "config_override": "mcp_servers.geoapify={url=\"https://api.geoapify.com/v1/mcp\",env_http_headers={\"x-api-key\"=\"GEOAPIFY_API_KEY\"},enabled_tools=[\"geocode_address\"],required=true,tools={geocode_address={approval_mode=\"approve\"}},startup_timeout_sec=20,tool_timeout_sec=20}",
+  "events": [
+    {
+      "event": "assistant_text",
+      "text": "approximation=true. I\u2019ll discover the hosted Geoapify geocoder and invoke it exactly once with the supplied query and limit."
+    },
+    {
+      "event": "item.started",
+      "tool": "geocode_address",
+      "server": "geoapify",
+      "arguments": {
+        "query": "300 N Loraine St, Midland, TX 79701",
+        "limit": 5
+      },
+      "status": "in_progress",
+      "error_present": false,
+      "error": null,
+      "result": null
+    },
+    {
+      "event": "item.completed",
+      "tool": "geocode_address",
+      "server": "geoapify",
+      "arguments": {
+        "query": "300 N Loraine St, Midland, TX 79701",
+        "limit": 5
+      },
+      "status": "completed",
+      "error_present": false,
+      "error": null,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"query\": \"300 N Loraine St, Midland, TX 79701\",\n  \"count\": 1,\n  \"results\": [\n    {\n      \"formatted\": \"300 North Loraine Street, Downtown Midland Management District, Midland, TX 79701, United States of America\",\n      \"address_line1\": \"300 North Loraine Street\",\n      \"address_line2\": \"Downtown Midland Management District, Midland, TX 79701, United States of America\",\n      \"lon\": -102.075567,\n      \"lat\": 31.9997,\n      \"place_id\": \"510a6af816d68459c059abcfd556ecff3f40f00102f901a670420100000000c00203\",\n      \"result_type\": \"building\",\n      \"rank\": {\n        \"importance\": 0.00000999999999995449,\n        \"popularity\": 1.6300150916456089,\n        \"confidence\": 1,\n        \"confidence_city_level\": 1,\n        \"confidence_street_level\": 1,\n        \"confidence_building_level\": 1,\n        \"match_type\": \"full_match\"\n      },\n      \"confidence\": 1,\n      \"housenumber\": \"300\",\n      \"street\": \"North Loraine Street\",\n      \"postcode\": \"79701\",\n      \"city\": \"Midland\",\n      \"county\": \"Midland County\",\n      \"state\": \"Texas\",\n      \"country\": \"United States\",\n      \"country_code\": \"us\",\n      \"timezone\": {\n        \"name\": \"America/Chicago\",\n        \"offset_STD\": \"-06:00\",\n        \"offset_DST\": \"-05:00\",\n        \"offset_STD_seconds\": -21600,\n        \"offset_DST_seconds\": -18000,\n        \"abbreviation_STD\": \"CST\",\n        \"abbreviation_DST\": \"CDT\"\n      },\n      \"bbox\": {\n        \"lon1\": -102.075617,\n        \"lat1\": 31.99965,\n        \"lon2\": -102.075517,\n        \"lat2\": 31.99975\n      }\n    }\n  ]\n}"
+          }
+        ],
+        "structured_content": {
+          "query": "300 N Loraine St, Midland, TX 79701",
+          "count": 1,
+          "results": [
+            {
+              "formatted": "300 North Loraine Street, Downtown Midland Management District, Midland, TX 79701, United States of America",
+              "address_line1": "300 North Loraine Street",
+              "address_line2": "Downtown Midland Management District, Midland, TX 79701, United States of America",
+              "lon": -102.075567,
+              "lat": 31.9997,
+              "place_id": "510a6af816d68459c059abcfd556ecff3f40f00102f901a670420100000000c00203",
+              "result_type": "building",
+              "rank": {
+                "importance": 9.99999999995449e-06,
+                "popularity": 1.6300150916456089,
+                "confidence": 1,
+                "confidence_city_level": 1,
+                "confidence_street_level": 1,
+                "confidence_building_level": 1,
+                "match_type": "full_match"
+              },
+              "confidence": 1,
+              "housenumber": "300",
+              "street": "North Loraine Street",
+              "postcode": "79701",
+              "city": "Midland",
+              "county": "Midland County",
+              "state": "Texas",
+              "country": "United States",
+              "country_code": "us",
+              "timezone": {
+                "name": "America/Chicago",
+                "offset_STD": "-06:00",
+                "offset_DST": "-05:00",
+                "offset_STD_seconds": -21600,
+                "offset_DST_seconds": -18000,
+                "abbreviation_STD": "CST",
+                "abbreviation_DST": "CDT"
+              },
+              "bbox": {
+                "lon1": -102.075617,
+                "lat1": 31.99965,
+                "lon2": -102.075517,
+                "lat2": 31.99975
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event": "assistant_text",
+      "text": "approximation=true. Status: completed successfully; exactly one hosted Geoapify `geocode_address` invocation.\n\n- count: 1\n- result_type: `building`\n- confidence: 1\n- confidence_building_level: 1\n- Accepted coordinates: latitude **31.9997**, longitude **-102.075567**\n\nRoute-time classification applies only at measured points; no continuous zone."
+    }
+  ],
+  "stderr": "Reading additional input from stdin...\n",
+  "capture_policy": "Ephemeral client; no persistent config changes; raw stdout held in memory only; actual tool results retained after sanitization; paths/emails/key redacted."
+}

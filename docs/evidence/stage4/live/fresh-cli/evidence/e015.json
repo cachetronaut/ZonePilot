@@ -1,0 +1,119 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.092478,
+          31.993315
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "1705 West Missouri Avenue, Midland, TX 79701, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "match_type": "full_match",
+          "popularity": 1.6030225566246614
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -102.0926342,
+          31.9929674
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "Museum of the Southwest, 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 6.47570000762496e-05,
+          "match_type": "inner_part",
+          "popularity": 1.6030225566246614
+        },
+        "result_type": "amenity"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -102.092461,
+          31.9927532
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "Panzon \"Chubby\", 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 6.47570000762496e-05,
+          "match_type": "inner_part",
+          "popularity": 1.6030225566246614
+        },
+        "result_type": "amenity"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -102.092348,
+          31.992962
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "Freedom Of Youth, 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 6.47570000762496e-05,
+          "match_type": "inner_part",
+          "popularity": 1.6030225566246614
+        },
+        "result_type": "amenity"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -102.0922441,
+          31.9937412
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "Dogs, 1705 West Missouri Avenue, Midland, TX 79705, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 6.47570000762496e-05,
+          "match_type": "inner_part",
+          "popularity": 1.6030225566246614
+        },
+        "result_type": "amenity"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

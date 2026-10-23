@@ -1,0 +1,30 @@
+# Owner-sent Geoapify submission email draft
+
+UNSENT. Do not send until the required items in [SUBMISSION.md](../../SUBMISSION.md) pass and the owner completes publication. The live comparison is complete, but this private build is not yet ready for final submission. Use the existing program contact channel; no recipient address has been guessed.
+
+Subject: ZonePilot submission, Open Geospatial Program Batch #2
+
+Hello Geoapify team,
+
+I am submitting ZonePilot for Batch #2's Combine OpenAPI + MCP track. It helps a single-location service business review an outbound driving budget using a spec-derived Python CLI and your hosted MCP tools.
+
+Repository: [OWNER: insert approved public repository URL]
+Tutorial: [OWNER: insert published dev.to URL]
+Repository tutorial: [OWNER: insert public TUTORIAL.md URL]
+Reviewed revision: [OWNER: insert exact commit]
+Compliance and evidence: [OWNER: insert public SUBMISSION.md URL]
+
+Both recorded live paths resolved twenty demo customers with twenty known routes. All twenty were within the twenty-minute budget, with a median of 488 seconds and maximum of 1,085 seconds. The CLI uses full REST Isoline geometry. The hosted MCP method carries approximation=true and classifies measured points by route time, with no continuous zone. This live sample has no outside or borderline customers; those outcomes are demonstrated only by the offline fixture.
+
+The business and customer identities are fictional. The addresses are real public Midland demo locations, with no affiliation or actual customer relationship. The evidence preserves the preliminary South Street/South Jackson geocoding discrepancy and the explicit replacement of that input before the final comparison.
+
+All nine required hosted tools have successful captured results. Claude Code supplied the full acquisition and Codex CLI supplied a successful smoke test. Broad service-category observations are sampled and capped: CLI 19 inside and 1 outside from 20 returned; MCP 20 inside and 0 outside from 20 returned. They are not verified plumbing competitors.
+
+My main feedback is that hosted MCP still has no isoline tool. The taxonomy also lacks a plumbing category or general trade-services umbrella, although specific electrician and carpenter categories exist. The tutorial records these limits, three genuine build failures and their fixes, and the remaining differences between methods.
+
+Geoapify may publish an adapted completed tutorial with author credit to Scout Squad under the permission recorded in the tutorial.
+
+Thank you,
+Scout Squad
+
+Owner check before sending: replace every placeholder, confirm the final review and required screenshots/platform evidence, resolve retained PR #1 history through GitHub Support purge or delete-and-recreate from clean squashed history before public visibility, verify the public links and synchronized revision, and confirm that no personal information or key is attached. Keep the repository private until the retained-history item is resolved. The November 15, 2026 deadline and one permitted fix round of up to seven days still apply.

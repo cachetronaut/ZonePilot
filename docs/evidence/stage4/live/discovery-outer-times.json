@@ -1,0 +1,129 @@
+{
+  "data_mode": "live",
+  "purpose": "Check public demo-location geocodability and geographical outcome coverage, retaining actual routes.",
+  "additional_candidate": {
+    "input_address": "13370 Hwy 191, Midland, TX 79707",
+    "resolved_address": null,
+    "coordinates": null,
+    "evidence": {
+      "candidate_count": 1,
+      "confidence": null,
+      "confidence_building_level": null,
+      "match_type": null,
+      "result_type": null
+    },
+    "reason": "insufficient_precision",
+    "response": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -102.277156487849,
+              31.939262056808936
+            ]
+          },
+          "properties": {
+            "formatted": "13370 State Highway 191, Midland, TX 79707, United States of America",
+            "result_type": "building",
+            "rank": {
+              "importance": 9.99999999995449e-06,
+              "popularity": 1.2247247967816313,
+              "confidence": 0.9,
+              "confidence_city_level": 1,
+              "confidence_street_level": 0.9,
+              "confidence_building_level": 0.9,
+              "match_type": "full_match"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "origin": [
+    -102.075567,
+    31.9997
+  ],
+  "candidates": [
+    {
+      "input_address": "2700 FM 1379, Midland, TX 79706",
+      "coordinates": [
+        -101.895762,
+        32.027595
+      ],
+      "route_status": "ok",
+      "time_seconds": 822.0,
+      "distance_meters": 19262.0
+    },
+    {
+      "input_address": "2514 Arena Trail, Midland, TX 79701",
+      "coordinates": [
+        -102.09584495638613,
+        31.970543397858293
+      ],
+      "route_status": "ok",
+      "time_seconds": 464.0,
+      "distance_meters": 5574.0
+    }
+  ],
+  "route_response": {
+    "sources": [
+      {
+        "original_location": [
+          -102.075567,
+          31.9997
+        ],
+        "location": [
+          -102.075663,
+          31.999697
+        ]
+      }
+    ],
+    "targets": [
+      {
+        "original_location": [
+          -101.895762,
+          32.027595
+        ],
+        "location": [
+          -101.895654,
+          32.027618
+        ]
+      },
+      {
+        "original_location": [
+          -102.09584495638613,
+          31.970543397858293
+        ],
+        "location": [
+          -102.095837,
+          31.970545
+        ]
+      }
+    ],
+    "sources_to_targets": [
+      [
+        {
+          "distance": 19262,
+          "time": 822,
+          "source_index": 0,
+          "target_index": 0
+        },
+        {
+          "distance": 5574,
+          "time": 464,
+          "source_index": 0,
+          "target_index": 1
+        }
+      ]
+    ],
+    "units": "metric",
+    "distance_units": "meters",
+    "mode": "drive",
+    "type": "balanced",
+    "traffic": "free_flow"
+  },
+  "http_attempts": 2
+}

@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-23",
+  "path": "mcp",
+  "data_mode": "live",
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "client": "Claude Code 2.1.309",
+  "exit_code": 0,
+  "elapsed_seconds": 35.3,
+  "prompt": "approximation=true. ZonePilot follow-up to the captured hosted session. Every text output approximation=true. Route-time classification only at measured points; no continuous zone. Owner approved real public demo addresses with fictional identities. Prior row4 returned a different street; preserve that failed preliminary attempt. Final sample replaces only row4 with the public Greenwood district address 2700 FM 1379, Midland, TX 79706. Apply the unchanged unique-building rule. No shell/files/credentials/installs or tools other than configured Geoapify MCP.\nCall geocode_address exactly once query=\"2700 FM 1379, Midland, TX 79706\", limit=5. Accept only one eligible building with valid coordinates and rank.confidence AND confidence_building_level>=0.95; do not use REST data. If accepted, insert that point at row4 among these nineteen exact coordinates acquired in the previous hosted geocode calls (do not re-geocode these nineteen):\n[\n  {\n    \"row_id\": 1,\n    \"address\": \"615 W Missouri Ave, Midland, TX 79701\",\n    \"lon\": -102.08075785714286,\n    \"lat\": 31.99625142857143\n  },\n  {\n    \"row_id\": 2,\n    \"address\": \"3500 Neely Ave, Midland, TX 79707\",\n    \"lon\": -102.12886042723052,\n    \"lat\": 32.011364317804045\n  },\n  {\n    \"row_id\": 3,\n    \"address\": \"909 Bonham St, Midland, TX 79703\",\n    \"lon\": -102.12813177220578,\n    \"lat\": 31.995025705553658\n  },\n  {\n    \"row_id\": 5,\n    \"address\": \"900 S Raymond Rd, Midland, TX 79703\",\n    \"lon\": -102.1234,\n    \"lat\": 31.977861\n  },\n  {\n    \"row_id\": 6,\n    \"address\": \"5001 Preston Dr, Midland, TX 79707\",\n    \"lon\": -102.152163,\n    \"lat\": 32.009876\n  },\n  {\n    \"row_id\": 7,\n    \"address\": \"2800 Moss Ave, Midland, TX 79705\",\n    \"lon\": -102.119297,\n    \"lat\": 32.029558\n  },\n  {\n    \"row_id\": 8,\n    \"address\": \"201 W Dakota Ave, Midland, TX 79701\",\n    \"lon\": -102.07548065306122,\n    \"lat\": 31.988152836734695\n  },\n  {\n    \"row_id\": 9,\n    \"address\": \"6000 Riverfront Dr, Midland, TX 79706\",\n    \"lon\": -102.163169,\n    \"lat\": 31.983509\n  },\n  {\n    \"row_id\": 10,\n    \"address\": \"1400 N N St, Midland, TX 79701\",\n    \"lon\": -102.10162,\n    \"lat\": 32.008075\n  },\n  {\n    \"row_id\": 11,\n    \"address\": \"100 E Gist Ave, Midland, TX 79701\",\n    \"lon\": -102.071072,\n    \"lat\": 31.980342\n  },\n  {\n    \"row_id\": 12,\n    \"address\": \"9600 Wright Dr, Midland, TX 79706\",\n    \"lon\": -102.214435,\n    \"lat\": 31.940028\n  },\n  {\n    \"row_id\": 13,\n    \"address\": \"1705 W Missouri Ave, Midland, TX 79701\",\n    \"lon\": -102.092478,\n    \"lat\": 31.993315\n  },\n  {\n    \"row_id\": 14,\n    \"address\": \"3800 Norwood St, Midland, TX 79707\",\n    \"lon\": -102.140165,\n    \"lat\": 32.022708\n  },\n  {\n    \"row_id\": 15,\n    \"address\": \"1700 E Magnolia Ave, Midland, TX 79705\",\n    \"lon\": -102.061321,\n    \"lat\": 32.025087\n  },\n  {\n    \"row_id\": 16,\n    \"address\": \"2601 Wedgewood St, Midland, TX 79707\",\n    \"lon\": -102.133052,\n    \"lat\": 32.01044\n  },\n  {\n    \"row_id\": 17,\n    \"address\": \"2400 Fannin Ave, Midland, TX 79705\",\n    \"lon\": -102.108976,\n    \"lat\": 32.018071\n  },\n  {\n    \"row_id\": 18,\n    \"address\": \"4800 Graceland Dr, Midland, TX 79703\",\n    \"lon\": -102.139277,\n    \"lat\": 31.975557\n  },\n  {\n    \"row_id\": 19,\n    \"address\": \"2503 W Loop 250 N, Midland, TX 79705\",\n    \"lon\": -102.11804277580553,\n    \"lat\": 32.036252252035105\n  },\n  {\n    \"row_id\": 20,\n    \"address\": \"301 W Missouri Ave, Midland, TX 79701\",\n    \"lon\": -102.07694,\n    \"lat\": 31.996331\n  }\n]\nThen call calculate_route_matrix exactly once with sources=[{lon:-102.075567,lat:31.9997}], all20targets in row_id order, mode=drive,units=metric,type=balanced,traffic=free_flow, no avoid. Keep full precision input coordinates. This final matrix replaces the earlier19-target matrix for the final twenty-row report. No Places or other route calls needed; prior sampled competitor evidence remains applicable at the identical origin/settings. Report actual row times, counts, median among in-zone, max/ties, alloutliers and borderline; no fabricated outside cases. Raw tool results captured by harness; concise final text only. All outputs approximation=true.\n",
+  "config": {
+    "mcpServers": {
+      "geoapify": {
+        "type": "http",
+        "url": "https://api.geoapify.com/v1/mcp",
+        "headers": {
+          "x-api-key": "${GEOAPIFY_API_KEY}"
+        }
+      }
+    }
+  },
+  "session_events": [
+    {
+      "event": "client_initialization",
+      "tools": [
+        "mcp__geoapify__calculate_route",
+        "mcp__geoapify__calculate_route_matrix",
+        "mcp__geoapify__combine_geometries",
+        "mcp__geoapify__evaluate_spatial_relation",
+        "mcp__geoapify__geocode_address",
+        "mcp__geoapify__geocode_structured_address",
+        "mcp__geoapify__get_timezone",
+        "mcp__geoapify__list_place_categories",
+        "mcp__geoapify__measure_geometry",
+        "mcp__geoapify__reverse_geocode_coordinates",
+        "mcp__geoapify__search_places",
+        "mcp__geoapify__transform_geometry"
+      ],
+      "mcp_servers": [
+        {
+          "name": "geoapify",
+          "status": "connected",
+          "source": "dynamic"
+        }
+      ],
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01XHERMX9vZCpZ81vnqSuhBi",
+      "name": "mcp__geoapify__geocode_address",
+      "arguments": {
+        "query": "2700 FM 1379, Midland, TX 79706",
+        "limit": 5
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01XHERMX9vZCpZ81vnqSuhBi",
+      "is_error": false,
+      "content": "{\"query\":\"2700 FM 1379, Midland, TX 79706\",\"count\":1,\"results\":[{\"formatted\":\"2700 FM 1379, Greenwood, TX 79706, United States of America\",\"address_line1\":\"2700 FM 1379\",\"address_line2\":\"Greenwood, TX 79706, United States of America\",\"lon\":-101.895762,\"lat\":32.027595,\"place_id\":\"51f9bf232a547959c0593d44a33b88034040f00102f9010a7b420100000000c00203\",\"result_type\":\"building\",\"rank\":{\"importance\":9.99999999995449e-06,\"popularity\":1.1028873983168512,\"confidence\":1,\"confidence_city_level\":1,\"confidence_street_level\":1,\"confidence_building_level\":1,\"match_type\":\"full_match\"},\"confidence\":1,\"housenumber\":\"2700\",\"street\":\"FM 1379\",\"postcode\":\"79706\",\"city\":\"Greenwood\",\"county\":\"Midland County\",\"state\":\"Texas\",\"country\":\"United States\",\"country_code\":\"us\",\"timezone\":{\"name\":\"America/Chicago\",\"offset_STD\":\"-06:00\",\"offset_DST\":\"-05:00\",\"offset_STD_seconds\":-21600,\"offset_DST_seconds\":-18000,\"abbreviation_STD\":\"CST\",\"abbreviation_DST\":\"CDT\"},\"bbox\":{\"lon1\":-101.895812,\"lat1\":32.027545,\"lon2\":-101.895712,\"lat2\":32.027645}}]}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "assistant_text",
+      "text": "Accepted: one building, confidence 1, building-level 1.",
+      "approximation": true
+    },
+    {
+      "event": "tool_use",
+      "id": "toolu_01HcE7Vpu5n2LwaA9CcW4cti",
+      "name": "mcp__geoapify__calculate_route_matrix",
+      "arguments": {
+        "sources": [
+          {
+            "lon": -102.075567,
+            "lat": 31.9997
+          }
+        ],
+        "targets": [
+          {
+            "lon": -102.08075785714286,
+            "lat": 31.99625142857143
+          },
+          {
+            "lon": -102.12886042723052,
+            "lat": 32.011364317804045
+          },
+          {
+            "lon": -102.12813177220578,
+            "lat": 31.995025705553658
+          },
+          {
+            "lon": -101.895762,
+            "lat": 32.027595
+          },
+          {
+            "lon": -102.1234,
+            "lat": 31.977861
+          },
+          {
+            "lon": -102.152163,
+            "lat": 32.009876
+          },
+          {
+            "lon": -102.119297,
+            "lat": 32.029558
+          },
+          {
+            "lon": -102.07548065306122,
+            "lat": 31.988152836734695
+          },
+          {
+            "lon": -102.163169,
+            "lat": 31.983509
+          },
+          {
+            "lon": -102.10162,
+            "lat": 32.008075
+          },
+          {
+            "lon": -102.071072,
+            "lat": 31.980342
+          },
+          {
+            "lon": -102.214435,
+            "lat": 31.940028
+          },
+          {
+            "lon": -102.092478,
+            "lat": 31.993315
+          },
+          {
+            "lon": -102.140165,
+            "lat": 32.022708
+          },
+          {
+            "lon": -102.061321,
+            "lat": 32.025087
+          },
+          {
+            "lon": -102.133052,
+            "lat": 32.01044
+          },
+          {
+            "lon": -102.108976,
+            "lat": 32.018071
+          },
+          {
+            "lon": -102.139277,
+            "lat": 31.975557
+          },
+          {
+            "lon": -102.11804277580553,
+            "lat": 32.036252252035105
+          },
+          {
+            "lon": -102.07694,
+            "lat": 31.996331
+          }
+        ],
+        "mode": "drive",
+        "units": "metric",
+        "type": "balanced",
+        "traffic": "free_flow"
+      },
+      "approximation": true
+    },
+    {
+      "event": "tool_result",
+      "tool_use_id": "toolu_01HcE7Vpu5n2LwaA9CcW4cti",
+      "is_error": false,
+      "content": "{\"sources\":[{\"lat\":31.999697,\"lon\":-102.075663}],\"targets\":[{\"lat\":31.996333,\"lon\":-102.08076},{\"lat\":32.011322,\"lon\":-102.128846},{\"lat\":31.995042,\"lon\":-102.128053},{\"lat\":32.027618,\"lon\":-101.895654},{\"lat\":31.97785,\"lon\":-102.123376},{\"lat\":32.009958,\"lon\":-102.152189},{\"lat\":32.029478,\"lon\":-102.119271},{\"lat\":31.98807,\"lon\":-102.075478},{\"lat\":31.983515,\"lon\":-102.163169},{\"lat\":32.008373,\"lon\":-102.101717},{\"lat\":31.979913,\"lon\":-102.070877},{\"lat\":31.939975,\"lon\":-102.21436},{\"lat\":31.993188,\"lon\":-102.093008},{\"lat\":32.022724,\"lon\":-102.140144},{\"lat\":32.025168,\"lon\":-102.061332},{\"lat\":32.010462,\"lon\":-102.132958},{\"lat\":32.017991,\"lon\":-102.10895},{\"lat\":31.976184,\"lon\":-102.139476},{\"lat\":32.036171,\"lon\":-102.118016},{\"lat\":31.996412,\"lon\":-102.076942}],\"sources_to_targets\":[[{\"distance\":856,\"time\":81,\"source_index\":0,\"target_index\":0},{\"distance\":6142,\"time\":490,\"source_index\":0,\"target_index\":1},{\"distance\":5590,\"time\":449,\"source_index\":0,\"target_index\":2},{\"distance\":19262,\"time\":822,\"source_index\":0,\"target_index\":3},{\"distance\":5968,\"time\":486,\"source_index\":0,\"target_index\":4},{\"distance\":16869,\"time\":816,\"source_index\":0,\"target_index\":5},{\"distance\":9863,\"time\":607,\"source_index\":0,\"target_index\":6},{\"distance\":1776,\"time\":156,\"source_index\":0,\"target_index\":7},{\"distance\":16274,\"time\":887,\"source_index\":0,\"target_index\":8},{\"distance\":5246,\"time\":386,\"source_index\":0,\"target_index\":9},{\"distance\":3085,\"time\":247,\"source_index\":0,\"target_index\":10},{\"distance\":21635,\"time\":1085,\"source_index\":0,\"target_index\":11},{\"distance\":2214,\"time\":190,\"source_index\":0,\"target_index\":12},{\"distance\":12587,\"time\":665,\"source_index\":0,\"target_index\":13},{\"distance\":4792,\"time\":344,\"source_index\":0,\"target_index\":14},{\"distance\":6331,\"time\":509,\"source_index\":0,\"target_index\":15},{\"distance\":6881,\"time\":478,\"source_index\":0,\"target_index\":16},{\"distance\":13939,\"time\":722,\"source_index\":0,\"target_index\":17},{\"distance\":10820,\"time\":569,\"source_index\":0,\"target_index\":18},{\"distance\":492,\"time\":59,\"source_index\":0,\"target_index\":19}]],\"units\":\"metric\",\"distance_units\":\"meters\",\"time_units\":\"seconds\"}",
+      "structuredContent": null,
+      "approximation": true
+    },
+    {
+      "event": "assistant_text",
+      "text": "I made both calls once each, and the replacement row4 passed the unique-building rule. **approximation=true**\n\n**Row4 geocode:** there was one result: \"2700 FM 1379, Greenwood, TX 79706\", a building at lon -101.895762, lat 32.027595. Both rank.confidence and confidence_building_level are 1, so it's accepted. It sits in Greenwood, Midland County, not the city of Midland, which is the district you intended. The earlier failed row4 attempt stays on record as a failed preliminary result. This one replaces it only in the final sample.\n\n**Final matrix:** one call, origin (-102.075567, 31.9997), 20 targets in row order, drive/metric/balanced/free_flow, no avoid. Times are free-flow drive times measured to each point. No continuous zone is implied.\n\n| Row | Time (s) | Time (min) | Distance (m) |\n|---|---|---|---|\n| 1 | 81 | 1.4 | 856 |\n| 2 | 490 | 8.2 | 6,142 |\n| 3 | 449 | 7.5 | 5,590 |\n| **4** | **822** | **13.7** | **19,262** |\n| 5 | 486 | 8.1 | 5,968 |\n| 6 | 816 | 13.6 | 16,869 |\n| 7 | 607 | 10.1 | 9,863 |\n| 8 | 156 | 2.6 | 1,776 |\n| 9 | 887 | 14.8 | 16,274 |\n| 10 | 386 | 6.4 | 5,246 |\n| 11 | 247 | 4.1 | 3,085 |\n| 12 | 1,085 | 18.1 | 21,635 |\n| 13 | 190 | 3.2 | 2,214 |\n| 14 | 665 | 11.1 | 12,587 |\n| 15 | 344 | 5.7 | 4,792 |\n| 16 | 509 | 8.5 | 6,331 |\n| 17 | 478 | 8.0 | 6,881 |\n| 18 | 722 | 12.0 | 13,939 |\n| 19 | 569 | 9.5 | 10,820 |\n| 20 | 59 | 1.0 | 492 |\n\n**Your message doesn't restate the zone threshold.** The figures below assume 15 min (900 s). Please confirm that matches the earlier session.\n\n- **Counts:** 19 in zone, 1 outside.\n- **Median among in-zone rows:** 486 s, about 8.1 min (row5).\n- **Longest in-zone time:** 887 s (row9), with no ties. The longest overall is 1,085 s (row12).\n- **Outlier:** only row12 (9600 Wright Dr), at 1,085 s. That's the one real case outside the zone; I added no others.\n- **Borderline (within 90 s of the threshold):** row9 at 887 s (13 s under), row4 at 822 s and row6 at 816 s.\n- **Note on row4:** it's the farthest point by distance (19.3 km) but comes in under the threshold, which suggests the route uses a fast highway.\n- **Snapping:** the routing engine moved row18's point to the road network about 70 m from the input coordinate. All other rows moved less, roughly 10–50 m.\n\nThe competitor evidence sampled earlier still applies, because the origin and settings are identical. **approximation=true**",
+      "approximation": true
+    },
+    {
+      "event": "client_result",
+      "is_error": false,
+      "subtype": "success",
+      "text": "I made both calls once each, and the replacement row4 passed the unique-building rule. **approximation=true**\n\n**Row4 geocode:** there was one result: \"2700 FM 1379, Greenwood, TX 79706\", a building at lon -101.895762, lat 32.027595. Both rank.confidence and confidence_building_level are 1, so it's accepted. It sits in Greenwood, Midland County, not the city of Midland, which is the district you intended. The earlier failed row4 attempt stays on record as a failed preliminary result. This one replaces it only in the final sample.\n\n**Final matrix:** one call, origin (-102.075567, 31.9997), 20 targets in row order, drive/metric/balanced/free_flow, no avoid. Times are free-flow drive times measured to each point. No continuous zone is implied.\n\n| Row | Time (s) | Time (min) | Distance (m) |\n|---|---|---|---|\n| 1 | 81 | 1.4 | 856 |\n| 2 | 490 | 8.2 | 6,142 |\n| 3 | 449 | 7.5 | 5,590 |\n| **4** | **822** | **13.7** | **19,262** |\n| 5 | 486 | 8.1 | 5,968 |\n| 6 | 816 | 13.6 | 16,869 |\n| 7 | 607 | 10.1 | 9,863 |\n| 8 | 156 | 2.6 | 1,776 |\n| 9 | 887 | 14.8 | 16,274 |\n| 10 | 386 | 6.4 | 5,246 |\n| 11 | 247 | 4.1 | 3,085 |\n| 12 | 1,085 | 18.1 | 21,635 |\n| 13 | 190 | 3.2 | 2,214 |\n| 14 | 665 | 11.1 | 12,587 |\n| 15 | 344 | 5.7 | 4,792 |\n| 16 | 509 | 8.5 | 6,331 |\n| 17 | 478 | 8.0 | 6,881 |\n| 18 | 722 | 12.0 | 13,939 |\n| 19 | 569 | 9.5 | 10,820 |\n| 20 | 59 | 1.0 | 492 |\n\n**Your message doesn't restate the zone threshold.** The figures below assume 15 min (900 s). Please confirm that matches the earlier session.\n\n- **Counts:** 19 in zone, 1 outside.\n- **Median among in-zone rows:** 486 s, about 8.1 min (row5).\n- **Longest in-zone time:** 887 s (row9), with no ties. The longest overall is 1,085 s (row12).\n- **Outlier:** only row12 (9600 Wright Dr), at 1,085 s. That's the one real case outside the zone; I added no others.\n- **Borderline (within 90 s of the threshold):** row9 at 887 s (13 s under), row4 at 822 s and row6 at 816 s.\n- **Note on row4:** it's the farthest point by distance (19.3 km) but comes in under the threshold, which suggests the route uses a fast highway.\n- **Snapping:** the routing engine moved row18's point to the road network about 70 m from the input coordinate. All other rows moved less, roughly 10–50 m.\n\nThe competitor evidence sampled earlier still applies, because the origin and settings are identical. **approximation=true**",
+      "permission_denials": [],
+      "approximation": true
+    }
+  ],
+  "stderr": "",
+  "capture_policy": "No session persistence. Tool arguments/results retained after recursive credential, local-path and email redaction. Raw stdout held in memory only. Synthetic geometry is diagnostic only. No screenshots. Contact objects removed from parsed hosted JSON copies before committing. Client tool JSON is retained as a sanitized text projection, not a separately captured structuredContent field.",
+  "completed_at_utc": "2026-10-23T19:58:09Z",
+  "completed_at_utc_source": "Local artifact write time immediately after ephemeral client exit."
+}

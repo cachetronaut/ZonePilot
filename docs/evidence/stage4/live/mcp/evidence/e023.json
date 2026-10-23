@@ -1,0 +1,685 @@
+{
+  "approximation": true,
+  "arguments": {
+    "category": "service",
+    "lat": 31.9997,
+    "limit": 20,
+    "lon": -102.075567,
+    "radius_meters": 20000
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "category": "service",
+    "coordinates": {
+      "lat": 31.9997,
+      "lon": -102.075567
+    },
+    "count": 20,
+    "radius_meters": 20000,
+    "results": [
+      {
+        "brand": "Bank of America",
+        "brand_details": {
+          "wikidata": "Q487907"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 162,
+        "district": "Original Town",
+        "formatted": "Bank of America, West Ohio Avenue, Midland, TX 79701, United States of America",
+        "lat": 32.0010482,
+        "lon": -102.0762161,
+        "name": "Bank of America",
+        "place_id": "516e3b7eb9e08459c059ea84ef5822004040f00103f9015f6b9cf40000000092030f42616e6b206f6620416d6572696361",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Ohio Avenue",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 270,
+        "district": "Homestead",
+        "formatted": "City Bank Midland, 400 West Illinois Avenue, Midland, TX 79701, United States of America",
+        "housenumber": "400",
+        "lat": 31.9997352,
+        "lon": -102.0784227,
+        "name": "City Bank Midland",
+        "opening_hours": "Mo-Fr 09:00-17:00",
+        "place_id": "51e6f0a4e0048559c059a1fa62a5eeff3f40f00103f90119a0a6a502000000920311436974792042616e6b204d69646c616e64",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Illinois Avenue",
+        "suburb": "Downtown Midland Management District",
+        "website": "https://www.city.bank/locations/details/midland"
+      },
+      {
+        "brand": "United States Post Office",
+        "brand_details": {
+          "wikidata": "Q668687"
+        },
+        "categories": [
+          "building",
+          "building.facility",
+          "service",
+          "service.post",
+          "service.post.office"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 304,
+        "district": "Original Town",
+        "formatted": "United States Post Office, 100 East Wall Street, Midland, TX 79701, United States of America",
+        "housenumber": "100",
+        "lat": 31.9969224,
+        "lon": -102.0737131,
+        "name": "United States Post Office",
+        "name_other": {
+          "short_name": "USPS"
+        },
+        "operator": "United States Postal Service",
+        "operator_details": {
+          "type": "public",
+          "website": "https://www.usps.com",
+          "wikidata": "Q668687",
+          "wikipedia": "en:United States Postal Service"
+        },
+        "place_id": "51ae6a1cb7b78459c05920f86e4e36ff3f40f00102f9013e6bc10d00000000920319556e697465642053746174657320506f7374204f6666696365",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "East Wall Street",
+        "suburb": "Downtown Midland Management District",
+        "website": "https://tools.usps.com/go/POLocatorAction!input.action"
+      },
+      {
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 319,
+        "district": "Original Town",
+        "formatted": "Community National Bank, North Big Spring Street, Midland, TX 79701, United States of America",
+        "lat": 31.9981412,
+        "lon": -102.0784008,
+        "name": "Community National Bank",
+        "place_id": "51bcfec984048559c059011c812e86ff3f40f00103f901737c9cf400000000920317436f6d6d756e697479204e6174696f6e616c2042616e6b",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "North Big Spring Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Bank of America",
+        "brand_details": {
+          "wikidata": "Q487907"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 326,
+        "district": "Original Town",
+        "formatted": "Bank of America, 303 West Wall Street, Midland, TX 79701, United States of America",
+        "housenumber": "303",
+        "lat": 31.9971187,
+        "lon": -102.0772192,
+        "name": "Bank of America",
+        "place_id": "51e3a7cc28f18459c059a60ccd2b43ff3f40f00103f901170def6c0000000092030f42616e6b206f6620416d6572696361",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Wall Street",
+        "suburb": "Downtown Midland Management District",
+        "website": "https://locators.bankofamerica.com/tx/midland/financial-centers-midland-12409.html"
+      },
+      {
+        "categories": [
+          "building",
+          "building.facility",
+          "service",
+          "service.police"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 369,
+        "district": "Homestead",
+        "formatted": "Loraine Center / Midland Police Department, 601 North Loraine Street, Midland, TX 79701, United States of America",
+        "housenumber": "601",
+        "lat": 32.0032292,
+        "lon": -102.0760059,
+        "name": "Loraine Center / Midland Police Department",
+        "place_id": "511b5fd247dd8459c059f75a7dd069004040f00101f9018df55d000000000092032a4c6f7261696e652043656e746572202f204d69646c616e6420506f6c696365204465706172746d656e74",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "North Loraine Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Frost Bank",
+        "brand_details": {
+          "wikidata": "Q5506152"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 389,
+        "district": "Homestead",
+        "formatted": "Frost Bank, North Marienfeld Street, Midland, TX 79701, United States of America",
+        "lat": 31.9977556,
+        "lon": -102.0789909,
+        "name": "Frost Bank",
+        "place_id": "519f0bd92f0e8559c0595ab835e96cff3f40f00103f9018c6b9cf40000000092030a46726f73742042616e6b",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "North Marienfeld Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Wells Fargo",
+        "brand_details": {
+          "wikidata": "Q744149"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 427,
+        "district": "Original Town",
+        "formatted": "Wells Fargo, West Texas Avenue, Midland, TX 79701, United States of America",
+        "lat": 31.9986006,
+        "lon": -102.0798982,
+        "name": "Wells Fargo",
+        "place_id": "519800570d1d8559c059ca15f549a4ff3f40f00103f9011344ef6c0000000092030b57656c6c7320466172676f",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Texas Avenue",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Chase",
+        "brand_details": {
+          "wikidata": "Q524629"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 446,
+        "district": "Original Town",
+        "formatted": "Chase, West Wall Street, Midland, TX 79701, United States of America",
+        "lat": 31.9977366,
+        "lon": -102.0796906,
+        "name": "Chase",
+        "opening_hours": "Mo-Fr 09:00-17:00; Sa-Su closed",
+        "place_id": "511c339aa6198559c0596d5771aa6bff3f40f00103f90135c79ef6000000009203054368617365",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Wall Street",
+        "suburb": "Downtown Midland Management District",
+        "website": "https://locator.chase.com/tx/midland/500-w-wall-st"
+      },
+      {
+        "brand": "Frost Bank",
+        "brand_details": {
+          "wikidata": "Q5506152"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 489,
+        "district": "Original Town",
+        "formatted": "Frost Bank, West Wall Street, Midland, TX 79701, United States of America",
+        "lat": 31.9977008,
+        "lon": -102.0801792,
+        "name": "Frost Bank",
+        "place_id": "517174f0a7218559c0592983d15169ff3f40f00103f9017c01cbf10000000092030a46726f73742042616e6b",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Wall Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Security Bank",
+        "brand_details": {
+          "wikidata": "Q7444945"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 492,
+        "district": "Homestead",
+        "formatted": "Security Bank, West Michigan Avenue, Midland, TX 79703, United States of America",
+        "lat": 32.0029884,
+        "lon": -102.079062,
+        "name": "Security Bank",
+        "place_id": "51ce16105a0f8559c059fa4a83ec61004040f00103f901fb469cf40000000092030d53656375726974792042616e6b",
+        "postcode": "79703",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Michigan Avenue",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Prosperity Bank",
+        "brand_details": {
+          "wikidata": "Q7250893"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 513,
+        "district": "Original Town",
+        "formatted": "Prosperity Bank, West Wall Street, Midland, TX 79701, United States of America",
+        "lat": 31.9971187,
+        "lon": -102.080078,
+        "name": "Prosperity Bank",
+        "place_id": "5143c879ff1f8559c059a60ccd2b43ff3f40f00103f9018f6b9cf40000000092030f50726f737065726974792042616e6b",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Wall Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "Wells Fargo",
+        "brand_details": {
+          "wikidata": "Q744149"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 559,
+        "district": "Homestead",
+        "formatted": "Wells Fargo, North Carrizo Street, Midland, TX 79701, United States of America",
+        "lat": 31.9989613,
+        "lon": -102.0814194,
+        "name": "Wells Fargo",
+        "place_id": "51a210b7f9358559c059e9c97fedbbff3f40f00103f901916b9cf40000000092030b57656c6c7320466172676f",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "North Carrizo Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "brand": "BB&T",
+        "brand_details": {
+          "wikidata": "Q795486"
+        },
+        "categories": [
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 586,
+        "district": "Atrium",
+        "formatted": "BB&T, West Kansas Avenue, Midland, TX 79701, United States of America",
+        "lat": 32.0045931,
+        "lon": -102.0779059,
+        "name": "BB&T",
+        "name_other": {
+          "official_name": "Branch Banking and Trust Company"
+        },
+        "place_id": "51962a0769fc8459c0597f4db68196004040f00103f9016f599cf40000000092030442422654",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Kansas Avenue"
+      },
+      {
+        "categories": [
+          "service",
+          "service.police"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 655,
+        "district": "Southern",
+        "formatted": "Midland County Detention Center, West Washington Avenue, Midland, TX 79701, United States of America",
+        "lat": 31.9937975,
+        "lon": -102.0754059,
+        "name": "Midland County Detention Center",
+        "place_id": "513a9b4473d38459c0599baa4f8369fe3f40f00103f9018b6287f20000000092031f4d69646c616e6420436f756e747920446574656e74696f6e2043656e746572",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Washington Avenue"
+      },
+      {
+        "categories": [
+          "service",
+          "service.advertising",
+          "service.advertising.billboard"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 672,
+        "formatted": "South Big Spring Street, Midland, TX 79701, United States of America",
+        "lat": 31.993926663726327,
+        "lon": -102.07790468045857,
+        "mappedTo": {
+          "lat": 31.993926663726327,
+          "lon": -102.07790468045857
+        },
+        "place_id": "511b71b7daf98459c05938c67d5072fe3f40f00103f9014f9e238702000000",
+        "postcode": "79701",
+        "ref": "TX 349 Bus",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "South Big Spring Street",
+        "suburb": "Downtown Midland Management District"
+      },
+      {
+        "categories": [
+          "building",
+          "building.commercial",
+          "service",
+          "service.financial",
+          "service.financial.bank"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 710,
+        "district": "Homestead",
+        "formatted": "My Community Credit Union, 600 West Louisiana Avenue, Midland, TX 79701, United States of America",
+        "housenumber": "600",
+        "lat": 32.0041118,
+        "lon": -102.0814069,
+        "name": "My Community Credit Union",
+        "opening_hours": "Mo-Tu 09:00-17:00; We 10:00-17:00; Th 09:00-17:00; Fr 09:00-18:00",
+        "place_id": "51098a62c5358559c0597d0cdbbb86004040f00102f90109ec1d18000000009203194d7920436f6d6d756e6974792043726564697420556e696f6e",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "West Louisiana Avenue",
+        "website": "https://www.mccu.coop/about-connect/location-details.html?id=13317&title=main-office-downtown&location-information=main-office-downtown-600-w-louisiana-ave--midland-tx-79701"
+      },
+      {
+        "categories": [
+          "service",
+          "service.advertising",
+          "service.advertising.billboard"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 935,
+        "district": "Nueva La Jolla",
+        "formatted": "East Front Street, Midland, TX 79701, United States of America",
+        "lat": 32.00034157158431,
+        "lon": -102.0656298029267,
+        "mappedTo": {
+          "lat": 32.00034157158431,
+          "lon": -102.0656298029267
+        },
+        "place_id": "51fda36fd2348459c059781b3d2311004040f00103f901329f238702000000",
+        "postcode": "79701",
+        "ref": "I 20 Bus",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "East Front Street"
+      },
+      {
+        "categories": [
+          "commercial",
+          "service",
+          "service.cleaning",
+          "service.cleaning.dry_cleaning"
+        ],
+        "city": "Midland",
+        "commercial": {
+          "type": "dry_cleaning"
+        },
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 1265,
+        "district": "Homestead",
+        "formatted": "Iron Press Cleaners, 1309 North Big Spring Street, Midland, TX 79701, United States of America",
+        "housenumber": "1309",
+        "lat": 32.0107154,
+        "lon": -102.0790375,
+        "name": "Iron Press Cleaners",
+        "place_id": "51166a4df30e8559c059bd70491f5f014040f00103f9016ded12de0200000092031349726f6e20507265737320436c65616e657273",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "North Big Spring Street",
+        "website": "https://www.ironpresscleaners.com"
+      },
+      {
+        "categories": [
+          "service",
+          "service.fire_station"
+        ],
+        "city": "Midland",
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "datasource": {
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database License",
+          "sourcename": "openstreetmap",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 1334,
+        "district": "South Park",
+        "formatted": "Midland Fire Department Station #2, South Mineola Street, Midland, TX 79701, United States of America",
+        "lat": 31.9898431,
+        "lon": -102.0664714,
+        "name": "Midland Fire Department Station #2",
+        "place_id": "51a3474211418459c059e6fd7c5b66fd3f40f00102f901b456eb17000000009203224d69646c616e642046697265204465706172746d656e742053746174696f6e202332",
+        "postcode": "79701",
+        "state": "Texas",
+        "state_code": "TX",
+        "street": "South Mineola Street"
+      }
+    ]
+  },
+  "session": "mcp-customers.json",
+  "tool": "search_places",
+  "tool_use_id": "toolu_019HyWqGZvyqvfoPV1DSVGqi"
+}

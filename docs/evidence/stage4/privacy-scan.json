@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-23",
+  "scope": "All regular working-tree file paths and contents including ignored/untracked files, excluding .git administration; all locally stored blob/commit/tag/tree objects, including unreachable objects; all fetched advertised heads/tags/pull heads/merge refs. Server caches and backups are not accessible.",
+  "file_count": 190,
+  "git_object_count": 316,
+  "scanned_head": "fdfcdc8ba21049587f2b075922375735d7bd5334",
+  "working_tree_findings": [],
+  "current_branch_history_findings": [],
+  "all_object_findings": [
+    {
+      "object": "1d0ed99fd43a88f2851999535d41dabe4e4716b9",
+      "type": "blob",
+      "categories": [
+        "owner_identity"
+      ]
+    },
+    {
+      "object": "7337316e54614332871e1ade407fa971c442a47a",
+      "type": "blob",
+      "categories": [
+        "owner_identity"
+      ]
+    },
+    {
+      "object": "d8834729806dca4edc6c025bba577cacff699598",
+      "type": "blob",
+      "categories": [
+        "owner_identity"
+      ]
+    }
+  ],
+  "affected_refs": [
+    {
+      "ref": "refs/audit/pull/1/head",
+      "flagged_objects": 3,
+      "categories": [
+        "owner_identity"
+      ]
+    }
+  ],
+  "exact_key_checked": true,
+  "identity_source": "Authenticated GitHub profile name/email and local account token; values never reported",
+  "allowed_emails": [
+    "159639410+cachetronaut@users.noreply.github.com",
+    "web-flow@users.noreply.github.com",
+    "noreply@github.com"
+  ],
+  "current_tree_and_branch_status": "pass",
+  "retained_history_status": "owner_prepublication_item",
+  "owner_resolution_options": [
+    "Ask GitHub Support to purge retained PR 1 identity-bearing refs/objects, then rescan.",
+    "Delete and recreate the repository from clean squashed history before going public, then rescan."
+  ],
+  "publication_rule": "Repository MUST remain private until the owner resolves retained history. No force push or history rewrite attempted."
+}

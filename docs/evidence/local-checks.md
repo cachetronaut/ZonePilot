@@ -45,3 +45,28 @@ Sol verified the round 1 fixes and identified two additional P2 defects. Fixed s
 ## Owner-approved point-time method, 2026-10-23
 
 All 135 offline tests passed on Python 3.14.9 after enabling the owner-approved route_time_at_points default. Import tests no longer patch approval. Tests cover complete/partial keyless bundles, approximation labels, the mandatory point-only limitation, below/equal/above-budget times, missing/failed/unresolved routes, contradictory verdicts, unapproved polygon methods and requested competitor rejection. B01/B03/B04, live competitor evidence/extent, Python 3.15.1 and platform checks remain pending. No live call was made.
+
+## Stage 4 verification, 2026-10-23
+
+Current macOS arm64 Python 3.14.9 suite: 135 tests passed. A fresh remote clone of main 5169b27 also passed all 135 tests and produced report.json/report.md byte-identical to the expected synthetic files. Python 3.15.1, Linux and Windows remain pending.
+
+[Stage 4 evidence](stage4/README.md) records the authenticated live CLI failure, Claude hosted origin attempt with approximation=true, unsuccessful Codex smoke attempts, and sanitized capture policy. The shipped origin produces city matches rather than an eligible building. Both paths evaluated zero customers and have unavailable live percentage/median. No successful live report or nine-tool acceptance is claimed.
+
+The [expanded privacy scan](stage4/privacy-scan.json) includes fetched advertised pull-request refs. Current working files and main are clean under the recorded checks, but three owner-identity blobs remain reachable through old PR #1. Full-history zero-hit acceptance and public release are blocked. Earlier reachable-branch-only scan results above do not cover this retained ref.
+
+
+## Stage 4 continuation: completed live reports
+
+The owner's amended demo policy allows labeled public Midland locations with fictional business/customer identities. The final CLI exited 0 and both CLI/MCP reports evaluated twenty customers: 100% in zone, median 488 seconds, maximum 1,085 seconds / 21,635 metres at DEMO-12. No outside or borderline customer was observed. Sampled broad service candidates were 19 in zone for the CLI and 20 for MCP; only two in-zone provider IDs overlap across their different search extents. See [full live comparison](stage4/live/comparison.md), with MCP approximation=true throughout.
+
+All nine hosted tools succeeded across 33 Claude invocations, including an explicitly superseded preliminary matrix and a final twenty-target matrix. Codex's scoped geocode smoke succeeded after its actual noninteractive approval-policy error was diagnosed. [Coverage](stage4/live/tool-coverage.json) links each successful invocation. No actual setup screenshots were taken; those remain owner handoff.
+
+The full live Isoline has 14,758 positions and three rings. The old 2,000-position cap failed; the new 20,000-position/32-ring limit and 2,000,000-pair work budget validate the full geometry without simplification. Offline regressions preserve topology/boundary behavior and test sweep equivalence/work exhaustion. Requested MCP competitor imports now bind counts and records to the normalized acquired route artifact, with approximation=true.
+
+`PYTHONDONTWRITEBYTECODE=1 python3.14 -m unittest discover -s tests` passed all 156 tests in 0.981 seconds after integration. `git diff --check` passed. No installation or CI ran. Fresh-clone verification of this revision follows in the Stage 4 live evidence index; the older main check above is historical. Python 3.15.1, Linux and Windows remain pending. FR-04 live outside/borderline diversity is not demonstrated; only authored fixtures cover it.
+
+The expanded scan found zero current-tree/current-branch hits. The same three old PR #1 identity blobs remain reachable through the audit ref. Under the latest owner instruction this is a pre-publication owner item, not permission to rewrite history or make the repo public. GitHub Support purge and delete-and-recreate from clean squashed history are the two documented options.
+
+## Stage 4 current fresh-clone verification
+
+A fresh remote clone of PR revision `4a250b72bca5b7ae9f15722c495bfa238318b14f` passed 156 tests on Python 3.14.9/macOS arm64. Synthetic golden and reconstructed captured MCP reports matched byte for byte. The exact README live runtime command exited 0: 20 evaluated, 100% in zone, median 488 seconds, maximum 1085 seconds, no outside/borderline customers, 19 sampled service candidates inside and 1 outside. It recorded 24 HTTP attempts and no Isoline polls. Keychain supplied only the live child environment; offline children received no key. The temporary clone was removed. Evidence: [fresh clone](stage4/live/fresh-clone.json). No target-runtime or cross-platform pass is inferred.

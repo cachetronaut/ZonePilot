@@ -3,8 +3,11 @@
 import copy
 import itertools
 import math
+import random
 import unittest
 from unittest.mock import patch
+
+import zonepilot.geometry as geometry_module
 
 from zonepilot.geometry import (
     GeometryError,
@@ -347,14 +350,14 @@ class ValidationTests(unittest.TestCase):
                 self.assertTrue(contains(geometry, ring[0]))
 
     def test_vertex_cap_includes_closing_positions(self):
-        geometry = polygon(regular_ring(1999))
+        geometry = polygon(regular_ring(19_999))
         self.assertIs(validate_geometry(geometry), geometry)
         self.assertTrue(contains(geometry, [0, 0]))
-        self.assert_invalid(polygon(regular_ring(2000)))
+        self.assert_invalid(polygon(regular_ring(20_000)))
 
     def test_vertex_cap_applies_across_components(self):
-        first = regular_ring(1000)
-        second = [[x + 30, y] for x, y in regular_ring(1000)]
+        first = regular_ring(10_000)
+        second = [[x + 30, y] for x, y in regular_ring(10_000)]
         self.assert_invalid(multipolygon([first], [second]))
 
     def test_ring_cap_applies_across_components_and_holes(self):
@@ -365,15 +368,99 @@ class ValidationTests(unittest.TestCase):
         self.assertIsNotNone(validate_geometry(polygon(rectangle(0, 0, 70, 3), *holes)))
         self.assert_invalid(polygon(rectangle(0, 0, 70, 3), *holes, rectangle(65, 1, 66, 2)))
 
-    def test_complexity_caps_are_checked_before_quadratic_topology(self):
+    def test_complexity_caps_are_checked_before_topology(self):
         oversized = [
-            polygon(regular_ring(2000)),
+            polygon(regular_ring(20_000)),
             multipolygon(*[[rectangle(2 * i, 0, 2 * i + 1, 1)] for i in range(33)]),
             polygon(rectangle(), *[rectangle(1, 1, 2, 2) for _ in range(32)]),
         ]
         with patch("zonepilot.geometry._validate_ring", side_effect=AssertionError):
             for geometry in oversized:
                 self.assert_invalid(geometry)
+
+    def test_large_geometry_preserves_holes_components_and_all_positions(self):
+        exterior = regular_ring(6_000)
+        hole = [[x / 5, y / 5] for x, y in regular_ring(3_000)]
+        island = [[x / 20, y / 20] for x, y in regular_ring(2_500)]
+        geometry = multipolygon([exterior, hole], [island])
+        original = copy.deepcopy(geometry)
+        self.assertIs(validate_geometry(geometry), geometry)
+        self.assertEqual(geometry, original)
+        for point, expected in (([0, 0], True), ([1, 0], False),
+                                ([5, 0], True), ([11, 0], False),
+                                (hole[0], True), (island[0], True)):
+            with self.subTest(point=point):
+                self.assertIs(contains(geometry, point), expected)
+
+    def test_sweep_catches_hole_crossing_among_thousands_of_edges(self):
+        # The hole has thousands of short edges plus a long top edge crossing
+        # the concave exterior, although every hole vertex is strictly inside.
+        outer = [[0, 0], [10, 0], [10, 10], [8, 10], [8, 2],
+                 [2, 2], [2, 10], [0, 10], [0, 0]]
+        hole = [[1 + 8 * i / 3_000, 1] for i in range(3_001)]
+        hole += [[9, 3], [1, 3], hole[0][:]]
+        self.assert_invalid(polygon(outer, hole))
+
+    def test_sweep_preserves_tolerance_at_x_expiration_and_y_filter(self):
+        for gap, invalid in ((0, True), (0.5e-9, True), (2e-9, False)):
+            for vertical in (False, True):
+                other = (rectangle(2, 10 + gap, 4, 12) if vertical
+                         else rectangle(10 + gap, 2, 12, 4))
+                geometry = multipolygon([rectangle()], [other])
+                with self.subTest(gap=gap, vertical=vertical):
+                    if invalid:
+                        self.assert_invalid(geometry)
+                    else:
+                        self.assertIs(validate_geometry(geometry), geometry)
+
+    def test_work_budget_counts_y_disjoint_adjacent_pairs_and_is_global(self):
+        # Five x-overlapping pairs per rectangle, even though all are either
+        # adjacent or y-disjoint. Disjoint components share the same budget.
+        geometry = multipolygon([rectangle()], [rectangle(20, 0, 30, 10)])
+        with patch("zonepilot.geometry._MAX_CANDIDATE_PAIRS", 10):
+            self.assertIs(validate_geometry(geometry), geometry)
+        with patch("zonepilot.geometry._MAX_CANDIDATE_PAIRS", 9):
+            self.assert_invalid(geometry)
+
+    def test_pathological_valid_geometry_fails_closed_at_real_work_limit(self):
+        # Simple zigzag with many x-overlaps but disjoint y intervals. This
+        # stays below the position cap and needs over two million candidates.
+        ring = [[10 * (i % 2), i / 500] for i in range(2_201)]
+        ring += [[-1, ring[-1][1]], [-1, 0], ring[0][:]]
+        geometry = polygon(ring)
+        self.assert_invalid(geometry)
+        with patch("zonepilot.geometry._MAX_CANDIDATE_PAIRS", 3_000_000):
+            self.assertIs(validate_geometry(geometry), geometry)
+
+    def test_sweep_matches_exhaustive_contact_checks_for_synthetic_rings(self):
+        rng = random.Random(471)
+        cases = []
+        for _ in range(80):
+            rings = []
+            for ring_index in range(3):
+                # Include crossing arbitrary paths and disjoint simple rings,
+                # repeated x events, and both directions of long segments.
+                if rng.random() < 0.5:
+                    ring = [(rng.randrange(10), rng.randrange(10)) for _ in range(8)]
+                else:
+                    ring = [(x + ring_index * 25, y) for x, y in regular_ring(12)[:-1]]
+                rings.append(ring + [ring[0]])
+            cases.append(rings)
+        for case, rings in enumerate(cases):
+            edges = [(ri, ei, a, b) for ri, ring in enumerate(rings)
+                     for ei, (a, b) in enumerate(zip(ring, ring[1:]))]
+            contact = False
+            for index, (ri, ei, a, b) in enumerate(edges):
+                for rj, ej, c, d in edges[index + 1:]:
+                    if ri == rj and abs(ei - ej) in (1, len(rings[ri]) - 2):
+                        continue
+                    contact |= geometry_module._segments_contact(a, b, c, d)
+            with self.subTest(case=case):
+                if contact:
+                    with self.assertRaises(GeometryError):
+                        geometry_module._validate_segment_contacts(rings)
+                else:
+                    geometry_module._validate_segment_contacts(rings)
 
     def test_error_message_never_contains_untrusted_details(self):
         self.assertEqual(str(GeometryError("synthetic-private-detail")),

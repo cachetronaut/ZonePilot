@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.12813177220578,
+          31.995025705553658
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "909 Bonham Street, Midland, TX 79703, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.476102030462063
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

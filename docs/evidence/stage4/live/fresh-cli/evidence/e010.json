@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.07548065306122,
+          31.988152836734695
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "201 West Dakota Avenue, Midland Heights, Midland, TX 79701, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.5144858056004387
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

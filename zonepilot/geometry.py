@@ -3,11 +3,14 @@
 Membership includes every ring boundary within 1e-9 degrees of a segment.
 Validation rejects touching or nearly touching rings and components because
 their topology is ambiguous at that tolerance. Winding is immaterial. The
-2,000-position cap includes closing positions; the 32-ring cap covers the
-entire geometry. Segment pairs are examined at most once, bounding validation
-to O(V**2 + R*V) time and O(V) space after the structural checks.
+20,000-position cap includes closing positions; the 32-ring cap covers the
+entire geometry. A tolerance-aware x sweep bounds segment-pair work to
+2,000,000 candidates across all rings, failing closed if that budget is exceeded.
+Validation takes O(V log V + C + R*V) time and O(V) space, where C is the
+budgeted number of x-overlapping segment pairs.
 """
 
+import heapq
 import math
 
 __all__ = [
@@ -20,8 +23,9 @@ __all__ = [
 ]
 
 _TOLERANCE = 1e-9
-_MAX_VERTICES = 2000
+_MAX_VERTICES = 20_000
 _MAX_RINGS = 32
+_MAX_CANDIDATE_PAIRS = 2_000_000
 _EARTH_RADIUS_METRES = 6_371_008.8
 
 type Point = tuple[float, float]
@@ -168,14 +172,47 @@ def _validate_ring(ring: Ring) -> None:
             raise GeometryError()
     if abs(math.fsum(areas)) <= _TOLERANCE * perimeter:
         raise GeometryError()
-    edges = list(zip(ring, ring[1:]))
-    for first, (a, b) in enumerate(edges):
-        for second in range(first + 1, len(edges)):
-            if second == first + 1 or (first == 0 and second == len(edges) - 1):
+
+
+def _validate_segment_contacts(rings: list[Ring]) -> None:
+    """Check all rings together; count even y-disjoint and adjacent candidates.
+
+    Expiration uses exactly the x tolerance in _segments_contact. Each active
+    pair is visited once, including long edges spanning many later start events.
+    The heap avoids unbudgeted repeated scans just to expire active edges.
+    """
+    edges = []
+    for ring_index, ring in enumerate(rings):
+        for edge_index, (a, b) in enumerate(zip(ring, ring[1:])):
+            edges.append((min(a[0], b[0]), max(a[0], b[0]),
+                          min(a[1], b[1]), max(a[1], b[1]),
+                          ring_index, edge_index, a, b))
+    edges.sort(key=lambda edge: edge[0])
+    active = {}
+    expirations = []
+    candidates = 0
+    for identifier, edge in enumerate(edges):
+        min_x, max_x, min_y, max_y, ring_index, edge_index, a, b = edge
+        while expirations and expirations[0][0] + _TOLERANCE < min_x:
+            _, expired = heapq.heappop(expirations)
+            del active[expired]
+        for other in active.values():
+            candidates += 1
+            if candidates > _MAX_CANDIDATE_PAIRS:
+                raise GeometryError()
+            _, _, other_min_y, other_max_y, other_ring, other_index, c, d = other
+            if max_y + _TOLERANCE < other_min_y or other_max_y + _TOLERANCE < min_y:
                 continue
-            c, d = edges[second]
+            if ring_index == other_ring and abs(edge_index - other_index) in (
+                1, len(rings[ring_index]) - 2
+            ):
+                # Adjacent edges share a vertex. _validate_ring separately
+                # rejects their backtracking, short edges and degeneracy.
+                continue
             if _segments_contact(a, b, c, d):
                 raise GeometryError()
+        active[identifier] = edge
+        heapq.heappush(expirations, (max_x, identifier))
 
 
 def validate_geometry(geojson):
@@ -226,15 +263,10 @@ def validate_geometry(geojson):
     longitudes = [point[0] for ring in all_rings for point in ring]
     if max(longitudes) - min(longitudes) > 180:
         raise GeometryError()
-    # Structural limits are established before any quadratic work begins.
+    # Establish structural limits before topology work begins.
     for ring in all_rings:
         _validate_ring(ring)
-    for index, ring in enumerate(all_rings):
-        for other in all_rings[index + 1:]:
-            for a, b in zip(ring, ring[1:]):
-                for c, d in zip(other, other[1:]):
-                    if _segments_contact(a, b, c, d):
-                        raise GeometryError()
+    _validate_segment_contacts(all_rings)
     for polygon in normalized:
         for index, hole in enumerate(polygon[1:], start=1):
             if _ring_location(polygon[0], hole[0]) != 1:

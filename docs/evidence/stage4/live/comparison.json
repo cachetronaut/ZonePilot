@@ -1,0 +1,356 @@
+{
+  "date": "2026-10-23",
+  "data_mode": "live",
+  "mcp_approximation": true,
+  "mcp_limitation": "Route-time classification only at measured points; no continuous zone.",
+  "inputs_sha256": {
+    "data/sample_business.json": "5ca83ca946a41307c4dc44e7017e726fdfa40ea61a8040349eaeb4822e3dc10b",
+    "data/sample_customers.csv": "87fd72de1ae76a6dd2ef243b716d3ba809327d11197754b6c9182a46496657c6"
+  },
+  "business_coordinates_equal": true,
+  "common_settings": {
+    "budget_seconds": 1200,
+    "direction": "outbound",
+    "mode": "drive",
+    "route_type": "balanced",
+    "traffic": "free_flow",
+    "units": "metric"
+  },
+  "cli_summary": {
+    "borderline": 0,
+    "classified_denominator": 20,
+    "disagreements": 0,
+    "in_zone": 20,
+    "in_zone_percent": 100.0,
+    "known_routes": 20,
+    "max_time_row_ids": [
+      12
+    ],
+    "max_time_seconds": 1085.0,
+    "median_in_zone_seconds": 488.0,
+    "missing_routes": 0,
+    "out_of_zone": 0,
+    "out_of_zone_percent": 0.0,
+    "resolved": 20,
+    "total": 20,
+    "unknown_membership": 0,
+    "unresolved": 0
+  },
+  "mcp_summary": {
+    "borderline": 0,
+    "classified_denominator": 20,
+    "disagreements": 0,
+    "in_zone": 20,
+    "in_zone_percent": 100.0,
+    "known_routes": 20,
+    "max_time_row_ids": [
+      12
+    ],
+    "max_time_seconds": 1085.0,
+    "median_in_zone_seconds": 488.0,
+    "missing_routes": 0,
+    "out_of_zone": 0,
+    "out_of_zone_percent": 0.0,
+    "resolved": 20,
+    "total": 20,
+    "unknown_membership": 0,
+    "unresolved": 0
+  },
+  "cli_search": {
+    "cap_reached": true,
+    "category": "service",
+    "coverage": "sampled",
+    "duplicate_count": 0,
+    "observed_in_zone_count": 19,
+    "observed_out_of_zone_count": 1,
+    "returned_count": 20,
+    "search_extent": {
+      "method": "rectangle",
+      "parameters": {
+        "bbox": [
+          -102.332248,
+          31.700116,
+          -101.764102,
+          32.272319
+        ]
+      }
+    },
+    "status": "ok",
+    "unclassified_count": 0
+  },
+  "mcp_search": {
+    "cap_reached": true,
+    "category": "service",
+    "coverage": "sampled",
+    "duplicate_count": 0,
+    "observed_in_zone_count": 20,
+    "observed_out_of_zone_count": 0,
+    "returned_count": 20,
+    "search_extent": {
+      "method": "circle",
+      "parameters": {
+        "center": [
+          -102.075567,
+          31.9997
+        ],
+        "radius_meters": 20000
+      }
+    },
+    "status": "ok",
+    "unclassified_count": 0
+  },
+  "in_zone_candidate_id_overlap": 2,
+  "cli_only_in_zone_candidates": 17,
+  "mcp_only_in_zone_candidates": 18,
+  "rows": [
+    {
+      "row_id": 1,
+      "reference": "DEMO-01",
+      "input_address": "615 W Missouri Ave, Midland, TX 79701",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 81.0,
+      "mcp_time_seconds": 81.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 2,
+      "reference": "DEMO-02",
+      "input_address": "3500 Neely Ave, Midland, TX 79707",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 490.0,
+      "mcp_time_seconds": 490.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 3,
+      "reference": "DEMO-03",
+      "input_address": "909 Bonham St, Midland, TX 79703",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 449.0,
+      "mcp_time_seconds": 449.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 4,
+      "reference": "DEMO-04",
+      "input_address": "2700 FM 1379, Midland, TX 79706",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 822.0,
+      "mcp_time_seconds": 822.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 5,
+      "reference": "DEMO-05",
+      "input_address": "900 S Raymond Rd, Midland, TX 79703",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 486.0,
+      "mcp_time_seconds": 486.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 6,
+      "reference": "DEMO-06",
+      "input_address": "5001 Preston Dr, Midland, TX 79707",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 816.0,
+      "mcp_time_seconds": 816.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 7,
+      "reference": "DEMO-07",
+      "input_address": "2800 Moss Ave, Midland, TX 79705",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 607.0,
+      "mcp_time_seconds": 607.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 8,
+      "reference": "DEMO-08",
+      "input_address": "201 W Dakota Ave, Midland, TX 79701",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 156.0,
+      "mcp_time_seconds": 156.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 9,
+      "reference": "DEMO-09",
+      "input_address": "6000 Riverfront Dr, Midland, TX 79706",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 887.0,
+      "mcp_time_seconds": 887.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 10,
+      "reference": "DEMO-10",
+      "input_address": "1400 N N St, Midland, TX 79701",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 386.0,
+      "mcp_time_seconds": 386.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 11,
+      "reference": "DEMO-11",
+      "input_address": "100 E Gist Ave, Midland, TX 79701",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 247.0,
+      "mcp_time_seconds": 247.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 12,
+      "reference": "DEMO-12",
+      "input_address": "9600 Wright Dr, Midland, TX 79706",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 1085.0,
+      "mcp_time_seconds": 1085.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 13,
+      "reference": "DEMO-13",
+      "input_address": "1705 W Missouri Ave, Midland, TX 79701",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 190.0,
+      "mcp_time_seconds": 190.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 14,
+      "reference": "DEMO-14",
+      "input_address": "3800 Norwood St, Midland, TX 79707",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 665.0,
+      "mcp_time_seconds": 665.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 15,
+      "reference": "DEMO-15",
+      "input_address": "1700 E Magnolia Ave, Midland, TX 79705",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 344.0,
+      "mcp_time_seconds": 344.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 16,
+      "reference": "DEMO-16",
+      "input_address": "2601 Wedgewood St, Midland, TX 79707",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 509.0,
+      "mcp_time_seconds": 509.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 17,
+      "reference": "DEMO-17",
+      "input_address": "2400 Fannin Ave, Midland, TX 79705",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 478.0,
+      "mcp_time_seconds": 478.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 18,
+      "reference": "DEMO-18",
+      "input_address": "4800 Graceland Dr, Midland, TX 79703",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 722.0,
+      "mcp_time_seconds": 722.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 19,
+      "reference": "DEMO-19",
+      "input_address": "2503 W Loop 250 N, Midland, TX 79705",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 569.0,
+      "mcp_time_seconds": 569.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    },
+    {
+      "row_id": 20,
+      "reference": "DEMO-20",
+      "input_address": "301 W Missouri Ave, Midland, TX 79701",
+      "same_resolved_coordinates": true,
+      "cli_verdict": "in_zone",
+      "mcp_verdict": "in_zone",
+      "cli_time_seconds": 59.0,
+      "mcp_time_seconds": 59.0,
+      "time_delta_seconds": 0.0,
+      "verdict_agrees": true
+    }
+  ],
+  "single_route_diagnostic": {
+    "row_id": 1,
+    "matrix_time_seconds": 81,
+    "single_route_time_seconds": 81.539,
+    "delta_seconds": 0.539,
+    "distance_meters": 856,
+    "purpose": "Separate required tool invocation, not a replacement for matrix evidence."
+  },
+  "coverage_limit": "This real20-minute sample produced no outside or borderline customer. Those branches are demonstrated only by authored offline fixtures; no live outcome was invented."
+}

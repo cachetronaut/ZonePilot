@@ -1,0 +1,27 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.10162,
+          32.008075
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "1400 North N Street, Midland, TX 79701, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "match_type": "full_match",
+          "popularity": 1.5511665990629813
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

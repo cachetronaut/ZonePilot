@@ -1,0 +1,59 @@
+{
+  "approximation": true,
+  "arguments": {
+    "limit": 5,
+    "query": "2700 FM 1379, Midland, TX 79706"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "count": 1,
+    "query": "2700 FM 1379, Midland, TX 79706",
+    "results": [
+      {
+        "address_line1": "2700 FM 1379",
+        "address_line2": "Greenwood, TX 79706, United States of America",
+        "bbox": {
+          "lat1": 32.027545,
+          "lat2": 32.027645,
+          "lon1": -101.895812,
+          "lon2": -101.895712
+        },
+        "city": "Greenwood",
+        "confidence": 1,
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "2700 FM 1379, Greenwood, TX 79706, United States of America",
+        "housenumber": "2700",
+        "lat": 32.027595,
+        "lon": -101.895762,
+        "place_id": "51f9bf232a547959c0593d44a33b88034040f00102f9010a7b420100000000c00203",
+        "postcode": "79706",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.1028873983168512
+        },
+        "result_type": "building",
+        "state": "Texas",
+        "street": "FM 1379",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      }
+    ]
+  },
+  "session": "mcp-final-customers.json",
+  "tool": "geocode_address",
+  "tool_use_id": "toolu_01XHERMX9vZCpZ81vnqSuhBi"
+}

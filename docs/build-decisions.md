@@ -30,3 +30,10 @@ New implementation commits follow that clean root. GitHub may retain hidden hist
 ## Remaining gates
 
 B02 customer method selection is approved on 2026-10-23. B01, B03 and B04 remain open; MCP competitor route-evidence/search-extent approval is also pending. The owner confirmed that wholly fictional samples stay under tests/fixtures/sample and live data/sample_* remain pending. Stage 4 still needs tutorial completion, permitted live comparison and screenshots, all nine hosted tools, platform/target-runtime checks, dev.to publication, final attribution/privacy review, owner-controlled visibility and program submission. Offline test success does not close these gates.
+
+## Current Stage 4 owner amendment
+
+The latest owner instruction supersedes the earlier B03 data prohibition and full-retained-history merge gate above. Real public Midland demo locations are approved with fictional business/customer identities and explicit live-data provenance. Current tree/current branch history must remain clean; old PR #1 retention is an owner pre-publication item. The owner permits a private squash merge after live results and a clean Sol xhigh review with no breaking changes. No history rewrite, public visibility change, external posting, email or license change is authorized. The PRD amendment and SUBMISSION.md record the current policy.
+
+
+Stage 4 full live geometry correction: the first real City Hall Isoline had 14,758 positions and three rings, exceeding the original 2,000 cap. The validator now accepts up to 20,000 positions with the same 32-ring limit and unchanged topology/boundary rules. An x-sweep and 2,000,000 candidate-pair work budget bound processing; no simplification, coordinate rounding or ring removal. See [full geometry evidence](live-geometry-contract.md). Earlier cap statements describe the historical build.

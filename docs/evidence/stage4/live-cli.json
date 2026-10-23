@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-23",
+  "data_mode": "live",
+  "path": "cli",
+  "source_revision": "5169b27",
+  "invocation": [
+    "python3.14",
+    "-m",
+    "zonepilot.cli",
+    "--business-address",
+    "90000 Imaginary Fixture Lane, Midland TX (fictional)",
+    "--business-name",
+    "Main Street Plumbing",
+    "--minutes",
+    "20",
+    "--customers",
+    "tests/fixtures/sample/sample_customers.csv",
+    "--competitor-category",
+    "service",
+    "--output-dir",
+    "reports/stage4-live"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "origin_unresolved: The business address did not resolve to one sufficiently precise building.\n",
+  "http_attempts": 1,
+  "requested_customer_rows": 20,
+  "customers_evaluated": 0,
+  "in_zone_percent": null,
+  "median_in_zone_seconds": null,
+  "report_bundle_exists": false,
+  "capture": "Unmodified cli.main; transport counter wrapper only. No request headers, bodies or returned map records persisted."
+}

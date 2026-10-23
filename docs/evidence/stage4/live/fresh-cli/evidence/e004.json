@@ -1,0 +1,51 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -102.12886042723052,
+          32.011364317804045
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "3500 Neely Avenue, Midland, TX 79707, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 9.99999999995449e-06,
+          "match_type": "full_match",
+          "popularity": 1.4882454455741718
+        },
+        "result_type": "building"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -102.1295237,
+          32.0134603
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "formatted": "Legacy Senior High School, 3500 Neely Avenue, Midland, TX 79707, United States of America",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 6.47570000762496e-05,
+          "match_type": "inner_part",
+          "popularity": 1.4975291927883851
+        },
+        "result_type": "amenity"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

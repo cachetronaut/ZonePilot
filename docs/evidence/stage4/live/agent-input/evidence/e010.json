@@ -1,0 +1,59 @@
+{
+  "approximation": true,
+  "arguments": {
+    "limit": 5,
+    "query": "6000 Riverfront Dr, Midland, TX 79706"
+  },
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "result": {
+    "count": 1,
+    "query": "6000 Riverfront Dr, Midland, TX 79706",
+    "results": [
+      {
+        "address_line1": "6000 Riverfront Drive",
+        "address_line2": "Midland, TX 79706, United States of America",
+        "bbox": {
+          "lat1": 31.9834821,
+          "lat2": 31.9845852,
+          "lon1": -102.165438,
+          "lon2": -102.1614197
+        },
+        "city": "Midland",
+        "confidence": 1,
+        "country": "United States",
+        "country_code": "us",
+        "county": "Midland County",
+        "formatted": "6000 Riverfront Drive, Midland, TX 79706, United States of America",
+        "housenumber": "6000",
+        "lat": 31.983509,
+        "lon": -102.163169,
+        "place_id": "5125ae635c718a59c0595952ee3ec7fb3f40c00203e2031f6d697865643a616464726573733a706f6c796c696e653a3231303332373539",
+        "postcode": "79706",
+        "rank": {
+          "confidence": 1,
+          "confidence_building_level": 1,
+          "confidence_city_level": 1,
+          "confidence_street_level": 1,
+          "importance": 0.053398090333409594,
+          "match_type": "full_match",
+          "popularity": 1.3649746811159693
+        },
+        "result_type": "building",
+        "state": "Texas",
+        "street": "Riverfront Drive",
+        "timezone": {
+          "abbreviation_DST": "CDT",
+          "abbreviation_STD": "CST",
+          "name": "America/Chicago",
+          "offset_DST": "-05:00",
+          "offset_DST_seconds": -18000,
+          "offset_STD": "-06:00",
+          "offset_STD_seconds": -21600
+        }
+      }
+    ]
+  },
+  "session": "mcp-customers.json",
+  "tool": "geocode_address",
+  "tool_use_id": "toolu_01CAraCwKEsqEoG5Q7SzPwdq"
+}

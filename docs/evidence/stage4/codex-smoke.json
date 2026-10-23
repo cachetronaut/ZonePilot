@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-23",
+  "path": "mcp",
+  "approximation": true,
+  "limitation": "Route-time classification only at measured points; no continuous zone.",
+  "client": "Codex CLI 0.163.0",
+  "exit_code": 0,
+  "prompt": "approximation=true. You are running the ZonePilot shipped agent pack's preflight, discovery and origin-resolution steps. All output must start approximation=true. Owner authorizes a bounded attempt of the shipped fictional sample, not publication of real returned premises. No shell, file access, installations or external writes. Use only the configured Geoapify hosted MCP tools. Report the names of available Geoapify tools from the client inventory. If available, call geocode_address EXACTLY ONCE with query=\"90000 Imaginary Fixture Lane, Midland TX (fictional)\" and limit=5. Do not call any other tool. Accept an origin only if exactly one building candidate has confidence and confidence_building_level both at least 0.95 and valid coordinates. Output ONLY tool name, status, candidate count, result types, confidence values, eligibility and whether subsequent steps must stop. Do not output returned addresses, coordinates, identifiers, account information, headers, secrets or local paths. The intended inputs are Main Street Plumbing, Midland TX, 20 fictional customers, 1200 seconds outbound drive/free_flow/balanced/metric. If origin fails, stop without route/Places/geometry calls or reports. Method route_time_at_points, approximation=true; Route-time classification only at measured points; no continuous zone. Explicitly state that zero customer rows were evaluated and full comparison/nine-tool evidence remain pending. Never claim a connection succeeded from configuration alone. This is the second-client smoke test in Codex CLI. Do not invoke shell, files, search, or any non-Geoapify tool. Use the tools directly. Do not create plans, files, or agents.",
+  "config_override": "mcp_servers.geoapify={url=\"https://api.geoapify.com/v1/mcp\",env_http_headers={\"x-api-key\"=\"GEOAPIFY_API_KEY\"},enabled_tools=[\"geocode_address\"],required=true,startup_timeout_sec=20,tool_timeout_sec=20}",
+  "events": [
+    {
+      "event": "assistant_text",
+      "text": "approximation=true\ntool name: No Geoapify tools available in the exposed client inventory\nstatus: geocode_address unavailable; no call made; connection unverified\ncandidate count: unknown\nresult types: unknown\nconfidence values: unknown\neligibility: no origin accepted\nsubsequent steps must stop: yes; zero customer rows were evaluated; full comparison/nine-tool evidence remain pending"
+    }
+  ],
+  "stderr": "Reading additional input from stdin...\n",
+  "capture_policy": "Ephemeral client; no persistent config changes; raw stdout held in memory only; tool results omitted before saving; paths/emails/key redacted."
+}
