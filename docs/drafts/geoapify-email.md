@@ -1,18 +1,20 @@
 # Owner-sent Geoapify submission email draft
 
-UNSENT. Do not send until the required items in [SUBMISSION.md](../../SUBMISSION.md) pass and the owner completes publication. The live comparison is complete, but this private build is not yet ready for final submission. Use the existing program contact channel; no recipient address has been guessed.
+UNSENT. Do not send during this task. Public repository verification is complete, but screenshots, runtime/platform checks, live outcome diversity and final program acceptance remain pending. Use the existing program contact channel; no recipient address has been guessed.
 
 Subject: ZonePilot submission, Open Geospatial Program Batch #2
 
 Hello Geoapify team,
 
-I am submitting ZonePilot for Batch #2's Combine OpenAPI + MCP track. It helps a single-location service business review an outbound driving budget using a spec-derived Python CLI and your hosted MCP tools.
+I have prepared ZonePilot for Batch #2's Combine OpenAPI + MCP track. It helps a single-location service business review an outbound driving budget using a spec-derived Python CLI and your hosted MCP tools.
 
-Repository: [OWNER: insert approved public repository URL]
-Tutorial: [OWNER: insert published dev.to URL]
-Repository tutorial: [OWNER: insert public TUTORIAL.md URL]
-Reviewed revision: [OWNER: insert exact commit]
-Compliance and evidence: [OWNER: insert public SUBMISSION.md URL]
+Repository: https://github.com/cachetronaut/ZonePilot
+dev.to tutorial: unpublished and optional; no public article URL exists.
+Repository tutorial: https://github.com/cachetronaut/ZonePilot/blob/main/TUTORIAL.md
+Verified implementation release HEAD: a17946fc491d58a81556c3654b3d3a091a9963a1
+Commit: https://github.com/cachetronaut/ZonePilot/commit/a17946fc491d58a81556c3654b3d3a091a9963a1
+The subsequent publication reconciliation changes documentation only.
+Compliance and evidence: https://github.com/cachetronaut/ZonePilot/blob/main/SUBMISSION.md
 
 Both recorded live paths resolved twenty demo customers with twenty known routes. All twenty were within the twenty-minute budget, with a median of 488 seconds and maximum of 1,085 seconds. The CLI uses full REST Isoline geometry. The hosted MCP method carries approximation=true and classifies measured points by route time, with no continuous zone. This live sample has no outside or borderline customers; those outcomes are demonstrated only by the offline fixture.
 
@@ -27,4 +29,4 @@ Geoapify may publish an adapted completed tutorial with author credit to Scout S
 Thank you,
 Scout Squad
 
-Owner check before sending: replace every placeholder, confirm the final review and required screenshots/platform evidence, resolve retained PR #1 history through GitHub Support purge or delete-and-recreate from clean squashed history before public visibility, verify the public links and synchronized revision, and confirm that no personal information or key is attached. Keep the repository private until the retained-history item is resolved. The November 15, 2026 deadline and one permitted fix round of up to seven days still apply.
+Owner check before sending: confirm required credential-safe screenshots, Python 3.15.1 and Linux/Windows verification, final acceptance of the live outcome-diversity gap and optional unpublished dev.to status. Fresh private and anonymous public clone privacy checks passed November 2; MIT is unchanged and the recreated repository has no PRs. Confirm the linked documentation and record the exact send-time revision privately. Do not attach personal information or credentials. The November 15, 2026 deadline and one permitted fix round of up to seven days still apply.

@@ -2,7 +2,7 @@
 
 ZonePilot helps a single-location service business review a 5–60 minute outbound driving budget. It geocodes addresses, obtains a road-network Isoline polygon, classifies points locally, measures routes and optionally observes category-based competitors. JSON and Markdown come from one validated schema.
 
-Built for the [Geoapify Open Geospatial Program](https://geoapify.com). This repository remains private. The internal target is November 8, 2026; submission is due November 15.
+Built for the [Geoapify Open Geospatial Program](https://geoapify.com). The [repository](https://github.com/cachetronaut/ZonePilot) is public as of November 2, 2026. The internal target is November 8, 2026; submission is due November 15.
 
 ## Current status
 
@@ -12,7 +12,9 @@ Stage 4 live reports on October 23, 2026 evaluated all twenty fictional customer
 
 Claude Code 2.1.309 completed all nine hosted tools; Codex CLI 0.163.0 passed a separate geocode smoke call. MCP is always `approximation=true`: route-time classification only at measured points; no continuous zone. [Evidence index](docs/evidence/stage4/README.md) preserves earlier failures separately from successful reports and offline fixtures.
 
-The repository stays private. Current-tree/current-branch privacy checks are required before merge; old PR #1 retained owner-identity text is an owner pre-publication item, with GitHub Support purge or delete-and-recreate from clean squashed history as the two options. Screenshots, target-runtime/platform checks and public submission remain owner steps. See [submission pack](SUBMISSION.md), [tutorial](TUTORIAL.md), [local checks](docs/evidence/local-checks.md) and [PRD](docs/prd.md).
+The recreated public repository was verified on November 2, 2026 at release HEAD `a17946fc491d58a81556c3654b3d3a091a9963a1`. Only `main` was pushed; no old PR or audit refs were transferred. Fresh private and anonymous public clones passed the corrected privacy scan, with four commits, 205 reachable objects and 190 files. Four 32-hex matches were ID fields, not credentials. Credential candidates were environment references or synthetic test values. MIT was unchanged and the recreated repository had no pull requests. The actual Geoapify key was not read; the October 23 exact-key scan is historical evidence, not a new exact-key check. Subsequent documentation reconciliation preserves that implementation revision.
+
+Screenshots, Python 3.15.1 and Linux/Windows checks, live outcome diversity and final acceptance remain pending. The dev.to draft is unpublished and optional under the November 2 owner instruction. The submission email remains unsent. See the [submission pack](SUBMISSION.md) and [public tutorial](TUTORIAL.md).
 
 ## Reproduce the offline example
 
@@ -34,12 +36,10 @@ The fixture is Main Street Plumbing, Midland TX with twenty fictional customers 
 
 [Demo provenance](data/README.md) identifies real public locations used for fictional identities. Main Street Plumbing is fictional and is not based at City Hall; `300 N Loraine St, Midland, TX 79701` is only its demo origin. No public location is an actual customer or affiliated with this project. `data/sample_business.json` records settings and labeling; `data/sample_customers.csv` contains twenty fictional customer names/references at the approved demo addresses.
 
-On this owner's macOS machine, retrieve the existing Keychain item directly into the environment and stop if lookup fails:
+Set `GEOAPIFY_API_KEY` in the process environment through your trusted secret-entry method before a live run. Do not place its value in a file or command argument:
 
 ```sh
 set +x
-GEOAPIFY_API_KEY="$(security find-generic-password -a geoapify -s GEOAPIFY_API_KEY -w 2>/dev/null)" || exit 2
-export GEOAPIFY_API_KEY
 python3.14 -B -m zonepilot.cli --business-address '300 N Loraine St, Midland, TX 79701' --business-name 'Main Street Plumbing' --minutes 20 --customers data/sample_customers.csv --competitor-category service --output-dir reports/live-demo
 unset GEOAPIFY_API_KEY
 ```
@@ -48,7 +48,7 @@ Use an installed supported interpreter; no installation is required. The recorde
 
 The earlier invented origin failed with `origin_unresolved`; [historical evidence](docs/evidence/stage4/live-cli.json) is retained. It is not the current sample. The final real sample has no outside or borderline customer, so those branches remain demonstrated by the authored offline fixture rather than claimed as live outcomes.
 
-The fresh-clone Stage 4 check is recorded in the [evidence index](docs/evidence/stage4/README.md). Before PR #4 merges, reviewers must select `stage4/submission-pack` when cloning; after merge, the normal default-branch clone contains these files.
+The fresh-clone Stage 4 check is recorded in the [evidence index](docs/evidence/stage4/README.md). That October 23 runtime check is historical evidence. Clone `main` from the recreated public repository for the published files; no old PR branches exist there.
 
 Set the key only in the process environment. For POSIX shells, this masked prompt passes the secret directly into the process environment without putting a literal key in shell history:
 
@@ -95,7 +95,7 @@ The importer accepts valid acquired point-time evidence without a key and writes
 
 ## Manual acceptance checklist
 
-The [test record](docs/evidence/local-checks.md) maps tested cases and pending gates. CI is intentionally skipped; PR titles include `[skip ci]`.
+The [test record](docs/evidence/local-checks.md) maps tested cases and pending gates. CI is intentionally skipped. The November 2 publication checks inspected Git objects and documents without running project or third-party code.
 
 - [x] Offline input validation and no-network preflight/replay: FR-01–03, FR-05–06, AC-01.
 - [x] Conservative geocoding and geometry cases: FR-07–11, AC-02–03.
@@ -108,11 +108,12 @@ The [test record](docs/evidence/local-checks.md) maps tested cases and pending g
 - [x] Owner-approved point-time method and sampled MCP competitor contract: FR-12, B02.
 - [x] Complete identical-input comparison, all nine hosted tools and second-client smoke: FR-25–26, AC-07, B04. [MCP comparison, approximation=true](docs/evidence/stage4/live/comparison.md); [Codex success](docs/evidence/stage4/live/codex-smoke-approved.json).
 - [ ] Actual credential-free setup screenshots in both clients: FR-28, AC-10, CR-14. Live text/config evidence is present; screenshots remain owner handoff.
-- [x] Current [fresh remote clone check](docs/evidence/stage4/live/fresh-clone.json), revision `4a250b7`: 156 tests, byte-identical synthetic and captured MCP reports, successful live CLI with the same 20/20 in-zone result and 488-second median. PR branch selected before merge; temporary clone removed.
+- [x] Historical October 23 [fresh remote clone check](docs/evidence/stage4/live/fresh-clone.json), revision `4a250b7`: 156 tests, byte-identical synthetic and captured MCP reports, successful live CLI with the same 20/20 in-zone result and 488-second median. PR branch selected before merge; temporary clone removed.
 - [ ] Python 3.15.1 and Linux/Windows command verification: NFR-06, AC-09. Current verified runtime is macOS Python 3.14.9.
 - [x] [Tutorial](TUTORIAL.md) with setup, live comparison, three evidenced failures, lessons and Geoapify feedback; [dev.to draft](docs/drafts/devto.md) saved locally. Both README and tutorial link to geoapify.com.
-- [ ] Owner publication and final program acceptance: public repo, screenshots, dev.to URL and synchronized revision, final license-holder confirmation, submission email. [SUBMISSION.md](SUBMISSION.md) maps every Section 8 item.
-- [ ] Retained PR #1 privacy disposition before publication. Current-tree/current-branch scan is separate from the three old retained blobs; the repository MUST stay private until the owner resolves them. [Scan evidence](docs/evidence/stage4/privacy-scan.json).
+- [x] Public repository and anonymous clean clone verified November 2, 2026; unchanged MIT and release implementation revision recorded above.
+- [ ] Final program acceptance, screenshots, runtime/platform verification and submission email. Optional dev.to draft remains unpublished. [SUBMISSION.md](SUBMISSION.md) maps every Section 8 item.
+- [x] Publication repository recreated and populated with clean `main` history only. Fresh private/public clone scans passed; PR list empty. The [October 23 scan](docs/evidence/stage4/privacy-scan.json) describes the deleted repository and local retained audit objects, not the recreated remote.
 
 [Schema](docs/report-schema.md) · [API provenance](docs/api-provenance.md) · [PRD review log](docs/prd-review-log.md)
 
