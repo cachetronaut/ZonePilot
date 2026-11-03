@@ -24,9 +24,9 @@ All nine required hosted tools have successful captured results. Claude Code sup
 
 My main feedback is that hosted MCP still has no isoline tool. The taxonomy also lacks a plumbing category or general trade-services umbrella, although specific electrician and carpenter categories exist. The tutorial records these limits, three genuine build failures and their fixes, and the remaining differences between methods.
 
-Geoapify may publish an adapted completed tutorial with author credit to Scout Squad under the permission recorded in the tutorial.
+Geoapify may publish an adapted completed tutorial with author credit to Cachetronaut under the permission recorded in the tutorial.
 
 Thank you,
-Scout Squad
+
 
 Owner check before sending: confirm required credential-safe screenshots, Python 3.15.1 and Linux/Windows verification, final acceptance of the live outcome-diversity gap and optional unpublished dev.to status. Fresh private and anonymous public clone privacy checks passed November 2; MIT is unchanged and the recreated repository has no PRs. Confirm the linked documentation and record the exact send-time revision privately. Do not attach personal information or credentials. The November 15, 2026 deadline and one permitted fix round of up to seven days still apply.

@@ -117,4 +117,4 @@ The [test record](docs/evidence/local-checks.md) maps tested cases and pending g
 
 [Schema](docs/report-schema.md) · [API provenance](docs/api-provenance.md) · [PRD review log](docs/prd-review-log.md)
 
-Project code is MIT, retaining the existing cachetronaut copyright. Geoapify and [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) have separate data attribution. Synthetic fixtures contain no live map records. Geoapify may publish an adapted tutorial with credit to Scout Squad when the tutorial and its evidence pass the publication gates.
+Project code is MIT, retaining the existing cachetronaut copyright. Geoapify and [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) have separate data attribution. Synthetic fixtures contain no live map records. Geoapify may publish an adapted tutorial with credit to Cachetronaut when the tutorial and its evidence pass the publication gates.
